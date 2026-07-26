@@ -3,7 +3,7 @@ import {authWrapper} from "@/utils/authWrapper";
 import {AlertProvider} from "@/context/AlertContext";
 import PageWrapper from "@/components/layout/page-wrapper/PageWrapper";
 import Header from "@/components/layout/header/Header";
-import Footer from "@/components/layout/footer/Footer";
+import SiteFooter from "@/components/layout/site-footer/SiteFooter";
 import ProtectedRoute from "@/components/utils/protected-route/ProtectedRoute";
 import {currentFont} from "@/resources/styles-config";
 import {I18nProvider} from "@/context/i18nContext";
@@ -29,7 +29,7 @@ function Layout({children}: { children: React.ReactNode }) {
                             <PageWrapper>
                                 {children}
                             </PageWrapper>
-                            <Footer/>
+                            <SiteFooter/>
                         </CurrencyProvider>
                     </ProtectedRoute>
                 </AllOrdersProvider>

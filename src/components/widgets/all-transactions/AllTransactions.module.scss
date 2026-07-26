@@ -52,17 +52,17 @@
 
 .receiptButton {
   padding: 0.4rem 0.7rem;
-  border: 1px solid rgba(37, 99, 235, 0.35);
+  border: 1px solid rgba(124, 58, 237, 0.35);
   border-radius: 999px;
-  background: rgba(37, 99, 235, 0.06);
-  color: #2563eb;
+  background: rgba(124, 58, 237, 0.06);
+  color: #7C3AED;
   font-size: 0.78rem;
   font-weight: 700;
   cursor: pointer;
   transition: background 140ms ease, opacity 140ms ease;
 
   &:hover:not(:disabled) {
-    background: rgba(37, 99, 235, 0.14);
+    background: rgba(124, 58, 237, 0.14);
   }
 
   &:disabled {
@@ -110,7 +110,7 @@
 }
 
 .typeSpend {
-  background: rgba(37, 99, 235, 0.1);
+  background: rgba(124, 58, 237, 0.1);
   color: rgba(29, 78, 216, 0.95);
 }
 

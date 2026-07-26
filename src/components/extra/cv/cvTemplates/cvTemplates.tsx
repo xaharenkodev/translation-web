@@ -16,7 +16,7 @@ const renderParagraphs = (text?: string, style?: any) =>
 
 // 🎨 Динамічний набір тем
 const getTheme = (o: CVOrderType) => {
-    const primary = o.themeColor && o.themeColor !== "Default" ? o.themeColor : "#2563EB";
+    const primary = o.themeColor && o.themeColor !== "Default" ? o.themeColor : "#7C3AED";
     const font = o.fontStyle && o.fontStyle !== "Default" ? o.fontStyle : "Helvetica";
     const accent =
         primary === "#DC2626"
@@ -27,7 +27,7 @@ const getTheme = (o: CVOrderType) => {
                     ? "#EDE9FE"
                     : primary === "#F59E0B"
                         ? "#FEF3C7"
-                        : "#DBEAFE";
+                        : "#EDE9FE";
     return { primary, accent, font, text: "#111827", bg: "#FFFFFF" };
 };
 
@@ -434,7 +434,7 @@ const renderRichText = (text: string, style: any) => {
 // 🧠 MANAGER REVIEWED
 //
 export const ManagerReviewedCV = (o: CVOrderType) => {
-    const themeColor = o.themeColor && o.themeColor !== "Default" ? o.themeColor : "#1E40AF";
+    const themeColor = o.themeColor && o.themeColor !== "Default" ? o.themeColor : "#5B21B6";
     const accent = "#F3F4F6";
     const font = o.fontStyle && o.fontStyle !== "Default" ? o.fontStyle : "Helvetica";
 

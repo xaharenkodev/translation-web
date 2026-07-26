@@ -1,0 +1,219 @@
+.section {
+    position: relative;
+    padding: 90px 24px;
+    background: var(--surface-muted);
+    overflow: hidden;
+}
+
+.inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 56px;
+}
+
+.tagline {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.desc {
+    margin-top: 14px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+}
+
+.card {
+    position: relative;
+    border-radius: 24px;
+    padding: 38px 34px;
+    background: var(--background-light);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px var(--shadow-color);
+    }
+}
+
+.cardPremium {
+    background: linear-gradient(160deg, #1e1240 0%, #3b0f63 55%, #6d1d78 100%);
+    border: none;
+    color: #fff;
+
+    .planDesc, .feature { color: rgba(255, 255, 255, 0.82); }
+    .perWord { color: #fff; }
+    .perWordUnit { color: rgba(255, 255, 255, 0.6); }
+    .featureIcon { background: rgba(255, 255, 255, 0.14); color: #6ee7b7; }
+}
+
+.ribbon {
+    position: absolute;
+    top: 22px;
+    right: -34px;
+    transform: rotate(38deg);
+    background: var(--brand-gradient);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 7px 44px;
+}
+
+.planBadge {
+    align-self: flex-start;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+}
+
+.cardPremium .planBadge {
+    background: rgba(255, 255, 255, 0.14);
+    color: #f0abfc;
+}
+
+.planTitle {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    margin-top: 18px;
+    letter-spacing: -0.01em;
+}
+
+.planDesc {
+    margin-top: 10px;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.priceRow {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 26px 0 4px;
+}
+
+.perWord {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.perWordUnit {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.minNote {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+.cardPremium .minNote { color: rgba(255, 255, 255, 0.55); }
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 26px 0 30px;
+    display: grid;
+    gap: 13px;
+    flex: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.94rem;
+    color: var(--text-secondary);
+}
+
+.featureIcon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+    font-size: 0.7rem;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    font-weight: 700;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover { transform: translateY(-2px); }
+}
+
+.ctaLight {
+    background: var(--tertiary-color);
+    color: var(--primary-color);
+
+    &:hover { box-shadow: 0 12px 26px var(--shadow-color); }
+}
+
+.ctaGradient {
+    background: var(--brand-gradient);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(168, 85, 247, 0.4);
+
+    &:hover { box-shadow: 0 18px 40px rgba(168, 85, 247, 0.55); }
+}
+
+.deliveryTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.cardPremium .deliveryTag { color: rgba(255, 255, 255, 0.75); }
+
+@media (max-width: 860px) {
+    .cards { grid-template-columns: 1fr; }
+}

@@ -6,12 +6,14 @@
 export const UNPUBLISHED_ROUTES = [
     "/services",
     "/join-team",
-    "/dashboard",
     "/extra",
     "/checkout-test",
     "/cases",
     "/resources",
     "/success",
+    "/templates",
+    "/cart",
+    "/get-started",
 ] as const;
 
 /** True when a route is unpublished, including any nested route beneath it. */

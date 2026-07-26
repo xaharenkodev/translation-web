@@ -82,6 +82,22 @@ const DrawerMenu: FC<DrawerMenuProps> = ({ open, onClose }) => {
                             {link.label}
                         </a>
                     ))}
+
+                    <a
+                        href="/dashboard"
+                        className={styles.link}
+                        onClick={onClose}
+                        style={{
+                            background: "var(--brand-gradient, var(--primary-color))",
+                            color: "#fff",
+                            padding: "12px 26px",
+                            borderRadius: "999px",
+                            fontWeight: 700,
+                            textAlign: "center",
+                        }}
+                    >
+                        Translate Now →
+                    </a>
                 </nav>
             </div>
         </Drawer>

@@ -19,57 +19,69 @@ a {
 
 :root {
     /* =========================
-       Brand (Blue AI Style)
+       Brand (Violet Linguist Style)
     ========================= */
-    --primary-color: #2563EB;        /* яскравий синій (основний) */
-    --secondary-color: #1E40AF;      /* темніший синій */
-    --tertiary-color: #EFF6FF;       /* дуже світлий блакитний фон */
-    --quaternary-color: #F8FAFC;     /* майже білий */
+    --primary-color: #7C3AED;        /* насичений фіолетовий (основний) */
+    --secondary-color: #5B21B6;      /* глибокий фіолетовий */
+    --tertiary-color: #F5F3FF;       /* дуже світлий лавандовий фон */
+    --quaternary-color: #FAF9FF;     /* майже білий з фіолетовим підтоном */
+
+    --accent-color: #EC4899;         /* рожевий акцент для градієнтів */
+    --brand-gradient: linear-gradient(120deg, #7C3AED 0%, #A855F7 45%, #EC4899 100%);
 
     /* =========================
        Backgrounds & Surfaces
     ========================= */
     --background-light: #FFFFFF;
-    --background-dark: #0F172A;      /* темно-синій замість чорного */
-    --surface-color: #fafafa;
-    --surface-muted: #dbe0e2;        /* легкий холодний фон секцій */
+    --background-dark: #170B33;      /* глибокий фіолетово-чорний */
+    --surface-color: #FBFAFE;
+    --surface-muted: #EFEAFB;        /* легкий лавандовий фон секцій */
 
     /* =========================
        Text
     ========================= */
-    --text-primary: #0F172A;         /* темно-синій заголовки */
-    --text-secondary: #334155;       /* холодний сірий */
-    --text-muted: #94A3B8;
+    --text-primary: #1E1240;         /* темний індиго для заголовків */
+    --text-secondary: #4B4569;       /* приглушений фіолетово-сірий */
+    --text-muted: #9C96B8;
     --text-inverse: #FFFFFF;
-    --text-accent: #2563EB;
+    --text-accent: #7C3AED;
 
     /* =========================
        Status
     ========================= */
-    --success-color: #199a49;
+    --success-color: #17A34A;
     --warning-color: #F59E0B;
     --error-color: #DC2626;
-    --info-color: #3B82F6;
+    --info-color: #8B5CF6;
 
     /* =========================
        Interactive
     ========================= */
-    --button-primary: #2563EB;
-    --button-hover: #1E40AF;
-    --button-outline: #E2E8F0;
+    --button-primary: #7C3AED;
+    --button-hover: #5B21B6;
+    --button-outline: #E7E1F6;
 
-    --link-color: #2563EB;
-    --link-hover: #1E40AF;
+    --link-color: #7C3AED;
+    --link-hover: #5B21B6;
 
     /* =========================
        System
     ========================= */
-    --border-color: #E2E8F0;
-    --shadow-color: rgba(37, 99, 235, 0.15);
+    --border-color: #E7E1F6;
+    --shadow-color: rgba(124, 58, 237, 0.18);
 
-    --font-family: 'Inter', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    --font-family: 'Plus Jakarta Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    --font-display: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
 
     --main-padding: 0 50px;
+}
+
+::selection {
+    background: rgba(124, 58, 237, 0.25);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 

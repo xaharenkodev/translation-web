@@ -21,10 +21,8 @@ export const headerContent = {
         href: "/"
     },
     links: [
-        {label: "Marketplace", href: "/templates"},
         {label: `About Us`, href: "/about-us"},
-        {label: "Get Started", href: "/get-started"},
-        {label: "Plans", href: "/pricing"},
+        {label: "Pricing", href: "/pricing"},
         {label: "Faq", href: "/faq"},
         {label: "Support", href: "/contact-us"},
 
@@ -37,10 +35,9 @@ export const footerContent = {
         {
             title: "Navigate",
             links: [
-                {label: "Marketplace", href: "/templates"},
+                {label: "Order Translation", href: "/dashboard"},
                 {label: `About Us`, href: "/about-us"},
-                {label: "Get Started", href: "/get-started"},
-                {label: "Plans", href: "/pricing"},
+                {label: "Pricing", href: "/pricing"},
                 {label: "Faq", href: "/faq"},
                 {label: "Support", href: "/contact-us"},
             ]

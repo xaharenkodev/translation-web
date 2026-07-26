@@ -39,9 +39,14 @@ export const googleFonts: GoogleFont[] = [
         css: "'Open Sans', sans-serif",
         url: "https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap"
     },
+    {
+        name: "Plus Jakarta Sans",
+        css: "'Plus Jakarta Sans', sans-serif",
+        url: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+    },
 ];
 
-export const currentFontIndex = 3;
+export const currentFontIndex = 5;
 export const currentFont = googleFonts[currentFontIndex];
 
 // Кольори для кнопок
@@ -140,7 +145,7 @@ export const hoverEffects: Record<HoverEffect, { transform: string; shadow: stri
     none: {transform: "none", shadow: "none"},
     shadow: {transform: "translateY(-6px)", shadow: "0 12px 28px rgba(0,0,0,0.18)"},
     lift: {transform: "translateY(-12px)", shadow: "0 16px 32px rgba(0,0,0,0.22)"},
-    glow: {transform: "scale(1.03)", shadow: "0 0 25px rgba(74,144,226,0.7), 0 0 40px rgba(74,144,226,0.4)"},
+    glow: {transform: "scale(1.03)", shadow: "0 0 25px rgba(139, 92, 246,0.7), 0 0 40px rgba(139, 92, 246,0.4)"},
     tilt: {transform: "rotate3d(1,1,0,6deg) scale(1.02)", shadow: "0 18px 30px var(--primary-color)"},
 };
 
@@ -158,11 +163,11 @@ export const cardVariants: Record<CardVariant, {
     },
     highlight: {
         border: "2px solid var(--primary-color)",
-        background: "linear-gradient(145deg, #f0f9ff, #e0f2fe)",
+        background: "linear-gradient(145deg, #FAF5FF, #F3E8FF)",
         hover: "shadow",
         label: {
             text: "Most Popular",
-            bg: "linear-gradient(135deg, var(--primary-color), #6366f1)",
+            bg: "linear-gradient(135deg, var(--primary-color), #8B5CF6)",
             color: "#fff",
         },
     },

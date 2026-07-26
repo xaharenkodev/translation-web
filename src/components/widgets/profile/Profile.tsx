@@ -24,7 +24,7 @@ const Profile = () => {
                             <span className={styles.kicker}>Account overview</span>
                             <h1>Welcome back, {firstName}</h1>
                             <p>
-                                Manage your purchased templates, wallet activity, and account access from one clean,
+                                Manage your translations, wallet activity, and account access from one clean,
                                 structured workspace.
                             </p>
                         </div>
@@ -36,9 +36,9 @@ const Profile = () => {
                 </div>
 
                 <div className={styles.actionBar}>
-                    <Link href="/templates" className={styles.inlineAction}>
+                    <Link href="/dashboard" className={styles.inlineAction}>
                         <FaArrowRight />
-                        Browse Templates
+                        New Translation
                     </Link>
                     <div className={styles.logoutWrap}>
                         <LogoutButton />

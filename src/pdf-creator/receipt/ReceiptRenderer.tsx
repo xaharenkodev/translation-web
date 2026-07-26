@@ -30,7 +30,7 @@ const colors = {
     text: "#111827",
     muted: "#6B7280",
     border: "#D1D5DB",
-    accent: "#2563EB",
+    accent: "#7C3AED",
 };
 
 const styles = StyleSheet.create({

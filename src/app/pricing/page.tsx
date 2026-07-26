@@ -1,15 +1,10 @@
 "use client";
 
-import Grid from "@/components/constructor/grid/Grid";
-import PricingCard from "@/components/constructor/pricing-card/PricingCard";
-import ValuesIcons from "@/components/constructor/values-icons/ValuesIcons";
-import StoryGridSection from "@/components/sections/story-grid-section/StoryGridSection";
-import HowItWorksSection from "@/components/sections/how-it-works-section/HowItWorksSection";
-import TextWithButton from "@/components/constructor/text-with-button/TextWithButton";
-import PromoFeatureCard from "@/components/features/promo-card/PromoFeatureCard";
 import FAQ from "@/components/constructor/faq/FAQ";
 import PromoSection from "@/components/sections/promo-section/PromoSection";
-import { topUpPlans } from "@/data/topUpPlans";
+import TopUpSection from "@/components/sections/translation/TopUpSection";
+import ComparePlans from "@/components/sections/translation/ComparePlans";
+import BigCta from "@/components/sections/translation/BigCta";
 
 export default function PricingPage() {
     return (
@@ -17,26 +12,21 @@ export default function PricingPage() {
             <PromoSection
                 title="Top Up Your"
                 highlight="Balance"
-                description="Add funds to your Account Balance, choose any amount you like, and use your balance across the template catalogue and future orders."
+                description="Add funds to your Account Balance, choose any amount you like, and use your balance for AI and specialist translation orders."
             />
 
-            <Grid
-                title="Balance Top-Up"
-                description="Use a suggested amount or enter your own custom top-up. All prices include VAT."
-                columns={4}
-                gap="2rem"
-            >
-                {topUpPlans.map((plan) => (
-                    <PricingCard key={plan.title} {...plan} />
-                ))}
-            </Grid>
+            <TopUpSection />
+
+            <ComparePlans />
+
+            <BigCta />
 
             <FAQ
                 items={[
                     {
                         question: "What is my Account Balance used for?",
                         answer:
-                            "Your Account Balance is store credit used to buy templates and other digital products on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash.",
+                            "Your Account Balance is store credit used to pay for translation services on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash.",
                     },
                     {
                         question: "Is there a minimum top-up?",

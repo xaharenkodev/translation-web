@@ -1,0 +1,55 @@
+.marquee {
+    padding: 34px 0;
+    background: var(--background-light);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+    width: max-content;
+    animation: scroll 42s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.rowReverse {
+    animation-direction: reverse;
+    animation-duration: 52s;
+}
+
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border-color);
+    background: var(--surface-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    transition: transform 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+    }
+}
+
+.native {
+    color: var(--primary-color);
+    font-weight: 700;
+}

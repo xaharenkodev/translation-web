@@ -7,23 +7,27 @@ import FAQ, {
 } from "@/components/constructor/faq/FAQ";
 import { COMPANY_EMAIL, COMPANY_NAME } from "@/resources/constants";
 import { metadataFromSchema } from "@/utils/fromSchema";
+import { TRANSLATION_PLANS } from "@/data/translationConfig";
+
+const aiPlan = TRANSLATION_PLANS.find((p) => p.id === "ai")!;
+const specialistPlan = TRANSLATION_PLANS.find((p) => p.id === "specialist")!;
 
 const faqMeta = {
-    title: `FAQ — ${COMPANY_NAME} Template Marketplace`,
-    description: `Frequently asked questions about buying website templates, account balance, payments, downloads, and usage on ${COMPANY_NAME}.`,
+    title: `FAQ — ${COMPANY_NAME} Translation Services`,
+    description: `Frequently asked questions about ordering translations, account balance, payments, delivery times, and supported languages on ${COMPANY_NAME}.`,
     keywords: [
-        "website templates FAQ",
-        "buy website templates",
-        "template marketplace",
-        "shopify templates",
-        "wordpress templates",
-        "download templates",
+        "translation FAQ",
+        "document translation",
+        "AI translation",
+        "specialist translation",
+        "translate pdf",
+        "translate docx",
     ],
     canonical: "/faq",
     ogImage: {
-        title: `${COMPANY_NAME} — Templates FAQ`,
+        title: `${COMPANY_NAME} — Translation FAQ`,
         description:
-            "Answers about template purchases, balance system, downloads, and marketplace usage.",
+            "Answers about translation orders, balance system, delivery, and supported languages.",
         bg: "#111827",
         color: "#ffffff",
     },
@@ -32,8 +36,8 @@ const faqMeta = {
 const faqCategories: FAQCategory[] = [
     "General",
     "Payments",
-    "Templates",
-    "Downloads",
+    "Translations",
+    "Delivery",
     "Account",
 ];
 
@@ -42,7 +46,7 @@ const faqCards: FAQCard[] = [
         icon: "book",
         title: "Getting Started",
         description:
-            "Learn how the marketplace works, how to buy templates, and how to get started quickly.",
+            "Learn how the service works, how to order your first translation, and how to get started quickly.",
         linkText: "Explore basics",
         href: "/contact-us",
     },
@@ -50,15 +54,15 @@ const faqCards: FAQCard[] = [
         icon: "payments",
         title: "Payments & Balance",
         description:
-            "Understand how your balance works, how to top up, and how purchases are processed.",
+            "Understand how your balance works, how to top up, and how orders are charged.",
         linkText: "View payment help",
         href: "/contact-us",
     },
     {
         icon: "downloads",
-        title: "Downloads & Access",
+        title: "Delivery & Results",
         description:
-            "Find answers about template access, downloads, and usage after purchase.",
+            "Find answers about delivery times, downloading results, and order status.",
         linkText: "Contact support",
         href: "/contact-us",
     },
@@ -68,19 +72,48 @@ const faqItems: FAQItem[] = [
     {
         category: "General",
         question: `What is ${COMPANY_NAME}?`,
-        answer: `${COMPANY_NAME} is a marketplace where you can browse, purchase, and use premium website templates for WordPress, Shopify, and other platforms.`,
+        answer: `${COMPANY_NAME} is an online translation service for documents and text. You can order an instant AI translation or a specialist translation with professional review, in 30+ languages.`,
     },
     {
         category: "General",
         question: "How does the process work?",
         answer:
-            "You create an account, top up your Account Balance, choose a template and confirm the purchase. The purchase is recorded in your account immediately, and we send the files and any activation details to your email address.",
+            "You create an account, top up your Account Balance, then place an order: choose the service level, set the language pair, and paste your text or upload a document. The cost is deducted from your balance and the finished translation appears in your account.",
+    },
+    {
+        category: "Translations",
+        question: "What is the difference between AI and Specialist translation?",
+        answer:
+            "AI translation is generated instantly by our translation engine — ideal for everyday texts, emails, and drafts. Specialist translation goes through our premium workflow with professional review, consistent terminology, and polished formatting, and is delivered within 12–24 hours.",
+    },
+    {
+        category: "Translations",
+        question: "How is the price calculated?",
+        answer: `Pricing is per word: £${aiPlan.perWord.toFixed(2)} per word for AI translation (minimum £${aiPlan.minimum.toFixed(2)}) and £${specialistPlan.perWord.toFixed(2)} per word for specialist translation (minimum £${specialistPlan.minimum.toFixed(2)}). The word count and exact total are shown before you confirm the order.`,
+    },
+    {
+        category: "Translations",
+        question: "Which file formats can I upload?",
+        answer:
+            "PDF, DOCX, and TXT files up to 15 MB. You can also paste text directly into the order form. The text is extracted automatically and the word count is calculated for you.",
+    },
+    {
+        category: "Translations",
+        question: "Which languages do you support?",
+        answer:
+            "We support 30+ languages including English, Swedish, German, French, Spanish, Italian, Polish, Ukrainian, Chinese, Japanese, Korean, and Arabic — in any combination of source and target language.",
+    },
+    {
+        category: "Translations",
+        question: "Can I give special instructions?",
+        answer:
+            "Yes. Every order has an instructions field where you can request a formal tone, ask to keep brand names untranslated, specify regional spelling, and similar preferences.",
     },
     {
         category: "Payments",
         question: "What is Account Balance?",
         answer:
-            "Account Balance is store credit recorded in your account and used to buy templates on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash. Full rules are in the Payment and Account Balance Policy.",
+            "Account Balance is store credit recorded in your account and used to pay for translation orders on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash. Full rules are in the Payment and Account Balance Policy.",
     },
     {
         category: "Payments",
@@ -102,63 +135,33 @@ const faqItems: FAQItem[] = [
     },
     {
         category: "Payments",
-        question: "How will the charge appear on my bank statement?",
+        question: "Do I need to pay every time I order a translation?",
         answer:
-            "The card statement descriptor is shown on the Top-Up Summary page before you pay, and is repeated in your confirmation email so you can match the charge to this website.",
+            "No. You add funds to your Account Balance and then place orders without repeating the full checkout — each order is simply deducted from your balance.",
     },
     {
-        category: "Payments",
-        question: "Do I need to pay every time I buy something?",
+        category: "Delivery",
+        question: "When do I get my translation?",
         answer:
-            "No. You add funds to your Account Balance and then use it for purchases without repeating the full checkout.",
+            "AI translations are ready in seconds and appear in your account immediately. Specialist translations are delivered within 12–24 hours — you will see the expected time on the order, and the result unlocks in your account automatically.",
     },
     {
-        category: "Templates",
-        question: "What types of templates are available?",
+        category: "Delivery",
+        question: "Where can I find my finished translations?",
         answer:
-            "You can find WordPress themes, Shopify templates, eCommerce designs, landing pages, portfolios, and business website layouts.",
+            "Every order is listed in your account under Your Translations, where you can read the result online, copy it, or download it as a text file at any time.",
     },
     {
-        category: "Templates",
-        question: "How do I choose the right template?",
+        category: "Delivery",
+        question: "My specialist translation is still pending — is that normal?",
         answer:
-            "Browse categories, check previews, and compare features to find the template that fits your project goals and platform.",
-    },
-    {
-        category: "Downloads",
-        question: "When do I get my template?",
-        answer:
-            "Products are delivered electronically — nothing is shipped. Your purchase is recorded in your account immediately, and we aim to send the files and any activation details to your email address within 24 hours of payment confirmation.",
-    },
-    {
-        category: "Downloads",
-        question: "Where can I find my purchased templates?",
-        answer:
-            "Every purchase is listed in your account, so you always have a record of what you own and when you bought it. The files themselves are sent to the email address on your order.",
-    },
-    {
-        category: "Downloads",
-        question: "I have not received my delivery email — what should I do?",
-        answer:
-            "Please check your spam and junk folders first, and make sure messages and attachments from us can be received. If it has been more than 24 hours since payment, contact us and we will resend the delivery.",
-    },
-    {
-        category: "Templates",
-        question: "What licence do I get?",
-        answer:
-            "You receive a limited licence to use the Product as set out in the Digital Product Licence Agreement. Buying a template does not transfer ownership of its source code, design or trademarks to you.",
-    },
-    {
-        category: "Templates",
-        question: "Do I need anything else to use a template?",
-        answer:
-            "Usually yes. A template may require separately purchased hosting, a domain name, and software such as WordPress, Shopify or specific plugins. These are not included unless the Product description says so, so please check the requirements before buying.",
+            "Yes. Specialist orders include professional review and are delivered within 12–24 hours of ordering. If more than 24 hours have passed and the order is still pending, please contact support and we will look into it right away.",
     },
     {
         category: "Account",
         question: "Can I get a refund?",
         answer:
-            "Digital content is covered by specific rules. Because you ask us to begin delivery immediately, your statutory right of withdrawal ends once delivery begins — you confirm this with a checkbox before paying. Refunds for non-delivery, duplicate charges, material defects and other cases are set out in the Refund and Cancellation Policy.",
+            "Digital services are covered by specific rules. Because you ask us to begin work immediately, your statutory right of withdrawal ends once processing begins. Refunds for non-delivery, duplicate charges, material defects and other cases are set out in the Refund and Cancellation Policy.",
     },
     {
         category: "Account",
@@ -168,21 +171,15 @@ const faqItems: FAQItem[] = [
     },
     {
         category: "Account",
-        question: "Do I need an account to buy templates?",
+        question: "Do I need an account to order translations?",
         answer:
-            "Yes. An account is required to manage your balance, purchases, and template access.",
+            "Yes. An account is required to manage your balance, orders, and finished translations.",
     },
     {
         category: "Account",
-        question: "Does my balance expire?",
+        question: "Are my documents kept confidential?",
         answer:
-            "Purchased Account Balance does not expire simply because time has passed. Any expiry condition on promotional credit is disclosed when that credit is issued.",
-    },
-    {
-        category: "Payments",
-        question: "Is my payment secure?",
-        answer:
-            "Card details are handled by our payment provider on their secure hosted page. They are never entered on or stored by this website.",
+            "Yes. Your documents and texts are used only to produce your translation and are never shared or published. See the Privacy Policy for details.",
     },
     {
         category: "Account",
@@ -200,14 +197,14 @@ export default function Page() {
     return (
         <FAQ
             title="Frequently Asked Questions"
-            description="Find answers about buying templates, account balance, downloads, and how the marketplace works."
+            description="Find answers about ordering translations, account balance, delivery times, and how the service works."
             items={faqItems}
             categories={faqCategories}
             cards={faqCards}
             contactCta={{
                 title: "Still need help?",
                 description:
-                    "Our support team can help with purchases, balance, downloads, and any questions before or after buying a template.",
+                    "Our support team can help with orders, balance, delivery, and any questions before or after ordering a translation.",
                 buttonText: "Contact Support",
                 href: "/contact-us",
             }}

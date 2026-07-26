@@ -124,10 +124,10 @@ const FAQ: React.FC<FAQProps> = ({
         `${normalizeCategory(item.category)}-${item.question}`;
 
     const cta = {
-        title: contactCta?.title ?? "Need help with your template purchase?",
+        title: contactCta?.title ?? "Need help with your translation order?",
         description:
             contactCta?.description ??
-            "Our support team can help with balance top-ups, template purchases, downloads, and account access.",
+            "Our support team can help with balance top-ups, translation orders, delivery, and account access.",
         buttonText: contactCta?.buttonText ?? "Contact Support",
         href: contactCta?.href ?? "/contact-us",
     };
@@ -141,7 +141,7 @@ const FAQ: React.FC<FAQProps> = ({
 
                     <div className={styles.searchWrap}>
                         <label className={styles.searchLabel} htmlFor={searchId}>
-                            Search template marketplace questions
+                            Search translation service questions
                         </label>
                         <div className={styles.searchField}>
                             <FiSearch className={styles.searchIcon} aria-hidden="true" />
@@ -149,7 +149,7 @@ const FAQ: React.FC<FAQProps> = ({
                                 id={searchId}
                                 className={styles.searchInput}
                                 type="search"
-                                placeholder="Search templates, payments, downloads..."
+                                placeholder="Search translations, payments, delivery..."
                                 value={searchQuery}
                                 onChange={(event) => setSearchQuery(event.target.value)}
                             />
@@ -254,7 +254,7 @@ const FAQ: React.FC<FAQProps> = ({
 
                 <div className={styles.cta}>
                     <div className={styles.ctaContent}>
-                        <p className={styles.ctaEyebrow}>Marketplace Support</p>
+                        <p className={styles.ctaEyebrow}>Customer Support</p>
                         <h3 className={styles.ctaTitle}>{cta.title}</h3>
                         <p className={styles.ctaDescription}>{cta.description}</p>
                     </div>

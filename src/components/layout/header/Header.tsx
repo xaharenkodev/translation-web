@@ -4,8 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./Header.module.scss";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { IconButton } from "@mui/material";
 import { FaBars } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa6";
 
 import { headerContent } from "@/resources/content";
 import { headerStyles } from "@/resources/styles-config";
@@ -78,6 +80,10 @@ const Header: React.FC = () => {
                     <div className={styles.actionsNav}>
                         <CurrencySwitch />
                         <AuthButtons />
+                        <Link href="/dashboard" className={styles.ctaButton}>
+                            Translate Now
+                            <FaArrowRight />
+                        </Link>
                     </div>
 
                     <div className={styles.menuButton}>

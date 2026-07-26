@@ -42,7 +42,7 @@
 .filterTabActive {
   background: var(--primary-color);
   color: #fff;
-  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.18);
+  box-shadow: 0 10px 22px rgba(124, 58, 237, 0.18);
 
   &:hover {
     transform: translateY(-1px);
@@ -130,7 +130,7 @@
   }
 
   &:hover .imageWrap {
-    border-color: rgba(37, 99, 235, 0.16);
+    border-color: rgba(124, 58, 237, 0.16);
   }
 }
 
@@ -157,8 +157,8 @@
   height: 100%;
   padding: 1rem;
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 42%),
-    linear-gradient(135deg, #dbeafe 0%, #eff6ff 45%, #ffffff 100%);
+    radial-gradient(circle at top left, rgba(124, 58, 237, 0.18), transparent 42%),
+    linear-gradient(135deg, #EDE9FE 0%, #F5F3FF 45%, #ffffff 100%);
 
   span {
     display: inline-flex;

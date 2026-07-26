@@ -5,7 +5,7 @@
     transition: color 0.25s ease, opacity 0.25s ease;
 
     &:hover {
-        color: var(--primary-color, #2563eb);
+        color: var(--primary-color, #7C3AED);
     }
 
     &::after {
@@ -16,7 +16,7 @@
         transform: translateX(-50%);
         width: 0%;
         height: 2px;
-        background: var(--primary-color, #2563eb);
+        background: var(--primary-color, #7C3AED);
         transition: width 0.25s ease;
     }
 
@@ -47,7 +47,7 @@
         z-index: 2;
 
         &:hover {
-            color: var(--primary-color, #2563eb);
+            color: var(--primary-color, #7C3AED);
         }
     }
 
@@ -91,7 +91,7 @@
             transition: background 0.2s ease, color 0.2s ease;
 
             &:hover {
-                background: var(--primary-color, #2563eb);
+                background: var(--primary-color, #7C3AED);
                 color: #fff;
             }
         }
@@ -115,7 +115,7 @@
         .dropdownLink {
             color: #f3f4f6;
             &:hover {
-                background: #2563eb;
+                background: #7C3AED;
                 color: #fff;
             }
         }

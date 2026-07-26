@@ -2,7 +2,7 @@ import { StyleSheet } from "@react-pdf/renderer";
 
 const biz = {
     primary: "#1F2937",
-    accent: "#2563EB",
+    accent: "#7C3AED",
     secondary: "#F3F4F6",
     border: "#D1D5DB",
     text: "#111827",
@@ -149,7 +149,7 @@ export const pdfStylesBusiness = StyleSheet.create({
         titleAI: {
             fontSize: 20,
             fontWeight: "bold",
-            color: "#60A5FA",
+            color: "#A78BFA",
             textTransform: "uppercase",
         },
         subtitleAI: {
@@ -164,13 +164,13 @@ export const pdfStylesBusiness = StyleSheet.create({
         },
         dividerAI: {
             borderBottomWidth: 1.5,
-            borderBottomColor: "#60A5FA",
+            borderBottomColor: "#A78BFA",
             marginVertical: 12,
         },
         infoCardAI: {
-            backgroundColor: "#E0F2FE",
+            backgroundColor: "#F3E8FF",
             borderLeftWidth: 4,
-            borderLeftColor: "#2563EB",
+            borderLeftColor: "#7C3AED",
             padding: 10,
             borderRadius: 6,
             marginBottom: 20,
@@ -186,29 +186,29 @@ export const pdfStylesBusiness = StyleSheet.create({
         },
         sectionHeaderAI: {
             fontSize: 13,
-            color: "#1E40AF",
+            color: "#5B21B6",
             fontWeight: "bold",
             textTransform: "uppercase",
             borderBottomWidth: 1,
-            borderBottomColor: "#93C5FD",
+            borderBottomColor: "#C4B5FD",
             paddingBottom: 4,
             marginBottom: 6,
         },
         aiInsightBox: {
-            backgroundColor: "#F0F9FF",
+            backgroundColor: "#FAF5FF",
             borderColor: "#BFDBFE",
             borderWidth: 1,
             borderRadius: 5,
             padding: 8,
         },
         aiInsightLabel: {
-            color: "#3B82F6",
+            color: "#8B5CF6",
             fontSize: 10,
             marginBottom: 3,
         },
         aiHintBox: {
             marginTop: 6,
-            backgroundColor: "#DBEAFE",
+            backgroundColor: "#EDE9FE",
             padding: 6,
             borderRadius: 4,
         },
@@ -220,13 +220,13 @@ export const pdfStylesBusiness = StyleSheet.create({
         footerAI: {
             marginTop: 20,
             borderTopWidth: 1,
-            borderTopColor: "#93C5FD",
+            borderTopColor: "#C4B5FD",
             paddingTop: 8,
             textAlign: "center",
         },
         footerTextAI: {
             fontSize: 10,
-            color: "#2563EB",
+            color: "#7C3AED",
         },
         footerSubAI: {
             fontSize: 8,

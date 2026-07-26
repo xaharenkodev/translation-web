@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { CVOrderType } from "@/backend/types/cv.types";
 import { TemplatePurchaseType } from "@/backend/types/template-purchase.types";
+import { TranslationOrderType } from "@/types/translation.types";
 
 export interface AiOrder {
     _id: string;
@@ -17,6 +18,7 @@ interface AllOrdersContextType {
     aiOrders: AiOrder[];
     cvOrders: CVOrderType[];
     templatePurchases: TemplatePurchaseType[];
+    translationOrders: TranslationOrderType[];
     refreshOrders: () => Promise<void>;
     loading: boolean;
 }
@@ -25,6 +27,7 @@ const AllOrdersContext = createContext<AllOrdersContextType>({
     aiOrders: [],
     cvOrders: [],
     templatePurchases: [],
+    translationOrders: [],
     refreshOrders: async () => {},
     loading: false,
 });
@@ -35,11 +38,24 @@ export const AllOrdersProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     const [aiOrders, setAiOrders] = useState<AiOrder[]>([]);
     const [cvOrders, setCvOrders] = useState<CVOrderType[]>([]);
     const [templatePurchases, setTemplatePurchases] = useState<TemplatePurchaseType[]>([]);
+    const [translationOrders, setTranslationOrders] = useState<TranslationOrderType[]>([]);
     const [loading, setLoading] = useState(false);
 
     const fetchOrders = async () => {
         setLoading(true);
         try {
+            // 🔹 Translation orders (primary service)
+            const resTranslations = await fetch("/api/translations/get-orders", {
+                method: "GET",
+                headers: { "Content-Type": "application/json" },
+                credentials: "include",
+            }).catch(() => null);
+            if (resTranslations) {
+                const dataTranslations = await resTranslations.json();
+                const normalized = Array.isArray(dataTranslations) ? dataTranslations : dataTranslations.orders;
+                setTranslationOrders(Array.isArray(normalized) ? normalized : []);
+            }
+
             // 🔹 Отримуємо CV ордери
             const resCv = await fetch("/api/cv/get-all-orders", {
                 method: "GET",
@@ -78,6 +94,7 @@ export const AllOrdersProvider: React.FC<{ children: React.ReactNode }> = ({ chi
             setAiOrders([]);
             setCvOrders([]);
             setTemplatePurchases([]);
+            setTranslationOrders([]);
         } finally {
             setLoading(false);
         }
@@ -88,7 +105,7 @@ export const AllOrdersProvider: React.FC<{ children: React.ReactNode }> = ({ chi
     }, []);
 
     return (
-        <AllOrdersContext.Provider value={{ aiOrders, cvOrders, templatePurchases, refreshOrders: fetchOrders, loading }}>
+        <AllOrdersContext.Provider value={{ aiOrders, cvOrders, templatePurchases, translationOrders, refreshOrders: fetchOrders, loading }}>
             {children}
         </AllOrdersContext.Provider>
     );

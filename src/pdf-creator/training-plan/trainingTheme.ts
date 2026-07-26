@@ -2,7 +2,7 @@ import { StyleSheet } from "@react-pdf/renderer";
 
 const colors = {
     primary: "#0B3B8C", // deep blue
-    accent: "#2563EB",  // blue
+    accent: "#7C3AED",  // blue
     light: "#F8FAFF",   // almost white-blue
     text: "#0F172A",    // slate-900
     muted: "#475569",   // slate-600

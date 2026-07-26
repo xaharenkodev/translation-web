@@ -1,63 +1,81 @@
 .header {
-  width: 100%;
-  transition: all 0.35s ease;
-  background: var(--background-light);
-  margin: 0 auto;
-}
-
-/* ---------------- Sticky base ---------------- */
-.sticky,
-.stickyRounded {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
+  padding: 14px 18px;
+  transition: padding 0.35s ease;
+  pointer-events: none; /* the pill itself re-enables */
 }
 
-/* ---------------- Normal scroll ---------------- */
 .scrolled {
-  background: var(--header-bg-scrolled, rgba(255, 255, 255, 0.9));
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  padding: 8px 18px;
 }
 
-/* ---------------- Rounded scroll ---------------- */
-.scrolledRounded {
-  margin: 12px auto;
-  max-width: 1200px;
-  border-radius: 18px;
-  top: 10px;
-}
-
+/* floating glass pill */
 .headerInner {
+  pointer-events: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 24px;
   width: 100%;
-  max-width: 1520px;
-  padding: 14px 22px;
+  max-width: 1280px;
   margin: 0 auto;
-  gap: 20px;
+  padding: 10px 14px 10px 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(124, 58, 237, 0.12);
+  box-shadow: 0 8px 32px rgba(30, 18, 64, 0.08);
+  transition: box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease;
+}
+
+.scrolled .headerInner {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(124, 58, 237, 0.2);
+  box-shadow: 0 12px 40px rgba(30, 18, 64, 0.14);
+}
+
+/* keep legacy variant classes harmless */
+.sticky,
+.stickyRounded,
+.scrolledRounded {
+  /* handled by the base pill styles */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 .logo img {
-  max-height: 58px;
+  max-height: 44px;
+  width: auto;
   object-fit: contain;
 }
 
 .nav {
   display: flex;
-  gap: 22px;
+  align-items: center;
+  gap: 6px;
+  margin: 0 auto;
 }
 
 .link {
-  color: var(--header-link-color, var(--text-primary));
+  color: var(--text-primary);
   text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.25s ease;
+  font-weight: 600;
+  font-size: 0.93rem;
+  padding: 9px 16px;
+  border-radius: 999px;
+  transition: color 0.22s ease, background 0.22s ease;
 
   &:hover {
-    color: var(--header-link-hover-color, var(--primary-color));
+    color: var(--primary-color);
+    background: rgba(124, 58, 237, 0.08);
   }
 }
 
@@ -65,10 +83,43 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 999px;
+  background: var(--brand-gradient, var(--primary-color));
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(124, 58, 237, 0.5);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
 }
 
 .menuButton {
   display: none;
+
+  button {
+    color: var(--text-primary);
+  }
 }
 
 @media (max-width: 1100px) {
@@ -79,5 +130,9 @@
 
   .menuButton {
     display: block;
+  }
+
+  .headerInner {
+    padding: 8px 10px 8px 16px;
   }
 }
