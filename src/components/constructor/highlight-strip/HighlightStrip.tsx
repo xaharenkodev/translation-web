@@ -14,8 +14,10 @@ interface HighlightStripProps {
     items: HighlightItem[];
 }
 
+// Парна кількість однакових груп + зсув рівно на половину треку = безшовний цикл.
+const GROUPS = 4;
+
 const HighlightStrip: React.FC<HighlightStripProps> = ({ items }) => {
-    const doubled = [...items, ...items];
 
     const resolveMedia = (key?: string): string | undefined => {
         if (!key) return undefined;
@@ -36,7 +38,9 @@ const HighlightStrip: React.FC<HighlightStripProps> = ({ items }) => {
         <section className={styles.strip}>
             <div className={styles.marquee}>
                 <div className={styles.track}>
-                    {doubled.map((item, i) => {
+                    {Array.from({ length: GROUPS }, (_, g) => (
+                    <div key={g} className={styles.group}>
+                    {items.map((item, i) => {
                         const resolvedImage = resolveMedia(item.image);
                         return (
                             <div key={i} className={styles.item}>
@@ -68,6 +72,8 @@ const HighlightStrip: React.FC<HighlightStripProps> = ({ items }) => {
                             </div>
                         );
                     })}
+                    </div>
+                    ))}
                 </div>
             </div>
 

@@ -29,7 +29,8 @@
 .track {
   display: flex;
   width: max-content;
-  animation: scroll 30s linear infinite;
+  /* Дистанція = 2 копії, тому тривалість подвоєна відносно старих 30s. */
+  animation: scroll 60s linear infinite;
   will-change: transform;
 }
 
@@ -74,6 +75,6 @@
     font-size: 1rem;
   }
   .track {
-    animation-duration: 20s;
+    animation-duration: 40s;
   }
 }

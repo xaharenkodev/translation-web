@@ -18,9 +18,19 @@
 .track {
   display: flex;
   align-items: center;
-  gap: 3rem;
   width: max-content;
-  animation: scroll 45s linear infinite;
+  /* Дистанція = 2 групи, тому тривалість подвоєна відносно старих 45s. */
+  animation: scroll 90s linear infinite;
+}
+
+/* Відступи всередині групи + trailing padding, щоб усі групи були однакової
+   ширини і -50% давав ідеальну точку зациклення. */
+.group {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+  flex: 0 0 auto;
 }
 
 .item {

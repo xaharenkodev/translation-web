@@ -1,4 +1,10 @@
 .marquee {
+    /* Батьківський <main> — flex-колонка з align-items: center, тож без цього
+       блок стискається під ширину треку (десятки тисяч px) і overflow: hidden
+       нічого не обрізає — рядок обривався посеред екрана. */
+    align-self: stretch;
+    width: 100%;
+    min-width: 0;
     padding: 34px 0;
     background: var(--background-light);
     overflow: hidden;
@@ -9,18 +15,27 @@
 
 .row {
     display: flex;
-    gap: 16px;
     width: max-content;
-    animation: scroll 42s linear infinite;
+    /* Тривалість перебивається інлайновим стилем після заміру ширини групи —
+       тут лише розумний фолбек до першого рендеру на клієнті. */
+    animation: scroll 84s linear infinite;
 
     &:hover {
         animation-play-state: paused;
     }
 }
 
+/* Spacing lives inside the group (and on its trailing edge) so every group is
+   exactly the same width and -50% is a pixel-perfect loop point. */
+.group {
+    display: flex;
+    gap: 16px;
+    padding-right: 16px;
+    flex: 0 0 auto;
+}
+
 .rowReverse {
     animation-direction: reverse;
-    animation-duration: 52s;
 }
 
 @keyframes scroll {

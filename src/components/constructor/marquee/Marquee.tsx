@@ -6,14 +6,18 @@ interface MarqueeProps {
     items: { text: string }[];
 }
 
+// Парна кількість копій — щоб трек перекривав будь-яку ширину екрана,
+// а зсув на -50% залишався безшовним.
+const COPIES = 4;
+
 const Marquee: React.FC<MarqueeProps> = ({ items }) => {
-    const doubled = [...items, ...items];
+    const repeated = Array.from({ length: COPIES }, () => items).flat();
 
     return (
         <section className={styles.marqueeWrapper}>
             <div className={styles.gradientOverlay} />
             <div className={styles.track}>
-                {doubled.map((item, i) => (
+                {repeated.map((item, i) => (
                     <span key={i} className={styles.item}>
             {item.text}
           </span>
