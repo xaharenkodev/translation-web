@@ -18,8 +18,8 @@ const cookiePolicyEn: PageSchema = {
         ogImage: {
             title: `Cookie Policy – ${COMPANY_NAME}`,
             description: `Cookies and similar technologies used by ${COMPANY_NAME}, their purposes and how to manage your preferences.`,
-            bg: "#ffffff",
-            color: "#000000",
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

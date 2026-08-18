@@ -13,13 +13,13 @@ const privacyPolicyEn: PageSchema = {
     meta: {
         title: `Privacy Policy – ${COMPANY_NAME}`,
         description:
-            `How ${COMPANY_NAME} collects, uses, shares and protects personal data, and the rights available to you.`,
+            `How ${COMPANY_NAME} handles your personal data and the documents you upload for translation, how long files are kept, and the rights available to you.`,
         canonical: "/privacy-policy",
         ogImage: {
             title: `Privacy Policy – ${COMPANY_NAME}`,
-            description: `How ${COMPANY_NAME} collects, uses, shares and protects personal data, and the rights available to you.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `How ${COMPANY_NAME} handles your personal data and the documents you upload for translation, how long files are kept, and the rights available to you.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

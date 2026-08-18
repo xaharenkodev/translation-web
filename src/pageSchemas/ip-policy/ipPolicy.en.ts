@@ -13,13 +13,13 @@ const ipPolicyEn: PageSchema = {
     meta: {
         title: `Intellectual Property and Takedown Policy – ${COMPANY_NAME}`,
         description:
-            `How to report intellectual property infringement on ${COMPANY_NAME} and how notices and counter-notices are handled.`,
+            `How to report copyright or other intellectual property concerns about material submitted for translation, and how notices and counter-notices are handled.`,
         canonical: "/ip-policy",
         ogImage: {
             title: `Intellectual Property and Takedown Policy – ${COMPANY_NAME}`,
-            description: `How to report intellectual property infringement on ${COMPANY_NAME} and how notices and counter-notices are handled.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `How to report copyright or other intellectual property concerns about material submitted for translation, and how notices and counter-notices are handled.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

@@ -11,15 +11,15 @@ import {
 
 const licenceAgreementEn: PageSchema = {
     meta: {
-        title: `Digital Product Licence Agreement – ${COMPANY_NAME}`,
+        title: `Translation Rights and Licence – ${COMPANY_NAME}`,
         description:
-            `Licence terms describing how ${COMPANY_NAME} digital themes and templates may be used, modified and deployed.`,
+            `Who owns a completed translation, how you may use, edit, publish and redistribute it, and what rights ${COMPANY_NAME} retains.`,
         canonical: "/licence-agreement",
         ogImage: {
-            title: `Digital Product Licence Agreement – ${COMPANY_NAME}`,
-            description: `Licence terms describing how ${COMPANY_NAME} digital themes and templates may be used, modified and deployed.`,
-            bg: "#ffffff",
-            color: "#000000",
+            title: `Translation Rights and Licence – ${COMPANY_NAME}`,
+            description: `Who owns a completed translation, how you may use, edit, publish and redistribute it, and what rights ${COMPANY_NAME} retains.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

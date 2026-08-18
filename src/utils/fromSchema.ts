@@ -34,7 +34,9 @@ export async function metadataFromSchema(meta: MetaSchema): Promise<Metadata> {
     ]);
 
     return {
-        title: meta.title,
+        // Schema titles already end with the company name, so opt out of the
+        // root layout's "%s — Company" template rather than repeating it.
+        title: { absolute: meta.title },
         description: meta.description,
         keywords: meta.keywords,
         alternates: {
@@ -46,7 +48,7 @@ export async function metadataFromSchema(meta: MetaSchema): Promise<Metadata> {
             url: canonicalAbs,
             siteName: COMPANY_NAME,
             type: "website",
-            locale: "uk_UA",
+            locale: "en_GB",
             images: [
                 {
                     url: ogImageAbs,

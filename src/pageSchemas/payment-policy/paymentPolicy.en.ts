@@ -13,13 +13,13 @@ const paymentPolicyEn: PageSchema = {
     meta: {
         title: `Payment and Account Balance Policy – ${COMPANY_NAME}`,
         description:
-            `How payments, currencies, conversion, taxes and Account Balance top-ups work on ${COMPANY_NAME}.`,
+            `How Account Balance top-ups, per-word pricing, currencies, conversion and taxes work when you order a translation on ${COMPANY_NAME}.`,
         canonical: "/payment-policy",
         ogImage: {
             title: `Payment and Account Balance Policy – ${COMPANY_NAME}`,
-            description: `How payments, currencies, conversion, taxes and Account Balance top-ups work on ${COMPANY_NAME}.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `How Account Balance top-ups, per-word pricing, currencies, conversion and taxes work when you order a translation on ${COMPANY_NAME}.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

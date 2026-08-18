@@ -28,7 +28,7 @@ const faqMeta = {
         title: `${COMPANY_NAME} — Translation FAQ`,
         description:
             "Answers about translation orders, balance system, delivery, and supported languages.",
-        bg: "#111827",
+        bg: "#170B33",
         color: "#ffffff",
     },
 };

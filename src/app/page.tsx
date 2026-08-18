@@ -1,5 +1,6 @@
 import type {Metadata} from "next";
 import {COMPANY_NAME} from "@/resources/constants";
+import {ogImageUrl} from "@/utils/ogImage";
 
 import TranslationHero from "@/components/sections/translation/TranslationHero";
 import LanguageMarquee from "@/components/sections/translation/LanguageMarquee";
@@ -18,6 +19,18 @@ export const metadata: Metadata = {
     description:
         "Translate documents and text online in 33 languages. Choose instant AI translation or specialist translation delivered within 12–24 hours. Upload PDF, DOCX, or paste text and pay from your Account Balance.",
     alternates: {canonical: "/"},
+    openGraph: {
+        title: `${COMPANY_NAME} — Professional Document & Text Translation`,
+        description:
+            "33 languages. Instant AI translation, or specialist translation delivered within 12–24 hours.",
+        url: "/",
+        images: [
+            ogImageUrl(
+                `${COMPANY_NAME} — Document & Text Translation`,
+                "33 languages. Instant AI translation, or specialist quality within 12–24 hours.",
+            ),
+        ],
+    },
 };
 
 const aiPlan = TRANSLATION_PLANS.find((p) => p.id === "ai")!;

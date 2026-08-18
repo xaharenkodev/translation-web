@@ -11,15 +11,15 @@ import {
 
 const deliveryPolicyEn: PageSchema = {
     meta: {
-        title: `Digital Delivery and Download Policy – ${COMPANY_NAME}`,
+        title: `Translation Delivery Policy – ${COMPANY_NAME}`,
         description:
-            `How digital products, download links and activation credentials are delivered after purchase on ${COMPANY_NAME}.`,
+            `How completed translations are delivered, turnaround times for AI and specialist orders, and what to do if a delivery does not arrive.`,
         canonical: "/delivery-policy",
         ogImage: {
-            title: `Digital Delivery and Download Policy – ${COMPANY_NAME}`,
-            description: `How digital products, download links and activation credentials are delivered after purchase on ${COMPANY_NAME}.`,
-            bg: "#ffffff",
-            color: "#000000",
+            title: `Translation Delivery Policy – ${COMPANY_NAME}`,
+            description: `How completed translations are delivered, turnaround times for AI and specialist orders, and what to do if a delivery does not arrive.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

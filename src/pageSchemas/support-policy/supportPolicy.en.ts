@@ -13,13 +13,13 @@ const supportPolicyEn: PageSchema = {
     meta: {
         title: `Support Policy – ${COMPANY_NAME}`,
         description:
-            `Scope, channels and response times of customer and technical support provided by ${COMPANY_NAME}.`,
+            `Support channels and response times for translation orders, quality queries, file problems and Account Balance issues at ${COMPANY_NAME}.`,
         canonical: "/support-policy",
         ogImage: {
             title: `Support Policy – ${COMPANY_NAME}`,
-            description: `Scope, channels and response times of customer and technical support provided by ${COMPANY_NAME}.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `Support channels and response times for translation orders, quality queries, file problems and Account Balance issues at ${COMPANY_NAME}.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

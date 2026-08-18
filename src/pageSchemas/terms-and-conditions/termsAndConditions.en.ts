@@ -13,13 +13,13 @@ const termsAndConditionsEn: PageSchema = {
     meta: {
         title: `Terms and Conditions – ${COMPANY_NAME}`,
         description:
-            `Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on ${COMPANY_NAME}.`,
+            `Terms and Conditions governing accounts, Account Balance top-ups, translation orders, delivery of completed translations and refunds on ${COMPANY_NAME}.`,
         canonical: "/terms-and-conditions",
         ogImage: {
             title: `Terms and Conditions – ${COMPANY_NAME}`,
-            description: `Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on ${COMPANY_NAME}.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `Terms and Conditions governing accounts, Account Balance top-ups, translation orders, delivery of completed translations and refunds on ${COMPANY_NAME}.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

@@ -13,13 +13,13 @@ const refundPolicyEn: PageSchema = {
     meta: {
         title: `Refund and Cancellation Policy – ${COMPANY_NAME}`,
         description:
-            `Refund, cancellation and chargeback rules for digital products purchased on ${COMPANY_NAME}.`,
+            `When a translation order or Account Balance top-up can be cancelled, redone or refunded on ${COMPANY_NAME}, and how chargebacks are handled.`,
         canonical: "/refund-policy",
         ogImage: {
             title: `Refund and Cancellation Policy – ${COMPANY_NAME}`,
-            description: `Refund, cancellation and chargeback rules for digital products purchased on ${COMPANY_NAME}.`,
-            bg: "#ffffff",
-            color: "#000000",
+            description: `When a translation order or Account Balance top-up can be cancelled, redone or refunded on ${COMPANY_NAME}, and how chargebacks are handled.`,
+            bg: "#170B33",
+            color: "#ffffff",
         },
     },
     blocks: [

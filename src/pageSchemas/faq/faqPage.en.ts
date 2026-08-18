@@ -4,21 +4,22 @@ import { COMPANY_NAME, COMPANY_EMAIL } from "@/resources/constants";
 const faqSchema: PageSchema = {
     meta: {
         title: `FAQ — ${COMPANY_NAME}`,
-        description: `Frequently asked questions about buying website themes and templates on ${COMPANY_NAME} — Account Balance, prices and VAT, delivery, licences, refunds and support.`,
+        description: `Frequently asked questions about ordering translations on ${COMPANY_NAME} — AI vs specialist translation, supported languages and file formats, per-word pricing, turnaround times, Account Balance, refunds and support.`,
         keywords: [
-            "website template FAQ",
-            "wordpress theme marketplace",
-            "buy website template",
-            "digital product delivery",
-            "template licence",
+            "translation FAQ",
+            "document translation service",
+            "AI translation",
+            "certified specialist translation",
+            "translation turnaround time",
+            "translation pricing per word",
             "account balance top-up",
         ],
         canonical: "/faq",
         ogImage: {
             title: `${COMPANY_NAME} — FAQ`,
             description:
-                "Answers to common questions about buying website themes and templates, Account Balance, delivery, licences and refunds.",
-            bg: "#111827",
+                "Answers to common questions about AI and specialist translation, supported files and languages, pricing, delivery times and refunds.",
+            bg: "#170B33",
             color: "#ffffff",
         },
     },

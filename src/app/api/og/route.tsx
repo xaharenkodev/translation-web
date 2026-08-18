@@ -19,8 +19,8 @@ export async function GET(req: Request) {
     const { searchParams } = new URL(req.url);
     const title = (searchParams.get("title") ?? "").slice(0, 140);
     const desc  = (searchParams.get("desc") ?? "").slice(0, 240);
-    const bg    = parseColor(searchParams.get("bg"), "#ffffff");
-    const color = parseColor(searchParams.get("color"), "#000000");
+    const bg    = parseColor(searchParams.get("bg"), "#170B33");
+    const color = parseColor(searchParams.get("color"), "#ffffff");
 
     const logoPath = "/logo.png";
     const logoUrl = `${getBaseUrl(req)}${logoPath}`;
