@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const termsAndConditionsEn: PageSchema = {
     meta: {
         title: `Terms and Conditions – ${COMPANY_NAME}`,
         description:
-            "Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on EarnerThemes.",
+            `Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on ${COMPANY_NAME}.`,
         canonical: "/terms-and-conditions",
         ogImage: {
             title: `Terms and Conditions – ${COMPANY_NAME}`,
-            description: "Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on EarnerThemes.",
+            description: `Terms and Conditions governing accounts, Account Balance top-ups, orders, licences, delivery and refunds on ${COMPANY_NAME}.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "1. About These Terms",
-            description: `These Terms and Conditions (“Terms”) govern your access to and use of the website located at www.earnerthemes.com (the “Website”), including the creation and use of an account, Account Balance top-ups, orders, purchases, delivery and use of digital website themes, templates and related digital content.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn these Terms, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to the person or organisation accessing the Website, creating an account or placing an order.\n\nPlease read these Terms carefully before using the Website or purchasing any Product. By creating an account, topping up your Account Balance, placing an order or otherwise confirming your acceptance of these Terms, you agree to be legally bound by them.\n\nIf you do not agree to these Terms, you must not place an order or use any part of the Website that requires acceptance of these Terms.`,
+            description: `These Terms and Conditions (“Terms”) govern your access to and use of the website located at ${COMPANY_WEBSITE} (the “Website”), including the creation and use of an account, Account Balance top-ups, orders, purchases, delivery and use of digital website themes, templates and related digital content.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn these Terms, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation accessing the Website, creating an account or placing an order.\n\nPlease read these Terms carefully before using the Website or purchasing any Product. By creating an account, topping up your Account Balance, placing an order or otherwise confirming your acceptance of these Terms, you agree to be legally bound by them.\n\nIf you do not agree to these Terms, you must not place an order or use any part of the Website that requires acceptance of these Terms.`,
         },
         {
             type: "text",
@@ -50,7 +52,7 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             description:
-                "These documents form part of the agreement between you and EarnerThemes. If there is a conflict between these Terms and a policy specifically governing a particular matter, the more specific policy will apply to that matter.",
+                `These documents form part of the agreement between you and ${COMPANY_NAME}. If there is a conflict between these Terms and a policy specifically governing a particular matter, the more specific policy will apply to that matter.`,
         },
         {
             type: "text",
@@ -61,7 +63,7 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "4. Nature of the Marketplace",
-            description: `EarnerThemes provides an online catalogue and distribution platform through which users can obtain licensed digital website themes, templates and related Products.\n\nSome Products are created and owned by third-party Authors. EarnerThemes makes such Products available under commercial, distribution or licensing arrangements with the relevant Authors or rights holders.\n\nUnless expressly stated otherwise on a Product page, your purchase contract is with SENIOR EARNER LTD. The relevant Author retains ownership of the intellectual property rights in the Product.\n\nPurchasing a Product does not transfer ownership of the Product, its source code, design, trademarks or other intellectual property to you. You receive only the rights expressly granted under the applicable Licence.`,
+            description: `${COMPANY_NAME} provides an online catalogue and distribution platform through which users can obtain licensed digital website themes, templates and related Products.\n\nSome Products are created and owned by third-party Authors. ${COMPANY_NAME} makes such Products available under commercial, distribution or licensing arrangements with the relevant Authors or rights holders.\n\nUnless expressly stated otherwise on a Product page, your purchase contract is with ${COMPANY_LEGAL_NAME}. The relevant Author retains ownership of the intellectual property rights in the Product.\n\nPurchasing a Product does not transfer ownership of the Product, its source code, design, trademarks or other intellectual property to you. You receive only the rights expressly granted under the applicable Licence.`,
         },
         {
             type: "text",
@@ -175,7 +177,7 @@ const termsAndConditionsEn: PageSchema = {
                 "providing a complete and accurate email address;",
                 "maintaining access to that email account;",
                 "checking spam, junk and filtering folders;",
-                "ensuring that messages and attachments from EarnerThemes can be received; and",
+                `ensuring that messages and attachments from ${COMPANY_NAME} can be received; and`,
                 "contacting us if delivery has not been received within 24 hours.",
             ],
         },
@@ -253,7 +255,7 @@ const termsAndConditionsEn: PageSchema = {
             type: "text",
             title: "15. Support",
             description:
-                "Support relating to Accounts, Account Balance top-ups, Orders, delivery and access is provided by EarnerThemes.\n\nProduct-specific technical support is provided only to the extent described on the Product page or in the Support Policy.\n\nUnless expressly included, support does not include:",
+                `Support relating to Accounts, Account Balance top-ups, Orders, delivery and access is provided by ${COMPANY_NAME}.\n\nProduct-specific technical support is provided only to the extent described on the Product page or in the Support Policy.\n\nUnless expressly included, support does not include:`,
             bullets: [
                 "hosting or server administration;",
                 "installation or deployment;",
@@ -334,7 +336,7 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "19. Intellectual Property",
-            description: `The Website, including its branding, design, text, graphics, software, databases and original content, is owned by or licensed to SENIOR EARNER LTD and is protected by intellectual property laws.\n\nProducts and Product-related trademarks may be owned by their respective Authors or other rights holders. Their appearance on the Website does not transfer ownership to EarnerThemes or to the purchaser.\n\nYou may use Website content and Products only as expressly permitted by these Terms and the applicable Licence.\n\nIf you believe that material available through the Website infringes your intellectual property rights, contact info@earnerthemes.com with:`,
+            description: `The Website, including its branding, design, text, graphics, software, databases and original content, is owned by or licensed to ${COMPANY_LEGAL_NAME} and is protected by intellectual property laws.\n\nProducts and Product-related trademarks may be owned by their respective Authors or other rights holders. Their appearance on the Website does not transfer ownership to ${COMPANY_NAME} or to the purchaser.\n\nYou may use Website content and Products only as expressly permitted by these Terms and the applicable Licence.\n\nIf you believe that material available through the Website infringes your intellectual property rights, contact ${COMPANY_EMAIL} with:`,
             bullets: [
                 "identification of the protected work;",
                 "identification and location of the allegedly infringing material;",
@@ -353,7 +355,7 @@ const termsAndConditionsEn: PageSchema = {
             type: "text",
             title: "20. Third-Party Platforms and Services",
             description:
-                "Products may be designed to operate with third-party platforms such as WordPress, WooCommerce, Shopify, Elementor or other software and services.\n\nThose platforms are operated independently and are subject to their own terms, licences, technical requirements and privacy practices.\n\nUnless expressly stated, EarnerThemes is not affiliated with, endorsed by or responsible for any third-party platform. We are not responsible for changes made by third parties that are outside our reasonable control, although your statutory rights relating to the Product remain unaffected.",
+                `Products may be designed to operate with third-party platforms such as WordPress, WooCommerce, Shopify, Elementor or other software and services.\n\nThose platforms are operated independently and are subject to their own terms, licences, technical requirements and privacy practices.\n\nUnless expressly stated, ${COMPANY_NAME} is not affiliated with, endorsed by or responsible for any third-party platform. We are not responsible for changes made by third parties that are outside our reasonable control, although your statutory rights relating to the Product remain unaffected.`,
         },
         {
             type: "text",
@@ -413,7 +415,7 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "25. Business User Indemnity",
-            description: `If you are a Business User, you agree to indemnify SENIOR EARNER LTD against reasonable losses, liabilities, damages and costs arising directly from:`,
+            description: `If you are a Business User, you agree to indemnify ${COMPANY_LEGAL_NAME} against reasonable losses, liabilities, damages and costs arising directly from:`,
             bullets: [
                 "your unlawful use or redistribution of a Product;",
                 "your material breach of the applicable Licence;",
@@ -463,7 +465,7 @@ const termsAndConditionsEn: PageSchema = {
             type: "text",
             title: "29. Governing Law and Disputes",
             description:
-                "These Terms and any non-contractual obligations arising from them are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore starting formal proceedings, you should contact us at info@earnerthemes.com and provide sufficient information about the issue, the relevant Order and the resolution requested. We will attempt to resolve the complaint in good faith.\n\nIf you are a Business User, the courts of England and Wales will have exclusive jurisdiction.\n\nIf you are a Consumer, the courts of England and Wales will have non-exclusive jurisdiction. You may also have the right to bring proceedings in the courts of the part of the United Kingdom or other country in which you reside, where applicable law permits.",
+                `These Terms and any non-contractual obligations arising from them are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore starting formal proceedings, you should contact us at ${COMPANY_EMAIL} and provide sufficient information about the issue, the relevant Order and the resolution requested. We will attempt to resolve the complaint in good faith.\n\nIf you are a Business User, the courts of England and Wales will have exclusive jurisdiction.\n\nIf you are a Consumer, the courts of England and Wales will have non-exclusive jurisdiction. You may also have the right to bring proceedings in the courts of the part of the United Kingdom or other country in which you reside, where applicable law permits.`,
         },
         {
             type: "text",
@@ -490,12 +492,12 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "30.4 Entire Agreement",
-            description: `These Terms and the policies incorporated into them constitute the agreement between you and SENIOR EARNER LTD concerning the Website, Account Balance and Products.\n\nIf you are a Consumer, this provision does not exclude liability for statements or representations that cannot lawfully be excluded.`,
+            description: `These Terms and the policies incorporated into them constitute the agreement between you and ${COMPANY_LEGAL_NAME} concerning the Website, Account Balance and Products.\n\nIf you are a Consumer, this provision does not exclude liability for statements or representations that cannot lawfully be excluded.`,
         },
         {
             type: "text",
             title: "30.5 No Third-Party Rights",
-            description: `Except where the applicable Licence expressly grants enforceable rights to an Author or rights holder, no person other than you and SENIOR EARNER LTD has the right to enforce these Terms.`,
+            description: `Except where the applicable Licence expressly grants enforceable rights to an Author or rights holder, no person other than you and ${COMPANY_LEGAL_NAME} has the right to enforce these Terms.`,
         },
         {
             type: "text",

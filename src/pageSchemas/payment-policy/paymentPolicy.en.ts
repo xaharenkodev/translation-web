@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const paymentPolicyEn: PageSchema = {
     meta: {
         title: `Payment and Account Balance Policy – ${COMPANY_NAME}`,
         description:
-            "How payments, currencies, conversion, taxes and Account Balance top-ups work on EarnerThemes.",
+            `How payments, currencies, conversion, taxes and Account Balance top-ups work on ${COMPANY_NAME}.`,
         canonical: "/payment-policy",
         ogImage: {
             title: `Payment and Account Balance Policy – ${COMPANY_NAME}`,
-            description: "How payments, currencies, conversion, taxes and Account Balance top-ups work on EarnerThemes.",
+            description: `How payments, currencies, conversion, taxes and Account Balance top-ups work on ${COMPANY_NAME}.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const paymentPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Policy",
-            description: `This Payment and Account Balance Policy (“Policy”) explains how payments, Account Balance top-ups, deductions, corrections, refunds, payment disputes and related transactions are handled through www.earnerthemes.com.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to the person or organisation making a payment, topping up or using an Account Balance, or purchasing a Product.\n\nThis Policy forms part of our Terms and Conditions. By purchasing Account Balance or using it to place an Order, you agree to this Policy.`,
+            description: `This Payment and Account Balance Policy (“Policy”) explains how payments, Account Balance top-ups, deductions, corrections, refunds, payment disputes and related transactions are handled through ${COMPANY_WEBSITE}.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation making a payment, topping up or using an Account Balance, or purchasing a Product.\n\nThis Policy forms part of our Terms and Conditions. By purchasing Account Balance or using it to place an Order, you agree to this Policy.`,
         },
         {
             type: "text",
@@ -60,7 +62,7 @@ const paymentPolicyEn: PageSchema = {
             type: "text",
             title: "4. Nature of Account Balance",
             description:
-                "Account Balance is a closed-loop store credit that may be used only to purchase eligible Products through EarnerThemes.\n\nAccount Balance:",
+                `Account Balance is a closed-loop store credit that may be used only to purchase eligible Products through ${COMPANY_NAME}.\n\nAccount Balance:`,
             bullets: [
                 "is linked to your Account;",
                 "may be used only on the Website;",
@@ -69,7 +71,7 @@ const paymentPolicyEn: PageSchema = {
                 "cannot be used to make payments to third parties;",
                 "cannot be transferred between users unless we expressly permit it;",
                 "cannot ordinarily be withdrawn or exchanged for cash; and",
-                "has no use outside the EarnerThemes Website.",
+                `has no use outside the ${COMPANY_NAME} Website.`,
             ],
         },
         {
@@ -104,7 +106,7 @@ const paymentPolicyEn: PageSchema = {
             bullets: [
                 "the Payment Provider may apply its own exchange rate;",
                 "additional conversion or international payment fees may apply; and",
-                "EarnerThemes does not control those exchange rates or fees.",
+                `${COMPANY_NAME} does not control those exchange rates or fees.`,
             ],
         },
         {
@@ -119,9 +121,9 @@ const paymentPolicyEn: PageSchema = {
                 "The Website lets you display prices in GBP, EUR or USD. Conversion works as follows:",
             bullets: [
                 "GBP is the base currency in which Account Balance and Product prices are held.",
-                "Prices in EUR and USD are calculated from the GBP price using a fixed reference rate maintained by EarnerThemes. It is a published shop rate, not a live market rate, and it is reviewed periodically.",
+                `Prices in EUR and USD are calculated from the GBP price using a fixed reference rate maintained by ${COMPANY_NAME}. It is a published shop rate, not a live market rate, and it is reviewed periodically.`,
                 "The rate used is applied consistently across the Website, and the converted amount is rounded to two decimal places.",
-                "EarnerThemes adds no separate conversion fee, commission or surcharge to the displayed price.",
+                `${COMPANY_NAME} adds no separate conversion fee, commission or surcharge to the displayed price.`,
                 "Fixed Top-Up packages are offered as clean denominations in each supported currency, so the amount you see is the amount you pay.",
                 "The exact amount and currency you will be charged are shown on the Top-Up Summary page before you confirm payment.",
             ],
@@ -129,7 +131,7 @@ const paymentPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "If your card or bank account is held in a different currency from the transaction currency, your card issuer or bank may apply its own exchange rate and its own fees. Those rates and fees are set by your provider, not by EarnerThemes.\n\nMAKE SURE YOU UNDERSTAND THE COSTS OF CURRENCY CONVERSION AS THEY MAY BE DIFFERENT DEPENDING ON WHETHER YOU SELECT YOUR HOME CURRENCY OR THE TRANSACTION CURRENCY.",
+                `If your card or bank account is held in a different currency from the transaction currency, your card issuer or bank may apply its own exchange rate and its own fees. Those rates and fees are set by your provider, not by ${COMPANY_NAME}.\n\nMAKE SURE YOU UNDERSTAND THE COSTS OF CURRENCY CONVERSION AS THEY MAY BE DIFFERENT DEPENDING ON WHETHER YOU SELECT YOUR HOME CURRENCY OR THE TRANSACTION CURRENCY.`,
         },
         {
             type: "text",
@@ -144,7 +146,7 @@ const paymentPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "EarnerThemes does not impose a minimum or maximum transaction amount for card payments. Fixed packages are offered for convenience only, and the custom Top-Up option is always available for any other amount.",
+                `${COMPANY_NAME} does not impose a minimum or maximum transaction amount for card payments. Fixed packages are offered for convenience only, and the custom Top-Up option is always available for any other amount.`,
         },
         {
             type: "text",
@@ -234,7 +236,7 @@ const paymentPolicyEn: PageSchema = {
             type: "text",
             title: "11. Crediting Account Balance",
             description:
-                "A successfully completed Top-Up will normally be credited to your Account shortly after payment confirmation.\n\nThe Account Balance shown in your Account is the authoritative record of the credit available for use, subject to correction of technical or payment errors.\n\nIf payment has been taken but the corresponding balance is not displayed, contact info@earnerthemes.com and provide:",
+                `A successfully completed Top-Up will normally be credited to your Account shortly after payment confirmation.\n\nThe Account Balance shown in your Account is the authoritative record of the credit available for use, subject to correction of technical or payment errors.\n\nIf payment has been taken but the corresponding balance is not displayed, contact ${COMPANY_EMAIL} and provide:`,
             bullets: [
                 "your Account email address;",
                 "the date and amount of the payment;",
@@ -356,7 +358,7 @@ const paymentPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "Before making a material adverse correction, we will normally notify you and explain the reason, unless immediate action is reasonably necessary to prevent fraud, security harm or further incorrect Transactions.\n\nA correction will be limited to the amount reasonably necessary to address the error.\n\nIf you believe a correction is wrong, contact info@earnerthemes.com with the relevant Transaction information.",
+                `Before making a material adverse correction, we will normally notify you and explain the reason, unless immediate action is reasonably necessary to prevent fraud, security harm or further incorrect Transactions.\n\nA correction will be limited to the amount reasonably necessary to address the error.\n\nIf you believe a correction is wrong, contact ${COMPANY_EMAIL} with the relevant Transaction information.`,
         },
         {
             type: "text",
@@ -375,7 +377,7 @@ const paymentPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "Where you have used any part of a Top-Up, the used portion cannot ordinarily be refunded unless required by law or the related Product purchase independently qualifies for a refund.\n\nIf you are a Consumer, nothing in this Policy limits any applicable statutory cancellation rights. The availability and consequences of cancellation depend on the nature of the Transaction, whether the Account Balance has been used and applicable law.\n\nRefund requests must be submitted to info@earnerthemes.com with sufficient information to identify the Transaction.",
+                `Where you have used any part of a Top-Up, the used portion cannot ordinarily be refunded unless required by law or the related Product purchase independently qualifies for a refund.\n\nIf you are a Consumer, nothing in this Policy limits any applicable statutory cancellation rights. The availability and consequences of cancellation depend on the nature of the Transaction, whether the Account Balance has been used and applicable law.\n\nRefund requests must be submitted to ${COMPANY_EMAIL} with sufficient information to identify the Transaction.`,
         },
         {
             type: "text",
@@ -424,7 +426,7 @@ const paymentPolicyEn: PageSchema = {
             type: "text",
             title: "21. Unauthorised Transactions",
             description:
-                "If you believe that an Account Balance Top-Up or deduction was unauthorised, contact us immediately at info@earnerthemes.com.\n\nYou should also secure your Account by changing your password and reviewing your email account and payment method.\n\nWe may temporarily restrict the Account or Account Balance while investigating.\n\nWe may request:",
+                `If you believe that an Account Balance Top-Up or deduction was unauthorised, contact us immediately at ${COMPANY_EMAIL}.\n\nYou should also secure your Account by changing your password and reviewing your email account and payment method.\n\nWe may temporarily restrict the Account or Account Balance while investigating.\n\nWe may request:`,
             bullets: [
                 "the relevant Transaction reference;",
                 "the date and amount;",
@@ -508,7 +510,7 @@ const paymentPolicyEn: PageSchema = {
             type: "text",
             title: "25. Account Closure",
             description:
-                "You may request closure of your Account by contacting info@earnerthemes.com.\n\nBefore requesting closure, you should review and use any valid Account Balance.\n\nClosing an Account does not automatically create a right to withdraw unused Account Balance as cash. Any refund of unused purchased balance will be determined under:",
+                `You may request closure of your Account by contacting ${COMPANY_EMAIL}.\n\nBefore requesting closure, you should review and use any valid Account Balance.\n\nClosing an Account does not automatically create a right to withdraw unused Account Balance as cash. Any refund of unused purchased balance will be determined under:`,
             bullets: [
                 "this Policy;",
                 "the reason for Account closure;",
@@ -620,7 +622,7 @@ const paymentPolicyEn: PageSchema = {
             type: "text",
             title: "31. Governing Law and Disputes",
             description:
-                "This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore starting formal proceedings, contact info@earnerthemes.com with:",
+                `This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore starting formal proceedings, contact ${COMPANY_EMAIL} with:`,
             bullets: [
                 "your Account email;",
                 "the relevant Transaction or Order number;",

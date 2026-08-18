@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const cookiePolicyEn: PageSchema = {
     meta: {
         title: `Cookie Policy – ${COMPANY_NAME}`,
         description:
-            "Cookies and similar technologies used by EarnerThemes, their purposes and how to manage your preferences.",
+            `Cookies and similar technologies used by ${COMPANY_NAME}, their purposes and how to manage your preferences.`,
         canonical: "/cookie-policy",
         ogImage: {
             title: `Cookie Policy – ${COMPANY_NAME}`,
-            description: "Cookies and similar technologies used by EarnerThemes, their purposes and how to manage your preferences.",
+            description: `Cookies and similar technologies used by ${COMPANY_NAME}, their purposes and how to manage your preferences.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const cookiePolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Cookie Policy",
-            description: `This Cookie Policy explains how SENIOR EARNER LTD uses cookies and other technologies that store information on, or access information from, your device when you visit or use www.earnerthemes.com.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Cookie Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to a Website visitor or user.\n\nThis Cookie Policy should be read together with our Privacy Policy.`,
+            description: `This Cookie Policy explains how ${COMPANY_LEGAL_NAME} uses cookies and other technologies that store information on, or access information from, your device when you visit or use ${COMPANY_WEBSITE}.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Cookie Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to a Website visitor or user.\n\nThis Cookie Policy should be read together with our Privacy Policy.`,
         },
         {
             type: "text",
@@ -51,7 +53,7 @@ const cookiePolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "Cookies may be placed directly by EarnerThemes or by an authorised third party whose services are used through the Website.",
+                `Cookies may be placed directly by ${COMPANY_NAME} or by an authorised third party whose services are used through the Website.`,
         },
         {
             type: "text",
@@ -84,7 +86,7 @@ const cookiePolicyEn: PageSchema = {
             type: "text",
             title: "4.1 First-Party Technologies",
             description:
-                "First-party Storage Technologies are placed by or on behalf of EarnerThemes through the earnerthemes.com domain.\n\nThey may be used for:",
+                `First-party Storage Technologies are placed by or on behalf of ${COMPANY_NAME} through the ${COMPANY_DOMAIN} domain.\n\nThey may be used for:`,
             bullets: [
                 "Account login;",
                 "security;",
@@ -578,7 +580,7 @@ const cookiePolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "We do not control technologies placed directly through a third-party website after you leave EarnerThemes.",
+                `We do not control technologies placed directly through a third-party website after you leave ${COMPANY_NAME}.`,
         },
         {
             type: "text",
@@ -611,7 +613,7 @@ const cookiePolicyEn: PageSchema = {
             type: "text",
             title: "26. Children",
             description:
-                "The Website is not intended for persons under 18 years old.\n\nWe do not knowingly use advertising or profiling technologies to target children.\n\nIf you believe that information about a child has been collected through the Website, contact info@earnerthemes.com.",
+                `The Website is not intended for persons under 18 years old.\n\nWe do not knowingly use advertising or profiling technologies to target children.\n\nIf you believe that information about a child has been collected through the Website, contact ${COMPANY_EMAIL}.`,
         },
         {
             type: "text",
@@ -636,7 +638,7 @@ const cookiePolicyEn: PageSchema = {
             type: "text",
             title: "28. Complaints",
             description:
-                "If you have a concern about our use of Storage Technologies, contact us at info@earnerthemes.com.\n\nYou also have the right to complain to the UK Information Commissioner’s Office:\n\nInformation Commissioner’s Office\nWebsite: https://ico.org.uk/make-a-complaint/",
+                `If you have a concern about our use of Storage Technologies, contact us at ${COMPANY_EMAIL}.\n\nYou also have the right to complain to the UK Information Commissioner’s Office:\n\nInformation Commissioner’s Office\nWebsite: https://ico.org.uk/make-a-complaint/`,
         },
         {
             type: "text",

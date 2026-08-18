@@ -17,7 +17,7 @@ export const baseURL =
 export const headerContent = {
     logo: {
         src: media.logo.src,
-        alt: "Site Logo",
+        alt: `${COMPANY_NAME} logo`,
         href: "/"
     },
     links: [
@@ -30,7 +30,7 @@ export const headerContent = {
 };
 
 export const footerContent = {
-    logo: {src: media.logo_white.src, alt: "Site Logo", href: "/"},
+    logo: {src: media.logo_white.src, alt: `${COMPANY_NAME} logo`, href: "/"},
     columns: [
         {
             title: "Navigate",

@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const deliveryPolicyEn: PageSchema = {
     meta: {
         title: `Digital Delivery and Download Policy – ${COMPANY_NAME}`,
         description:
-            "How digital products, download links and activation credentials are delivered after purchase on EarnerThemes.",
+            `How digital products, download links and activation credentials are delivered after purchase on ${COMPANY_NAME}.`,
         canonical: "/delivery-policy",
         ogImage: {
             title: `Digital Delivery and Download Policy – ${COMPANY_NAME}`,
-            description: "How digital products, download links and activation credentials are delivered after purchase on EarnerThemes.",
+            description: `How digital products, download links and activation credentials are delivered after purchase on ${COMPANY_NAME}.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const deliveryPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Policy",
-            description: `This Digital Delivery and Download Policy (“Policy”) explains how digital website themes, templates, files, Activation Credentials and related materials purchased through www.earnerthemes.com are processed, delivered and made available to customers.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to the person or organisation placing an Order or receiving a Product.\n\nThis Policy forms part of our Terms and Conditions.`,
+            description: `This Digital Delivery and Download Policy (“Policy”) explains how digital website themes, templates, files, Activation Credentials and related materials purchased through ${COMPANY_WEBSITE} are processed, delivered and made available to customers.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation placing an Order or receiving a Product.\n\nThis Policy forms part of our Terms and Conditions.`,
         },
         {
             type: "text",
@@ -60,7 +62,7 @@ const deliveryPolicyEn: PageSchema = {
             type: "text",
             title: "4. Digital-Only Delivery",
             description:
-                "All Products sold through EarnerThemes are supplied digitally.\n\nWe do not ship physical:",
+                `All Products sold through ${COMPANY_NAME} are supplied digitally.\n\nWe do not ship physical:`,
             bullets: [
                 "discs;",
                 "printed materials;",
@@ -159,7 +161,7 @@ const deliveryPolicyEn: PageSchema = {
                 "the email account is active;",
                 "you have access to it;",
                 "the mailbox has sufficient available storage;",
-                "attachments and messages from EarnerThemes can be received;",
+                `attachments and messages from ${COMPANY_NAME} can be received;`,
                 "spam or security settings do not automatically reject our messages; and",
                 "the email address remains current until Delivery is complete.",
             ],
@@ -186,7 +188,7 @@ const deliveryPolicyEn: PageSchema = {
             type: "text",
             title: "9. Correcting an Email Address",
             description:
-                "If you entered the wrong email address, contact info@earnerthemes.com as soon as possible.\n\nInclude:",
+                `If you entered the wrong email address, contact ${COMPANY_EMAIL} as soon as possible.\n\nInclude:`,
             bullets: [
                 "your full name;",
                 "the incorrect email address;",
@@ -223,7 +225,7 @@ const deliveryPolicyEn: PageSchema = {
             type: "text",
             title: "11. Reporting Non-Delivery",
             description:
-                "If Delivery has not been received within 24 hours, contact info@earnerthemes.com.\n\nInclude:",
+                `If Delivery has not been received within 24 hours, contact ${COMPANY_EMAIL}.\n\nInclude:`,
             bullets: [
                 "your full name;",
                 "the email address associated with the Order;",
@@ -672,7 +674,7 @@ const deliveryPolicyEn: PageSchema = {
             type: "text",
             title: "31. Governing Law and Disputes",
             description:
-                "This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore beginning formal proceedings, contact info@earnerthemes.com with the relevant Order information and requested resolution. We will attempt to resolve the matter in good faith.",
+                `This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore beginning formal proceedings, contact ${COMPANY_EMAIL} with the relevant Order information and requested resolution. We will attempt to resolve the matter in good faith.`,
         },
         {
             type: "text",

@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const ipPolicyEn: PageSchema = {
     meta: {
         title: `Intellectual Property and Takedown Policy – ${COMPANY_NAME}`,
         description:
-            "How to report intellectual property infringement on EarnerThemes and how notices and counter-notices are handled.",
+            `How to report intellectual property infringement on ${COMPANY_NAME} and how notices and counter-notices are handled.`,
         canonical: "/ip-policy",
         ogImage: {
             title: `Intellectual Property and Takedown Policy – ${COMPANY_NAME}`,
-            description: "How to report intellectual property infringement on EarnerThemes and how notices and counter-notices are handled.",
+            description: `How to report intellectual property infringement on ${COMPANY_NAME} and how notices and counter-notices are handled.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,13 +31,13 @@ const ipPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Policy",
-            description: `This Intellectual Property and Takedown Policy (“Policy”) explains how SENIOR EARNER LTD handles reports that a Product or other material available through www.earnerthemes.com infringes intellectual property rights.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to a rights holder, Author, user, complainant or other person interacting with this process.\n\nThis Policy forms part of our Terms and Conditions.`,
+            description: `This Intellectual Property and Takedown Policy (“Policy”) explains how ${COMPANY_LEGAL_NAME} handles reports that a Product or other material available through ${COMPANY_WEBSITE} infringes intellectual property rights.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to a rights holder, Author, user, complainant or other person interacting with this process.\n\nThis Policy forms part of our Terms and Conditions.`,
         },
         {
             type: "text",
             title: "2. Our Commitment",
             description:
-                "EarnerThemes respects intellectual property rights and expects Product Authors, customers and Website users to do the same.\n\nProducts offered through EarnerThemes may be created and owned by third-party Authors. We make such Products available under commercial, distribution or licensing arrangements with the relevant Authors or rights holders.\n\nWe take credible intellectual property complaints seriously and may remove, restrict or suspend material while a complaint is investigated.\n\nNothing in this Policy makes EarnerThemes a court or legal tribunal. Complex disputes may need to be resolved between the parties or through mediation, the Intellectual Property Office or an appropriate court.",
+                `${COMPANY_NAME} respects intellectual property rights and expects Product Authors, customers and Website users to do the same.\n\nProducts offered through ${COMPANY_NAME} may be created and owned by third-party Authors. We make such Products available under commercial, distribution or licensing arrangements with the relevant Authors or rights holders.\n\nWe take credible intellectual property complaints seriously and may remove, restrict or suspend material while a complaint is investigated.\n\nNothing in this Policy makes ${COMPANY_NAME} a court or legal tribunal. Complex disputes may need to be resolved between the parties or through mediation, the Intellectual Property Office or an appropriate court.`,
         },
         {
             type: "text",
@@ -145,13 +147,13 @@ const ipPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "You may wish to obtain independent legal advice. EarnerThemes cannot advise you on whether your rights have been infringed.",
+                `You may wish to obtain independent legal advice. ${COMPANY_NAME} cannot advise you on whether your rights have been infringed.`,
         },
         {
             type: "text",
             title: "8. How to Submit a Notice",
             description:
-                "Send the notice to:\n\nEmail: info@earnerthemes.com\nSubject: Intellectual Property Notice\n\nTo allow us to investigate, include the information listed in section 9.\n\nA notice may also be sent by post to the registered office stated at the end of this Policy.",
+                `Send the notice to:\n\nEmail: ${COMPANY_EMAIL}\nSubject: Intellectual Property Notice\n\nTo allow us to investigate, include the information listed in section 9.\n\nA notice may also be sent by post to the registered office stated at the end of this Policy.`,
         },
         {
             type: "text",
@@ -572,7 +574,7 @@ const ipPolicyEn: PageSchema = {
             type: "text",
             title: "24. Repeat Infringement",
             description:
-                "We may suspend or terminate access to EarnerThemes where an Author, supplier or user repeatedly:",
+                `We may suspend or terminate access to ${COMPANY_NAME} where an Author, supplier or user repeatedly:`,
             bullets: [
                 "submits infringing material;",
                 "redistributes Products without permission;",
@@ -619,7 +621,7 @@ const ipPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "A false or abusive notice may cause significant loss to EarnerThemes, Authors and customers.\n\nWe may:",
+                `A false or abusive notice may cause significant loss to ${COMPANY_NAME}, Authors and customers.\n\nWe may:`,
             bullets: [
                 "reject the notice;",
                 "request further verification;",
@@ -724,7 +726,7 @@ const ipPolicyEn: PageSchema = {
             type: "text",
             title: "31. No Legal Advice or Final Adjudication",
             description:
-                "Information provided by EarnerThemes through this process is not legal advice.\n\nOur decision to remove, restrict, restore or retain material:",
+                `Information provided by ${COMPANY_NAME} through this process is not legal advice.\n\nOur decision to remove, restrict, restore or retain material:`,
             bullets: [
                 "is an operational platform decision;",
                 "does not determine ownership;",

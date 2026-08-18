@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const privacyPolicyEn: PageSchema = {
     meta: {
         title: `Privacy Policy – ${COMPANY_NAME}`,
         description:
-            "How EarnerThemes collects, uses, shares and protects personal data, and the rights available to you.",
+            `How ${COMPANY_NAME} collects, uses, shares and protects personal data, and the rights available to you.`,
         canonical: "/privacy-policy",
         ogImage: {
             title: `Privacy Policy – ${COMPANY_NAME}`,
-            description: "How EarnerThemes collects, uses, shares and protects personal data, and the rights available to you.",
+            description: `How ${COMPANY_NAME} collects, uses, shares and protects personal data, and the rights available to you.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const privacyPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Privacy Policy",
-            description: `This Privacy Policy explains how SENIOR EARNER LTD collects, uses, stores, shares and protects personal data in connection with www.earnerthemes.com, customer Accounts, Account Balance Top-Ups, Orders, digital Product delivery, activation and support.\n\nThe data controller responsible for your personal data is:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Privacy Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to an individual who visits the Website, creates an Account, places an Order, contacts us or otherwise interacts with our services.`,
+            description: `This Privacy Policy explains how ${COMPANY_LEGAL_NAME} collects, uses, stores, shares and protects personal data in connection with ${COMPANY_WEBSITE}, customer Accounts, Account Balance Top-Ups, Orders, digital Product delivery, activation and support.\n\nThe data controller responsible for your personal data is:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Privacy Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to an individual who visits the Website, creates an Account, places an Order, contacts us or otherwise interacts with our services.`,
         },
         {
             type: "text",
@@ -45,7 +47,7 @@ const privacyPolicyEn: PageSchema = {
                 "contact customer support;",
                 "submit a refund, payment or intellectual property request;",
                 "receive transactional or marketing communications; or",
-                "otherwise provide personal data to EarnerThemes.",
+                `otherwise provide personal data to ${COMPANY_NAME}.`,
             ],
         },
         {
@@ -57,7 +59,7 @@ const privacyPolicyEn: PageSchema = {
             type: "text",
             title: "3. Personal Data We Collect",
             description:
-                "The personal data we collect depends on how you interact with EarnerThemes.",
+                `The personal data we collect depends on how you interact with ${COMPANY_NAME}.`,
         },
         {
             type: "text",
@@ -134,7 +136,7 @@ const privacyPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "EarnerThemes generally receives only the information required to identify and administer the Transaction, such as:",
+                `${COMPANY_NAME} generally receives only the information required to identify and administer the Transaction, such as:`,
             bullets: [
                 "payment status;",
                 "transaction amount;",
@@ -394,7 +396,7 @@ const privacyPolicyEn: PageSchema = {
             description:
                 "Where we rely on legitimate interests, we consider whether the processing is necessary and whether your rights and interests override ours.\n\nOur legitimate interests may include:",
             bullets: [
-                "operating and improving EarnerThemes;",
+                `operating and improving ${COMPANY_NAME};`,
                 "providing customer support;",
                 "securing Accounts and Transactions;",
                 "preventing fraud;",
@@ -549,7 +551,7 @@ const privacyPolicyEn: PageSchema = {
                 "promotions;",
                 "discounts;",
                 "Website updates; and",
-                "relevant EarnerThemes services.",
+                `relevant ${COMPANY_NAME} services.`,
             ],
         },
         {
@@ -559,7 +561,7 @@ const privacyPolicyEn: PageSchema = {
             bullets: [
                 "using the unsubscribe link in a marketing email;",
                 "changing available Account preferences; or",
-                "contacting info@earnerthemes.com.",
+                `contacting ${COMPANY_EMAIL}.`,
             ],
         },
         {
@@ -674,7 +676,7 @@ const privacyPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "Where required, we will assess whether the destination and transfer arrangements provide an appropriate level of protection.\n\nYou may contact info@earnerthemes.com for further information about safeguards relevant to your personal data.",
+                `Where required, we will assess whether the destination and transfer arrangements provide an appropriate level of protection.\n\nYou may contact ${COMPANY_EMAIL} for further information about safeguards relevant to your personal data.`,
         },
         {
             type: "text",
@@ -746,7 +748,7 @@ const privacyPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "No online system can be guaranteed completely secure. You are responsible for protecting your Account password, email account, device and Activation Credentials.\n\nIf you suspect unauthorised Account access or a personal data incident, contact info@earnerthemes.com promptly.",
+                `No online system can be guaranteed completely secure. You are responsible for protecting your Account password, email account, device and Activation Credentials.\n\nIf you suspect unauthorised Account access or a personal data incident, contact ${COMPANY_EMAIL} promptly.`,
         },
         {
             type: "text",
@@ -831,7 +833,7 @@ const privacyPolicyEn: PageSchema = {
             type: "text",
             title: "20. Exercising Your Rights",
             description:
-                "To exercise a data protection right, email info@earnerthemes.com.\n\nInclude:",
+                `To exercise a data protection right, email ${COMPANY_EMAIL}.\n\nInclude:`,
             bullets: [
                 "your name;",
                 "the email address associated with your Account;",
@@ -879,13 +881,13 @@ const privacyPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "Contact info@earnerthemes.com if you believe a significant decision was made about you solely through automated processing.",
+                `Contact ${COMPANY_EMAIL} if you believe a significant decision was made about you solely through automated processing.`,
         },
         {
             type: "text",
             title: "23. Children",
             description:
-                "The Website and Products are not intended for persons under 18 years old.\n\nWe do not knowingly allow a person under 18 to create an Account, purchase Account Balance or place an Order.\n\nIf you believe that a child has provided personal data to us, contact info@earnerthemes.com. We will investigate and delete the information where appropriate.",
+                `The Website and Products are not intended for persons under 18 years old.\n\nWe do not knowingly allow a person under 18 to create an Account, purchase Account Balance or place an Order.\n\nIf you believe that a child has provided personal data to us, contact ${COMPANY_EMAIL}. We will investigate and delete the information where appropriate.`,
         },
         {
             type: "text",

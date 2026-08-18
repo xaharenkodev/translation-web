@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const refundPolicyEn: PageSchema = {
     meta: {
         title: `Refund and Cancellation Policy – ${COMPANY_NAME}`,
         description:
-            "Refund, cancellation and chargeback rules for digital products purchased on EarnerThemes.",
+            `Refund, cancellation and chargeback rules for digital products purchased on ${COMPANY_NAME}.`,
         canonical: "/refund-policy",
         ogImage: {
             title: `Refund and Cancellation Policy – ${COMPANY_NAME}`,
-            description: "Refund, cancellation and chargeback rules for digital products purchased on EarnerThemes.",
+            description: `Refund, cancellation and chargeback rules for digital products purchased on ${COMPANY_NAME}.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const refundPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Policy",
-            description: `This Refund and Cancellation Policy (“Policy”) explains when an order, Account Balance top-up or digital Product purchased through www.earnerthemes.com may be cancelled, replaced, corrected or refunded.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to the person or organisation making a purchase or requesting a cancellation or refund.\n\nThis Policy forms part of our Terms and Conditions.`,
+            description: `This Refund and Cancellation Policy (“Policy”) explains when an order, Account Balance top-up or digital Product purchased through ${COMPANY_WEBSITE} may be cancelled, replaced, corrected or refunded.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation making a purchase or requesting a cancellation or refund.\n\nThis Policy forms part of our Terms and Conditions.`,
         },
         {
             type: "text",
@@ -60,7 +62,7 @@ const refundPolicyEn: PageSchema = {
             type: "text",
             title: "4. Digital Nature of Products",
             description:
-                "Products sold through EarnerThemes are digital and are delivered electronically. No physical goods are shipped.\n\nDigital files can be downloaded, stored and copied after Delivery. For this reason, change-of-mind cancellations and refunds may be restricted once supply of the Product has begun.\n\nHowever, the digital nature of a Product does not remove any mandatory legal rights you may have if the Product:",
+                `Products sold through ${COMPANY_NAME} are digital and are delivered electronically. No physical goods are shipped.\n\nDigital files can be downloaded, stored and copied after Delivery. For this reason, change-of-mind cancellations and refunds may be restricted once supply of the Product has begun.\n\nHowever, the digital nature of a Product does not remove any mandatory legal rights you may have if the Product:`,
             bullets: [
                 "is faulty;",
                 "is materially not as described;",
@@ -78,7 +80,7 @@ const refundPolicyEn: PageSchema = {
                 "check your spam, junk and filtered email folders;",
                 "confirm that the email address provided with the Order is correct;",
                 "check whether your email provider rejected or blocked attachments; and",
-                "contact info@earnerthemes.com with your Order details.",
+                `contact ${COMPANY_EMAIL} with your Order details.`,
             ],
         },
         {
@@ -90,7 +92,7 @@ const refundPolicyEn: PageSchema = {
             type: "text",
             title: "6. Cancelling Before Delivery",
             description:
-                "You may request cancellation of an Order before Delivery has begun by contacting info@earnerthemes.com as soon as possible.\n\nA cancellation request should include:",
+                `You may request cancellation of an Order before Delivery has begun by contacting ${COMPANY_EMAIL} as soon as possible.\n\nA cancellation request should include:`,
             bullets: [
                 "your name;",
                 "the email address associated with the Order;",
@@ -453,7 +455,7 @@ const refundPolicyEn: PageSchema = {
                 "international transaction charges imposed by a third party;",
                 "independent hosting, domain, software or service expenses;",
                 "customisation or development costs paid to another person; or",
-                "other consequential expenses not charged by EarnerThemes.",
+                `other consequential expenses not charged by ${COMPANY_NAME}.`,
             ],
         },
         {
@@ -491,7 +493,7 @@ const refundPolicyEn: PageSchema = {
             type: "text",
             title: "21. How to Request a Refund",
             description:
-                "Send your request to info@earnerthemes.com.\n\nInclude:",
+                `Send your request to ${COMPANY_EMAIL}.\n\nInclude:`,
             bullets: [
                 "your full name;",
                 "the email address associated with the Order;",
@@ -590,7 +592,7 @@ const refundPolicyEn: PageSchema = {
             type: "text",
             title: "27. Governing Law and Disputes",
             description:
-                "This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nIf you disagree with a refund decision, contact info@earnerthemes.com and identify:",
+                `This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nIf you disagree with a refund decision, contact ${COMPANY_EMAIL} and identify:`,
             bullets: [
                 "the Order;",
                 "the original decision;",

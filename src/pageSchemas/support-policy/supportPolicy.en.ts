@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const supportPolicyEn: PageSchema = {
     meta: {
         title: `Support Policy – ${COMPANY_NAME}`,
         description:
-            "Scope, channels and response times of customer and technical support provided by EarnerThemes.",
+            `Scope, channels and response times of customer and technical support provided by ${COMPANY_NAME}.`,
         canonical: "/support-policy",
         ogImage: {
             title: `Support Policy – ${COMPANY_NAME}`,
-            description: "Scope, channels and response times of customer and technical support provided by EarnerThemes.",
+            description: `Scope, channels and response times of customer and technical support provided by ${COMPANY_NAME}.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const supportPolicyEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Policy",
-            description: `This Support Policy (“Policy”) explains the assistance available in connection with Accounts, payments, Account Balance, Orders, delivery, activation and digital Products purchased through www.earnerthemes.com.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You” and “your” refer to the person or organisation requesting support.\n\nThis Policy forms part of our Terms and Conditions.`,
+            description: `This Support Policy (“Policy”) explains the assistance available in connection with Accounts, payments, Account Balance, Orders, delivery, activation and digital Products purchased through ${COMPANY_WEBSITE}.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation requesting support.\n\nThis Policy forms part of our Terms and Conditions.`,
         },
         {
             type: "text",
@@ -55,13 +57,13 @@ const supportPolicyEn: PageSchema = {
             type: "text",
             title: "3. Definitions",
             description:
-                "For the purposes of this Policy:\n\n“Account” means a registered user account created through the Website.\n\n“Account Balance” means purchased store credit recorded in an Account.\n\n“Activation Credentials” means a Licence key, activation code, token, login information or other credential supplied for the activation or use of a Product.\n\n“Author” means the creator, developer, publisher or relevant rights holder of a Product.\n\n“Licence” means the limited permission to use a Product under our Digital Product Licence Agreement.\n\n“Order” means a request submitted through the Website to purchase a Product.\n\n“Product” means a digital website theme, template, file, archive, activation credential, documentation or related Digital Content offered through the Website.\n\n“Product Support” means technical assistance relating directly to the included features and intended operation of a Product.\n\n“Support Request” means a request for assistance submitted through an authorised support channel.\n\n“Website Support” means assistance concerning the EarnerThemes Website, Accounts, payments, Orders and Delivery.",
+                `For the purposes of this Policy:\n\n“Account” means a registered user account created through the Website.\n\n“Account Balance” means purchased store credit recorded in an Account.\n\n“Activation Credentials” means a Licence key, activation code, token, login information or other credential supplied for the activation or use of a Product.\n\n“Author” means the creator, developer, publisher or relevant rights holder of a Product.\n\n“Licence” means the limited permission to use a Product under our Digital Product Licence Agreement.\n\n“Order” means a request submitted through the Website to purchase a Product.\n\n“Product” means a digital website theme, template, file, archive, activation credential, documentation or related Digital Content offered through the Website.\n\n“Product Support” means technical assistance relating directly to the included features and intended operation of a Product.\n\n“Support Request” means a request for assistance submitted through an authorised support channel.\n\n“Website Support” means assistance concerning the ${COMPANY_NAME} Website, Accounts, payments, Orders and Delivery.`,
         },
         {
             type: "text",
             title: "4. Support Channel",
             description:
-                "Support is provided by email at:\n\ninfo@earnerthemes.com\n\nWe do not currently provide telephone support.\n\nTo help us identify and resolve your issue, contact us using the email address associated with your Account or Order wherever possible.\n\nA message sent through social media, a review, a payment dispute or another public channel may not be treated as a formal Support Request.",
+                `Support is provided by email at:\n\n${COMPANY_EMAIL}\n\nWe do not currently provide telephone support.\n\nTo help us identify and resolve your issue, contact us using the email address associated with your Account or Order wherever possible.\n\nA message sent through social media, a review, a payment dispute or another public channel may not be treated as a formal Support Request.`,
         },
         {
             type: "text",
@@ -86,7 +88,7 @@ const supportPolicyEn: PageSchema = {
                 "Licence verification;",
                 "refund procedures;",
                 "unauthorised Transactions; and",
-                "general use of the EarnerThemes Website.",
+                `general use of the ${COMPANY_NAME} Website.`,
             ],
         },
         {
@@ -425,7 +427,7 @@ const supportPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "EarnerThemes will not ask you to disclose your complete payment card password, online banking password or card security code.\n\nIf temporary access to a website or platform is genuinely required, we will explain why and identify an appropriate secure method. You remain responsible for:",
+                `${COMPANY_NAME} will not ask you to disclose your complete payment card password, online banking password or card security code.\n\nIf temporary access to a website or platform is genuinely required, we will explain why and identify an appropriate secure method. You remain responsible for:`,
             bullets: [
                 "creating limited temporary credentials;",
                 "restricting permissions;",
@@ -509,7 +511,7 @@ const supportPolicyEn: PageSchema = {
         {
             type: "text",
             description:
-                "We will share only information reasonably necessary to address the issue and will handle personal data in accordance with our Privacy Policy.\n\nThe involvement of an Author may affect the time required to investigate, but EarnerThemes remains responsible for obligations that apply to us as the seller under the purchase contract.",
+                `We will share only information reasonably necessary to address the issue and will handle personal data in accordance with our Privacy Policy.\n\nThe involvement of an Author may affect the time required to investigate, but ${COMPANY_NAME} remains responsible for obligations that apply to us as the seller under the purchase contract.`,
         },
         {
             type: "text",
@@ -698,7 +700,7 @@ const supportPolicyEn: PageSchema = {
             type: "text",
             title: "33. Governing Law and Disputes",
             description:
-                "This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nIf you disagree with the handling of a Support Request, email info@earnerthemes.com and provide:",
+                `This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nIf you disagree with the handling of a Support Request, email ${COMPANY_EMAIL} and provide:`,
             bullets: [
                 "the Order number;",
                 "the existing support correspondence;",

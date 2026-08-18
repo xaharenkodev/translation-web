@@ -98,13 +98,13 @@ export function renderReceiptPDF(data: ReceiptData) {
     return (
         <Document
             title={`Receipt ${data.reference}`}
-            author={COMPANY_LEGAL_NAME ?? COMPANY_NAME ?? "EarnerThemes"}
+            author={COMPANY_LEGAL_NAME ?? COMPANY_NAME ?? ""}
         >
             <Page size="A4" style={styles.page}>
                 <View style={styles.header}>
                     <Text style={styles.title}>Receipt</Text>
                     <Text style={styles.subtitle}>
-                        {COMPANY_NAME ?? "EarnerThemes"} · Receipt no. {data.reference}
+                        {COMPANY_NAME ?? ""} · Receipt no. {data.reference}
                     </Text>
                 </View>
 
@@ -169,7 +169,7 @@ export function renderReceiptPDF(data: ReceiptData) {
 
                 <Text style={styles.footer}>
                     Account Balance is non-transferable store credit usable only on{" "}
-                    {COMPANY_NAME ?? "EarnerThemes"}. It is not cryptocurrency, is not tradable and is
+                    {COMPANY_NAME ?? ""}. It is not cryptocurrency, is not tradable and is
                     not redeemable for cash. This receipt was generated electronically and is valid
                     without a signature.
                 </Text>

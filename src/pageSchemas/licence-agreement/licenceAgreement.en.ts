@@ -5,17 +5,19 @@ import {
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
+    COMPANY_DOMAIN,
+    COMPANY_WEBSITE,
 } from "@/resources/constants";
 
 const licenceAgreementEn: PageSchema = {
     meta: {
         title: `Digital Product Licence Agreement – ${COMPANY_NAME}`,
         description:
-            "Licence terms describing how EarnerThemes digital themes and templates may be used, modified and deployed.",
+            `Licence terms describing how ${COMPANY_NAME} digital themes and templates may be used, modified and deployed.`,
         canonical: "/licence-agreement",
         ogImage: {
             title: `Digital Product Licence Agreement – ${COMPANY_NAME}`,
-            description: "Licence terms describing how EarnerThemes digital themes and templates may be used, modified and deployed.",
+            description: `Licence terms describing how ${COMPANY_NAME} digital themes and templates may be used, modified and deployed.`,
             bg: "#ffffff",
             color: "#000000",
         },
@@ -29,7 +31,7 @@ const licenceAgreementEn: PageSchema = {
         {
             type: "text",
             title: "1. About This Agreement",
-            description: `This Digital Product Licence Agreement (“Licence Agreement”) governs your use of website themes, templates, layouts, files, activation credentials, documentation, updates and other digital products obtained through www.earnerthemes.com.\n\nThis Licence Agreement is entered into between you and:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Licence Agreement, “EarnerThemes”, “we”, “us” and “our” refer to SENIOR EARNER LTD. “You”, “your” and “Licensee” refer to the individual or organisation purchasing, downloading, activating or using a Product.\n\nBy purchasing, downloading, activating, installing or using a Product, you confirm that you have read and agree to this Licence Agreement.\n\nIf you do not agree to this Licence Agreement, you must not download, install, activate or use the Product.`,
+            description: `This Digital Product Licence Agreement (“Licence Agreement”) governs your use of website themes, templates, layouts, files, activation credentials, documentation, updates and other digital products obtained through ${COMPANY_WEBSITE}.\n\nThis Licence Agreement is entered into between you and:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Licence Agreement, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You”, “your” and “Licensee” refer to the individual or organisation purchasing, downloading, activating or using a Product.\n\nBy purchasing, downloading, activating, installing or using a Product, you confirm that you have read and agree to this Licence Agreement.\n\nIf you do not agree to this Licence Agreement, you must not download, install, activate or use the Product.`,
         },
         {
             type: "text",
@@ -61,13 +63,13 @@ const licenceAgreementEn: PageSchema = {
             type: "text",
             title: "3. Definitions",
             description:
-                "For the purposes of this Licence Agreement:\n\n“Activation Credentials” means any Licence key, activation code, token, login information, registration information or other credential supplied for the installation, activation or use of a Product.\n\n“Author” means the creator, developer, publisher or relevant rights holder of a Product.\n\n“Client” means a person or organisation for whom you create a completed website or other permitted End Product.\n\n“End Product” means a completed website, online store or other final project created using a Product and incorporating sufficient configuration, content or customisation to function as a finished project.\n\n“Licence” means the limited permission to use a Product granted under this Licence Agreement.\n\n“Product” means a website theme, template, layout, source file, archive, documentation, activation information, update or related Digital Content obtained through EarnerThemes.\n\n“Product-Specific Terms” means additional licence terms displayed on the Product page, at checkout, in the Product documentation or within the delivered files.\n\n“Production Website” means a live website, online store or other publicly accessible End Product.\n\n“Staging Website” means a non-public development, testing or staging copy used solely in connection with the same Production Website.",
+                `For the purposes of this Licence Agreement:\n\n“Activation Credentials” means any Licence key, activation code, token, login information, registration information or other credential supplied for the installation, activation or use of a Product.\n\n“Author” means the creator, developer, publisher or relevant rights holder of a Product.\n\n“Client” means a person or organisation for whom you create a completed website or other permitted End Product.\n\n“End Product” means a completed website, online store or other final project created using a Product and incorporating sufficient configuration, content or customisation to function as a finished project.\n\n“Licence” means the limited permission to use a Product granted under this Licence Agreement.\n\n“Product” means a website theme, template, layout, source file, archive, documentation, activation information, update or related Digital Content obtained through ${COMPANY_NAME}.\n\n“Product-Specific Terms” means additional licence terms displayed on the Product page, at checkout, in the Product documentation or within the delivered files.\n\n“Production Website” means a live website, online store or other publicly accessible End Product.\n\n“Staging Website” means a non-public development, testing or staging copy used solely in connection with the same Production Website.`,
         },
         {
             type: "text",
             title: "4. Ownership of Products",
             description:
-                "Products made available through EarnerThemes may be created and owned by third-party Authors.\n\nEarnerThemes distributes or licenses such Products under commercial arrangements with the relevant Authors or rights holders. We grant only those rights that we are authorised to grant.\n\nThe Product is licensed, not sold. Your purchase does not transfer to you:",
+                `Products made available through ${COMPANY_NAME} may be created and owned by third-party Authors.\n\n${COMPANY_NAME} distributes or licenses such Products under commercial arrangements with the relevant Authors or rights holders. We grant only those rights that we are authorised to grant.\n\nThe Product is licensed, not sold. Your purchase does not transfer to you:`,
             bullets: [
                 "ownership of the Product;",
                 "copyright or other intellectual property rights;",
@@ -80,7 +82,7 @@ const licenceAgreementEn: PageSchema = {
         {
             type: "text",
             description:
-                "All rights not expressly granted to you remain reserved by EarnerThemes, the Author or the applicable rights holder.",
+                `All rights not expressly granted to you remain reserved by ${COMPANY_NAME}, the Author or the applicable rights holder.`,
         },
         {
             type: "text",
@@ -168,7 +170,7 @@ const licenceAgreementEn: PageSchema = {
         {
             type: "text",
             description:
-                "When a staging copy is no longer required, you should remove or deactivate it.\n\nIf technical activation limits prevent a legitimate staging installation, contact us at info@earnerthemes.com.",
+                `When a staging copy is no longer required, you should remove or deactivate it.\n\nIf technical activation limits prevent a legitimate staging installation, contact us at ${COMPANY_EMAIL}.`,
         },
         {
             type: "text",
@@ -253,7 +255,7 @@ const licenceAgreementEn: PageSchema = {
         {
             type: "text",
             description:
-                "Where legitimate activation fails, contact info@earnerthemes.com. We may request the Order number, licensed domain and reasonable technical information required to investigate.",
+                `Where legitimate activation fails, contact ${COMPANY_EMAIL}. We may request the Order number, licensed domain and reasonable technical information required to investigate.`,
         },
         {
             type: "text",
@@ -511,7 +513,7 @@ const licenceAgreementEn: PageSchema = {
             type: "text",
             title: "24. Intellectual Property Complaints",
             description:
-                "If you believe that a Product infringes your intellectual property rights, contact us at info@earnerthemes.com and provide:",
+                `If you believe that a Product infringes your intellectual property rights, contact us at ${COMPANY_EMAIL} and provide:`,
             bullets: [
                 "identification of the protected work;",
                 "identification of the Product or material concerned;",

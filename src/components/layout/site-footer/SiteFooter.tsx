@@ -5,10 +5,20 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope, FaPhone, FaLocationDot, FaArrowRight } from "react-icons/fa6";
 import { footerContent } from "@/resources/content";
+import visa from "@/assets/cards/visa.png";
+import mastercard from "@/assets/cards/mastercard.png";
+import pciDss from "@/assets/cards/pci-dss-compliant-logo-vector.svg";
 import { COMPANY_NAME } from "@/resources/constants";
 import styles from "./SiteFooter.module.scss";
 
 const LANG_CHIPS = ["EN", "SV", "DE", "FR", "ES", "UA", "PL", "中文", "日本語", "AR"];
+
+/* Brand marks sit on light chips so they stay legible on the dark footer. */
+const PAYMENT_MARKS = [
+    { src: visa, alt: "Visa" },
+    { src: mastercard, alt: "Mastercard" },
+    { src: pciDss, alt: "PCI DSS compliant" },
+];
 
 export default function SiteFooter() {
     const navColumn = footerContent.columns.find((c) => c.title === "Navigate");
@@ -93,6 +103,17 @@ export default function SiteFooter() {
                         <Link href="/dashboard" className={styles.cta}>
                             Order Translation <FaArrowRight />
                         </Link>
+                    </div>
+                </div>
+
+                <div className={styles.payments}>
+                    <span className={styles.payLabel}>Secure payments</span>
+                    <div className={styles.payMarks}>
+                        {PAYMENT_MARKS.map((m) => (
+                            <span key={m.alt} className={styles.payChip}>
+                                <Image src={m.src} alt={m.alt} className={styles.payIcon} />
+                            </span>
+                        ))}
                     </div>
                 </div>
 

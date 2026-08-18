@@ -5,12 +5,19 @@ export const COMPANY_LEGAL_NAME = process.env.NEXT_PUBLIC_COMPANY_LEGAL_NAME;
 export const COMPANY_NUMBER = process.env.NEXT_PUBLIC_COMPANY_NUMBER;
 export const COMPANY_EMAIL = process.env.NEXT_PUBLIC_COMPANY_EMAIL;
 
+/** Bare domain, derived from the company email so it never drifts from it. */
+export const COMPANY_DOMAIN = (COMPANY_EMAIL ?? "").split("@")[1] ?? "";
+
+/** Public website host as shown in legal copy. */
+export const COMPANY_WEBSITE = COMPANY_DOMAIN ? `www.${COMPANY_DOMAIN}` : "";
+
 /**
  * The statement descriptor the cardholder sees on their bank statement.
  * Must match exactly what the acquirer has configured for this merchant.
  */
 export const BILLING_DESCRIPTOR =
-    process.env.NEXT_PUBLIC_BILLING_DESCRIPTOR ?? "EARNERTHEMES";
+    process.env.NEXT_PUBLIC_BILLING_DESCRIPTOR ??
+    (COMPANY_NAME ?? "").toUpperCase();
 
 /** True while no live payment provider is connected — the checkout says so explicitly. */
 export const PAYMENT_TEST_MODE =

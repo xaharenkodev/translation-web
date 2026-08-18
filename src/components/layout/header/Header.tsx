@@ -63,8 +63,8 @@ const Header: React.FC = () => {
                         <Image
                             src={headerContent.logo.src}
                             alt={headerContent.logo.alt}
-                            width={190}
-                            height={60}
+                            width={621}
+                            height={88}
                             priority
                         />
                     </a>
