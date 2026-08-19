@@ -1,6 +1,7 @@
-import { sendEmail } from "@/backend/utils/sendEmail";
+import { sendEmail, EmailAttachment } from "@/backend/utils/sendEmail";
+import { generateInvoicePdf, buildInvoiceNumber } from "@/backend/utils/invoice";
 import { ENV } from "@/backend/config/env";
-import { formatMoney } from "@/utils/money";
+import { BASE_CURRENCY, SupportedCurrency, formatMoney } from "@/utils/money";
 
 import {
     COMPANY_NAME,
@@ -138,6 +139,8 @@ ${companyName} Team
         summaryLines: string[];
         amountLabel: string;
         amountValue: string;
+        amountNumeric?: number;
+        currency?: SupportedCurrency;
         transactionDate: Date | string;
     }) {
         const companyName = COMPANY_NAME || "Website";
@@ -150,14 +153,47 @@ ${companyName} Team
             minute: "2-digit",
         });
 
+        const currency = data.currency ?? BASE_CURRENCY;
+        const grossAmount =
+            typeof data.amountNumeric === "number"
+                ? data.amountNumeric
+                : parseAmount(data.amountValue);
+
+        const invoiceNumber = buildInvoiceNumber(new Date(data.transactionDate));
+
+        const attachments: EmailAttachment[] = [];
+        if (grossAmount > 0) {
+            try {
+                const pdf = await generateInvoicePdf({
+                    invoiceNumber,
+                    date: data.transactionDate,
+                    customerName: data.firstName?.trim(),
+                    customerEmail: data.email,
+                    title: data.summaryTitle || data.subject,
+                    lines: data.summaryLines,
+                    grossAmount,
+                    currency,
+                });
+                attachments.push({
+                    filename: `${invoiceNumber}.pdf`,
+                    content: pdf,
+                    contentType: "application/pdf",
+                });
+            } catch (error) {
+                console.error("❌ Invoice PDF generation failed:", { invoiceNumber, error });
+            }
+        }
+
         const text = `
 Hi ${customerName},
 
 Your transaction with ${companyName} was completed successfully.
 
+Invoice number: ${invoiceNumber}
 ${data.summaryLines.join("\n")}
 ${data.amountLabel}: ${data.amountValue}
 Transaction date: ${formattedDate}
+${attachments.length ? `\nA PDF invoice (${invoiceNumber}.pdf) is attached to this email.` : ""}
 
 ${COMPANY_EMAIL ? `Support email: ${COMPANY_EMAIL}` : ""}
 ${COMPANY_PHONE ? `Phone: ${COMPANY_PHONE}` : ""}
@@ -198,6 +234,10 @@ ${companyName} Team
             <table style="width:100%; border-collapse:collapse; margin-bottom:24px;">
               <tbody>
                 <tr>
+                  <td style="padding:8px 0; font-size:14px; color:#666;">Invoice number</td>
+                  <td style="padding:8px 0; font-size:14px; text-align:right; font-weight:700;">${escapeHtml(invoiceNumber)}</td>
+                </tr>
+                <tr>
                   <td style="padding:8px 0; font-size:14px; color:#666;">${escapeHtml(data.amountLabel)}</td>
                   <td style="padding:8px 0; font-size:14px; text-align:right; font-weight:700;">${escapeHtml(data.amountValue)}</td>
                 </tr>
@@ -207,6 +247,14 @@ ${companyName} Team
                 </tr>
               </tbody>
             </table>
+
+            ${
+                attachments.length
+                    ? `<p style="font-size:13px; color:#555; margin:0 0 24px; padding:12px 16px; background:#eef6ff; border-radius:8px;">
+              📎 Your PDF invoice <strong>${escapeHtml(invoiceNumber)}.pdf</strong> is attached to this email.
+            </p>`
+                    : ""
+            }
 
             ${
                 COMPANY_EMAIL || COMPANY_PHONE || COMPANY_ADDRESS
@@ -240,7 +288,7 @@ ${companyName} Team
         </div>
         `;
 
-        return await sendEmail(data.email, data.subject, text, html);
+        return await sendEmail(data.email, data.subject, text, html, attachments);
     },
 
     async sendTemplatePurchaseConfirmationEmail(data: {
@@ -277,10 +325,18 @@ ${companyName} Team
             summaryLines,
             amountLabel: "Amount paid",
             amountValue: formatMoney(data.amountPaid),
+            amountNumeric: data.amountPaid,
             transactionDate: data.transactionDate,
         });
     },
 };
+
+/** Fallback for callers that only pass a preformatted money string. */
+function parseAmount(value: string): number {
+    const cleaned = String(value).replace(/[^0-9.,-]/g, "").replace(/,/g, "");
+    const parsed = Number.parseFloat(cleaned);
+    return Number.isFinite(parsed) ? parsed : 0;
+}
 
 function escapeHtml(value: string) {
     return String(value)

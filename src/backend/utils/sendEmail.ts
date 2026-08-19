@@ -1,27 +1,49 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 import { ENV } from "@/backend/config/env";
 
-const resend = new Resend(ENV.RESEND_API);
+export type EmailAttachment = {
+    filename: string;
+    content: Buffer | Uint8Array;
+    contentType?: string;
+};
+
+const transporter = nodemailer.createTransport({
+    host: ENV.SMTP_HOST,
+    port: Number(ENV.SMTP_PORT),
+    secure: ENV.SMTP_SECURE,
+    auth: {
+        user: ENV.SMTP_USER,
+        pass: ENV.SMTP_PASS,
+    },
+});
 
 export async function sendEmail(
     to: string,
     subject: string,
     text: string,
-    html?: string
+    html?: string,
+    attachments?: EmailAttachment[]
 ) {
     try {
-        const response = await resend.emails.send({
-            from: ENV.EMAIL_FROM,
+        const info = await transporter.sendMail({
+            from: ENV.EMAIL_FROM || ENV.SMTP_USER,
             to,
             subject,
             text: text || "",
             html: html || defaultTemplate(subject, text),
+            attachments: attachments?.map((attachment) => ({
+                filename: attachment.filename,
+                content: Buffer.isBuffer(attachment.content)
+                    ? attachment.content
+                    : Buffer.from(attachment.content),
+                contentType: attachment.contentType,
+            })),
         });
 
-        console.log("✅ Email sent via Resend:", response);
-        return response;
+        console.log("✅ Email sent via SMTP:", info.messageId);
+        return info;
     } catch (error) {
-        console.error("❌ Resend email failed:", error);
+        console.error("❌ SMTP email failed:", error);
         throw error;
     }
 }
@@ -35,14 +57,14 @@ function defaultTemplate(title: string, message: string) {
           ${message}
         </p>
         <div style="text-align:center; margin:30px 0;">
-          <a href="${ENV.APP_URL}/dashboard" 
+          <a href="${ENV.APP_URL}/dashboard"
              style="background:#007BFF; color:#fff; text-decoration:none; padding:12px 24px; border-radius:6px; font-weight:bold;">
              Go to Dashboard
           </a>
         </div>
         <hr style="margin:20px 0; border:none; border-top:1px solid #eee;" />
         <p style="font-size:14px; color:#777; text-align:center;">
-          © ${new Date().getFullYear()} Averis – All rights reserved.
+          © ${new Date().getFullYear()} ${ENV.EMAIL_FROM} – All rights reserved.
         </p>
       </div>
     </div>

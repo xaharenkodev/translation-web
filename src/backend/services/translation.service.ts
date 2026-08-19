@@ -226,6 +226,7 @@ export const translationService = {
                 ],
                 amountLabel: "Amount used",
                 amountValue: formatMoney(totalCost),
+                amountNumeric: totalCost,
                 transactionDate: order.createdAt || new Date(),
             });
         } catch (error) {

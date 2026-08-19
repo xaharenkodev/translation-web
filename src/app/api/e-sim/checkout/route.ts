@@ -51,6 +51,7 @@ export async function POST(req: NextRequest) {
                 ],
                 amountLabel: "Amount used",
                 amountValue: formatMoney(chargeAmount),
+                amountNumeric: chargeAmount,
                 transactionDate: order.createdAt || new Date(),
             });
         } catch (error) {

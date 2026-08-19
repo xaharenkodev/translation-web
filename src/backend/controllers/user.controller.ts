@@ -36,6 +36,7 @@ export const userController = {
                 ],
                 amountLabel: "Top-up amount",
                 amountValue: formatMoney(amount),
+                amountNumeric: amount,
                 transactionDate: new Date(),
             });
         } catch (error) {

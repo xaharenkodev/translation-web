@@ -347,6 +347,7 @@ export const universalService = {
                 ],
                 amountLabel: "Amount used",
                 amountValue: formatMoney(totalCost),
+                amountNumeric: totalCost,
                 transactionDate: plainOrder.createdAt || new Date(),
             });
         } catch (error) {
