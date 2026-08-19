@@ -3,6 +3,8 @@ import { TranslationOrder, TranslationOrderDocument } from "../models/translatio
 import { User } from "../models/user.model";
 import { transactionService } from "./transaction.service";
 import { emailService } from "./email.service";
+import { buildTranslationPdf } from "../pdf/translationPdf";
+import type { EmailAttachment } from "../utils/sendEmail";
 import OpenAI from "openai";
 import { ENV } from "../config/env";
 import mongoose from "mongoose";
@@ -210,6 +212,35 @@ export const translationService = {
             readyAt,
         });
 
+        // AI orders are ready immediately, so the finished translation is delivered
+        // with the confirmation email as a PDF. Specialist orders unlock later and
+        // are delivered separately once their window has passed.
+        let attachments: EmailAttachment[] | undefined;
+        if (!isSpecialist) {
+            try {
+                const pdf = await buildTranslationPdf({
+                    orderId: String(order._id),
+                    planTitle: plan.title,
+                    sourceLanguage: order.sourceLanguage,
+                    targetLanguage: order.targetLanguage,
+                    subjectLabel:
+                        TRANSLATION_SUBJECTS.find((s) => s.id === subject)?.label || "General",
+                    wordCount,
+                    fileName: order.fileName,
+                    createdAt: order.createdAt || new Date(),
+                    translatedText,
+                });
+                attachments = [pdf];
+            } catch (error) {
+                // Never fail the order because the attachment could not be rendered —
+                // the translation is still available in the customer's account.
+                console.error("❌ Translation PDF generation failed:", {
+                    orderId: String(order._id),
+                    error,
+                });
+            }
+        }
+
         try {
             await emailService.sendOrderConfirmationEmail({
                 email: user.email,
@@ -222,12 +253,16 @@ export const translationService = {
                     `Word count: ${wordCount}`,
                     isSpecialist
                         ? `Delivery: within 12–24 hours (ready by ${readyAt.toUTCString()})`
-                        : "Delivery: instant — your translation is ready in your account",
+                        : "Delivery: instant — the translated PDF is attached to this email",
                 ],
                 amountLabel: "Amount used",
                 amountValue: formatMoney(totalCost),
                 amountNumeric: totalCost,
                 transactionDate: order.createdAt || new Date(),
+                attachments,
+                attachmentNote: attachments
+                    ? "Your finished translation is attached to this email as a PDF. It is also available in your account."
+                    : undefined,
             });
         } catch (error) {
             console.error("❌ Translation confirmation email failed:", {

@@ -142,6 +142,10 @@ ${companyName} Team
         amountNumeric?: number;
         currency?: SupportedCurrency;
         transactionDate: Date | string;
+        /** Files delivered with the email, e.g. the finished translation as a PDF. */
+        attachments?: EmailAttachment[];
+        /** Sentence explaining what is attached, shown above the order summary. */
+        attachmentNote?: string;
     }) {
         const companyName = COMPANY_NAME || "Website";
         const customerName = data.firstName?.trim() || "there";
@@ -160,8 +164,11 @@ ${companyName} Team
                 : parseAmount(data.amountValue);
 
         const invoiceNumber = buildInvoiceNumber(new Date(data.transactionDate));
+        let invoiceAttached = false;
 
-        const attachments: EmailAttachment[] = [];
+        // Caller-supplied deliverables (e.g. the finished translation) come first,
+        // with the invoice appended after them.
+        const attachments: EmailAttachment[] = [...(data.attachments || [])];
         if (grossAmount > 0) {
             try {
                 const pdf = await generateInvoicePdf({
@@ -179,6 +186,7 @@ ${companyName} Team
                     content: pdf,
                     contentType: "application/pdf",
                 });
+                invoiceAttached = true;
             } catch (error) {
                 console.error("❌ Invoice PDF generation failed:", { invoiceNumber, error });
             }
@@ -188,12 +196,12 @@ ${companyName} Team
 Hi ${customerName},
 
 Your transaction with ${companyName} was completed successfully.
-
+${data.attachmentNote ? `\n${data.attachmentNote}\n` : ""}
 Invoice number: ${invoiceNumber}
 ${data.summaryLines.join("\n")}
 ${data.amountLabel}: ${data.amountValue}
 Transaction date: ${formattedDate}
-${attachments.length ? `\nA PDF invoice (${invoiceNumber}.pdf) is attached to this email.` : ""}
+${invoiceAttached ? `\nA PDF invoice (${invoiceNumber}.pdf) is attached to this email.` : ""}
 
 ${COMPANY_EMAIL ? `Support email: ${COMPANY_EMAIL}` : ""}
 ${COMPANY_PHONE ? `Phone: ${COMPANY_PHONE}` : ""}
@@ -216,6 +224,16 @@ ${companyName} Team
             <p style="font-size:16px; line-height:1.6;">
               Your transaction with <strong>${escapeHtml(companyName)}</strong> was completed successfully.
             </p>
+
+            ${
+                data.attachmentNote
+                    ? `
+            <div style="margin:24px 0; padding:16px; background:#eef7ff; border:1px solid #cfe6ff; border-radius:8px;">
+              <p style="margin:0; font-size:15px; line-height:1.6;">📎 ${escapeHtml(data.attachmentNote)}</p>
+            </div>
+            `
+                    : ""
+            }
 
             <div style="margin:24px 0; padding:18px; background:#f8fbff; border-radius:8px;">
               <p style="margin:0 0 12px; font-size:15px; font-weight:700;">
@@ -249,7 +267,7 @@ ${companyName} Team
             </table>
 
             ${
-                attachments.length
+                invoiceAttached
                     ? `<p style="font-size:13px; color:#555; margin:0 0 24px; padding:12px 16px; background:#eef6ff; border-radius:8px;">
               📎 Your PDF invoice <strong>${escapeHtml(invoiceNumber)}.pdf</strong> is attached to this email.
             </p>`
