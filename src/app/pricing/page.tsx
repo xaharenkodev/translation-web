@@ -41,7 +41,7 @@ export default function PricingPage() {
                     {
                         question: "How are prices in EUR and USD calculated?",
                         answer:
-                            "GBP is the base currency. EUR and USD prices are calculated from the GBP price using a fixed reference rate we maintain, with no conversion fee or surcharge added by us. Your bank or card issuer may apply its own rate and fees. See the Payment and Account Balance Policy for details.",
+                            "GBP is the base currency. EUR and USD prices are calculated from the GBP price using a fixed reference rate we maintain, with no conversion fee or surcharge added by us. Your bank or card issuer may apply its own rate and fees. See the Refund, Cancellation and Balance Policy for details.",
                     },
                     {
                         question: "When is my balance available?",

@@ -265,8 +265,8 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
                     <p className={styles.helper}>
                         Account Balance is non-transferable store credit usable only on this website. It is not
                         cryptocurrency, is not tradable and is not redeemable for cash. See the{" "}
-                        <a href="/payment-policy" target="_blank" rel="noreferrer">
-                            Payment and Account Balance Policy
+                        <a href="/refund-policy" target="_blank" rel="noreferrer">
+                            Refund, Cancellation and Balance Policy
                         </a>{" "}
                         for how currency conversion rates are calculated.
                     </p>

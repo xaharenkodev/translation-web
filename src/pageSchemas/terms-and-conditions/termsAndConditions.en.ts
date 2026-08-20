@@ -1,23 +1,14 @@
 import {PageSchema} from "@/components/constructor/page-render/types";
-import {
-    COMPANY_NAME,
-    COMPANY_ADDRESS,
-    COMPANY_LEGAL_NAME,
-    COMPANY_NUMBER,
-    COMPANY_EMAIL,
-    COMPANY_DOMAIN,
-    COMPANY_WEBSITE,
-} from "@/resources/constants";
+import {COMPANY_NAME} from "@/resources/constants";
 
 const termsAndConditionsEn: PageSchema = {
     meta: {
         title: `Terms and Conditions – ${COMPANY_NAME}`,
-        description:
-            `Terms and Conditions governing accounts, Account Balance top-ups, translation orders, delivery of completed translations and refunds on ${COMPANY_NAME}.`,
+        description: "These Terms govern accounts, prepaid balances, AI Translation, Human Translation and all related use of QueTranslations.",
         canonical: "/terms-and-conditions",
         ogImage: {
             title: `Terms and Conditions – ${COMPANY_NAME}`,
-            description: `Terms and Conditions governing accounts, Account Balance top-ups, translation orders, delivery of completed translations and refunds on ${COMPANY_NAME}.`,
+            description: "These Terms govern accounts, prepaid balances, AI Translation, Human Translation and all related use of QueTranslations.",
             bg: "#170B33",
             color: "#ffffff",
         },
@@ -26,483 +17,333 @@ const termsAndConditionsEn: PageSchema = {
         {
             type: "text",
             title: "Terms and Conditions",
-            description: "Effective date: 23 July 2026",
+            description: "Last updated: 19 August 2026",
         },
         {
             type: "text",
-            title: "1. About These Terms",
-            description: `These Terms and Conditions (“Terms”) govern your access to and use of the website located at ${COMPANY_WEBSITE} (the “Website”), including the creation and use of an account, Account Balance top-ups, orders, purchases, delivery and use of digital website themes, templates and related digital content.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn these Terms, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation accessing the Website, creating an account or placing an order.\n\nPlease read these Terms carefully before using the Website or purchasing any Product. By creating an account, topping up your Account Balance, placing an order or otherwise confirming your acceptance of these Terms, you agree to be legally bound by them.\n\nIf you do not agree to these Terms, you must not place an order or use any part of the Website that requires acceptance of these Terms.`,
+            description: "These Terms govern accounts, prepaid balances, AI Translation, Human Translation and all related use of QueTranslations.",
         },
         {
             type: "text",
-            title: "2. Related Policies",
-            description:
-                "These Terms should be read together with the following policies, where applicable:",
-            bullets: [
-                "Digital Product Licence Agreement;",
-                "Payment and Account Balance Policy;",
-                "Refund and Cancellation Policy;",
-                "Digital Delivery and Download Policy;",
-                "Support Policy;",
-                "Privacy Policy;",
-                "Cookie Policy; and",
-                "Intellectual Property and Takedown Policy.",
-            ],
+            title: "About These Terms",
+            description: "Operator. The QueTranslations website and translation services are operated by QUENTICS OÜ, an Estonian private limited company with registration number 17569282 and registered address at Rotermanni tn 6, Kesklinna linnaosa, 10111 Tallinn, Harju maakond, Estonia (\"QueTranslations\", \"we\", \"us\" or \"our\").",
         },
         {
             type: "text",
-            description:
-                `These documents form part of the agreement between you and ${COMPANY_NAME}. If there is a conflict between these Terms and a policy specifically governing a particular matter, the more specific policy will apply to that matter.`,
+            description: "Agreement. These Terms and Conditions govern access to quetranslations.com, user accounts, account balances, orders, AI Translation, Human Translation and related support. By creating an account, adding funds, submitting an order or otherwise using the Services, the user agrees to these Terms and the policies incorporated by reference.",
         },
         {
             type: "text",
-            title: "3. Definitions",
-            description:
-                "For the purposes of these Terms:\n\n“Account” means a registered user account created on the Website.\n\n“Account Balance” means store credit recorded in your Account and available to purchase eligible Products on the Website.\n\n“Author” means the creator, developer, publisher or relevant rights holder of a Product.\n\n“Business User” means a person or organisation using the Website wholly or mainly for purposes relating to a trade, business, profession or commercial activity.\n\n“Consumer” means an individual acting wholly or mainly outside their trade, business, craft or profession.\n\n“Digital Content” means data produced and supplied in digital form, including themes, templates, files, archives, documentation, updates and activation information.\n\n“Licence” means the limited permission granted to you to use a Product in accordance with the applicable Digital Product Licence Agreement and any Product-specific licence terms.\n\n“Order” means a request submitted through the Website to purchase a Product.\n\n“Product” means a digital website theme, template, design, layout, associated file, activation credential or other Digital Content made available through the Website.",
+            description: "Priority of mandatory law. Nothing in these Terms excludes or restricts rights that cannot lawfully be excluded, including mandatory consumer rights applicable in the user’s country of residence.",
         },
         {
             type: "text",
-            title: "4. Nature of the Marketplace",
-            description: `${COMPANY_NAME} provides an online catalogue and distribution platform through which users can obtain licensed digital website themes, templates and related Products.\n\nSome Products are created and owned by third-party Authors. ${COMPANY_NAME} makes such Products available under commercial, distribution or licensing arrangements with the relevant Authors or rights holders.\n\nUnless expressly stated otherwise on a Product page, your purchase contract is with ${COMPANY_LEGAL_NAME}. The relevant Author retains ownership of the intellectual property rights in the Product.\n\nPurchasing a Product does not transfer ownership of the Product, its source code, design, trademarks or other intellectual property to you. You receive only the rights expressly granted under the applicable Licence.`,
+            title: "Definitions",
+            description: "Account. An individual profile used to access the Services, store files and translations, maintain a Balance and view order history.",
         },
         {
             type: "text",
-            title: "5. Eligibility",
-            description:
-                "You must be at least 18 years old and legally capable of entering into a binding contract to create an Account, top up an Account Balance or place an Order.\n\nIf you use the Website on behalf of a company or another organisation, you confirm that you have authority to bind that organisation to these Terms.\n\nYou must not use the Website if applicable law prohibits you from receiving or using the Products or services offered through it.",
+            description: "AI Translation. A translation produced primarily through automated artificial-intelligence models and delivered without human review unless a separate Human Translation service is purchased.",
         },
         {
             type: "text",
-            title: "6. Accounts",
-            description:
-                "Certain Website features, including Account Balance top-ups, purchases and access to order information, may require an Account.\n\nWhen creating or using an Account, you must:",
-            bullets: [
-                "provide accurate, complete and current information;",
-                "maintain a valid email address;",
-                "keep your login credentials confidential;",
-                "promptly update information that changes;",
-                "prevent unauthorised access to your Account; and",
-                "notify us promptly if you suspect unauthorised access or a security breach.",
-            ],
+            description: "Human Translation. A translation produced or substantively reviewed by a human translator engaged by QueTranslations and located within the European Economic Area.",
         },
         {
             type: "text",
-            description:
-                "You are responsible for activity conducted through your Account unless that activity results from a failure by us to use reasonable security measures.\n\nAccounts are personal to the registered user and must not be sold, transferred, shared or made available to another person without our written permission.\n\nWe may require reasonable verification information before processing an Order, changing Account information, restoring access or responding to a security concern.",
+            description: "Balance. Prepaid value credited to an Account and usable only to purchase QueTranslations services. A Balance is not a bank account, deposit, payment account or general-purpose payment instrument.",
         },
         {
             type: "text",
-            title: "7. Product Information",
-            description:
-                "We take reasonable care to ensure that Product descriptions, previews, prices, compatibility information and other material details are accurate.\n\nBefore placing an Order, you are responsible for reviewing:",
-            bullets: [
-                "the Product description and preview;",
-                "supported platforms and software versions;",
-                "technical and hosting requirements;",
-                "included files and features;",
-                "Licence restrictions;",
-                "support and update information; and",
-                "any third-party software or services required to use the Product.",
-            ],
+            description: "Customer Content. Any text, document, image, file, instruction, personal data or other material submitted by or for a user, together with any content generated as part of an order.",
         },
         {
             type: "text",
-            description:
-                "Images, demonstrations and previews are provided to illustrate the Product. Minor visual differences may arise from browser settings, devices, software versions, plugins, content, configuration or customisation.\n\nA Product may require separately purchased services or software, including hosting, a domain name, WordPress, Shopify, plugins, applications or other third-party services. These are not included unless the Product description expressly states otherwise.\n\nIf a Product page contains a material error, please contact us before purchasing.",
+            description: "Order. A request for a selected translation service confirmed after the applicable price is deducted from the user’s Balance.",
         },
         {
             type: "text",
-            title: "8. Prices and Taxes",
-            description:
-                "Prices are displayed in pounds sterling (GBP) unless another currency is expressly shown.\n\nThe price payable is the price displayed at checkout when you submit your Order. Where applicable, the checkout will identify any taxes, fees or other charges included in or added to the price.\n\nWe may change Product prices and Account Balance top-up options at any time. Price changes do not affect Orders already accepted by us.\n\nIf an obvious pricing or technical error affects an Order, we may contact you to offer the Product at the correct price or cancel the Order and restore or refund the amount paid.",
+            description: "User. Any person or organisation accessing or using the Services, including a consumer and a business customer.",
         },
         {
             type: "text",
-            title: "9. Account Balance",
-            description:
-                "You may purchase Account Balance through the top-up options offered on the Website. Available options may include fixed and custom top-up amounts.\n\nAccount Balance:",
-            bullets: [
-                "may be used only to purchase eligible Products through the Website;",
-                "is not a bank account, deposit or investment;",
-                "does not earn interest;",
-                "must not be sold or transferred to another user;",
-                "cannot ordinarily be withdrawn or exchanged for cash, except where required by law or expressly permitted by our Refund and Cancellation Policy; and",
-                "may be adjusted where necessary to correct an error, process an authorised refund or reverse a fraudulent or disputed transaction.",
-            ],
+            title: "Eligibility and Accounts",
+            description: "Eligibility. A user must be at least 18 years old and legally capable of entering into a binding agreement. A person using the Services for an organisation confirms that they are authorised to bind that organisation.",
         },
         {
             type: "text",
-            description:
-                "Any expiry or special condition applicable to promotional credit must be clearly disclosed when that credit is issued. Purchased Account Balance will not expire solely because of the passage of time unless an expiry condition was clearly disclosed before the top-up or is required by law.\n\nThe Payment and Account Balance Policy contains additional rules governing top-ups, deductions, corrections, refunds, payment disputes and Account closure.",
+            description: "Account information. Users must provide accurate, current and complete account information and keep it updated. Accounts may not be sold, transferred, shared in a manner that compromises security, or created using another person’s identity without lawful authority.",
         },
         {
             type: "text",
-            title: "10. Placing an Order",
-            description:
-                "Products may be purchased using an available Account Balance or another payment method offered at checkout.\n\nBy placing an Order, you confirm that:",
-            bullets: [
-                "the information provided is accurate;",
-                "you are authorised to use the selected payment method or Account Balance;",
-                "you have reviewed the Product description and technical requirements;",
-                "the Product is suitable for your intended platform and use;",
-                "you agree to the applicable Licence and policies; and",
-                "you authorise us to deduct the stated amount.",
-            ],
+            description: "Account security. Users are responsible for protecting their credentials and for activity performed through their Accounts. Suspected unauthorised access must be reported promptly to info@quetranslations.com.",
         },
         {
             type: "text",
-            description:
-                "An Order submitted through the Website is an offer to purchase the selected Product. An automated Order acknowledgement confirms that we have received your Order but does not necessarily mean that we have accepted it.\n\nA contract for the Product is formed when we accept the Order by sending the Product, download files, access instructions or activation information to your email address, or when we send a separate confirmation that the Order has been accepted.\n\nWe may decline or cancel an Order before acceptance where:",
-            bullets: [
-                "the Product is unavailable;",
-                "payment cannot be authorised;",
-                "additional verification is reasonably required;",
-                "the Order or Account appears fraudulent or unlawful;",
-                "the price or Product information contains an obvious error;",
-                "fulfilling the Order would infringe third-party rights or applicable law; or",
-                "you have materially breached these Terms.",
-            ],
+            description: "No subscriptions. The Services are offered through individual Orders funded from the Balance. QueTranslations does not charge recurring subscription fees unless a separate written agreement expressly provides otherwise.",
         },
         {
             type: "text",
-            description:
-                "If we cancel an Order after taking payment or deducting Account Balance, the corresponding amount will be refunded or restored, subject to any reasonable fraud or payment investigation permitted by law.",
+            title: "Translation Services",
+            description: "User selection. Before confirming an Order, the user selects either AI Translation or Human Translation. The selected service type, source and target language, calculated volume, price and estimated delivery time are shown or otherwise communicated before confirmation.",
         },
         {
             type: "text",
-            title: "11. Digital Delivery",
-            description:
-                "Products are delivered electronically. No physical goods will be shipped.\n\nFollowing successful checkout and payment confirmation, a member of our team will contact you using the email address associated with your Order. The purchased Product and the relevant activation details or access instructions will be sent by email.\n\nWe aim to complete delivery within 24 hours after successful checkout and payment confirmation. If additional information or verification is required before delivery, we will contact you using the email address provided with the Order.\n\nYou are responsible for:",
-            bullets: [
-                "providing a complete and accurate email address;",
-                "maintaining access to that email account;",
-                "checking spam, junk and filtering folders;",
-                `ensuring that messages and attachments from ${COMPANY_NAME} can be received; and`,
-                "contacting us if delivery has not been received within 24 hours.",
-            ],
+            description: "AI Translation. AI Translation is automated, may be delivered within minutes and may contain omissions, mistranslations, formatting changes, inconsistent terminology or context errors. It is not represented as equivalent to professional human translation and is not human-reviewed unless expressly stated.",
         },
         {
             type: "text",
-            description:
-                "Delivery will normally be treated as completed when the email containing the Product, access link, activation information or other delivery instructions has been sent to the email address provided with the Order, provided that we have not received a delivery failure notification.\n\nThis does not affect your rights if the Product was not delivered or could not reasonably be accessed.\n\nYou must keep activation details, Licence keys and other access credentials secure. They must not be published, resold, shared or provided to another person except where expressly permitted by the applicable Licence.\n\nAdditional delivery rules are contained in the Digital Delivery and Download Policy.",
+            description: "Human Translation. Human Translation is performed by translators located within the EEA. QueTranslations may assign an Order to an appropriate translator and may use secure internal tools to support formatting, terminology management and quality control.",
         },
         {
             type: "text",
-            title: "12. Immediate Supply of Digital Content",
-            description:
-                "Where you purchase as a Consumer and ask us to provide Digital Content during an applicable statutory cancellation period, we may ask you to:",
-            bullets: [
-                "expressly request that supply begins before the cancellation period ends; and",
-                "acknowledge that your ordinary right to cancel may be lost once supply of the Digital Content begins.",
-            ],
+            description: "Excluded professional services. QueTranslations does not provide certified, sworn, notarised, legal or medical translation services. Deliverables must not be represented as certified or relied on as legal advice, medical advice, a clinical translation, an official filing or a substitute for review by an appropriately qualified professional.",
         },
         {
             type: "text",
-            description:
-                "Where the required consent and acknowledgement have been obtained, your ordinary cancellation right may end when we begin supplying the Product by sending the files, access information or activation details.\n\nThis provision does not limit any statutory rights relating to Digital Content that is faulty, materially not as described or otherwise non-compliant with applicable law.",
+            description: "Language and format availability. Available language pairs, file formats and technical limits are those displayed through the Services at the time of an Order. QueTranslations may decline unsupported, corrupted, illegible or technically unsafe files.",
         },
         {
             type: "text",
-            title: "13. Product Licences",
-            description:
-                "Every purchase is subject to the Digital Product Licence Agreement and any Product-specific Licence terms displayed before purchase or included with the Product.\n\nUnless expressly stated otherwise, a Licence is:",
-            bullets: [
-                "limited;",
-                "non-exclusive;",
-                "non-transferable;",
-                "granted for lawful use only; and",
-                "restricted to the number of websites, stores, projects or end products specified for the relevant Product.",
-            ],
+            title: "Orders and Pricing",
+            description: "Order formation. An Order becomes binding when the user confirms the displayed service details, the applicable amount is deducted from the Balance and QueTranslations issues an on-screen or electronic confirmation. Adding funds to the Balance does not itself create a translation Order.",
         },
         {
             type: "text",
-            description:
-                "You must not:",
-            bullets: [
-                "resell, redistribute or sublicense the Product as a standalone product;",
-                "share source files, archives, Licence keys or activation credentials;",
-                "upload the Product to a public repository, file-sharing service or download directory;",
-                "falsely claim ownership or authorship;",
-                "remove copyright, trademark or attribution notices where their removal is prohibited;",
-                "use the Product beyond the permitted number of websites or projects;",
-                "use the Product to create a directly competing template or stock product; or",
-                "use the Product in violation of law or third-party rights.",
-            ],
+            description: "Price calculation. Prices may be calculated by source-word count, language pair, selected service, urgency, formatting requirements or other factors disclosed before confirmation. The system-calculated source-word count controls unless it is affected by an obvious technical or extraction error.",
         },
         {
             type: "text",
-            description:
-                "Different terms may apply to open-source components, third-party assets or software distributed under the GNU General Public Licence or another open-source licence. Where applicable, those terms will be identified in the Product files, documentation or Product-specific Licence information.",
+            description: "Material discrepancies. If an apparent file or word-count error materially affects price or timing, QueTranslations may pause the Order and request approval of an adjusted quotation. If the user does not accept the adjustment, the unused amount allocated to that Order will be restored to the Balance.",
         },
         {
             type: "text",
-            title: "14. Updates and Availability",
-            description:
-                "Whether updates are included depends on the Product description, applicable Licence and Support Policy.\n\nUnless expressly promised for a defined period, we do not guarantee that:",
-            bullets: [
-                "every Product will receive future updates;",
-                "a Product will remain compatible with every future version of WordPress, Shopify, a browser, plugin or other third-party platform;",
-                "an Author will continue developing a Product indefinitely; or",
-                "a Product will remain permanently available through the Website.",
-            ],
+            description: "Currencies and taxes. Funds may be added and services purchased in EUR, GBP or USD. Any applicable VAT or other tax will be shown before the relevant transaction where required. A card issuer or bank may apply its own conversion rate or fees, which are outside QueTranslations’ control.",
         },
         {
             type: "text",
-            description:
-                "You should download and securely retain the Product files and documentation supplied to you.\n\nIf a Product is removed due to a legal, security or rights-related concern, we may suspend further access or activation where reasonably necessary. Any available remedy will be determined under applicable law and the Refund and Cancellation Policy.",
+            title: "Balance and Payments",
+            description: "Funding. The Balance may be funded using supported Visa or Mastercard cards through a third-party payment processor. QueTranslations does not require users to provide full card details directly to QueTranslations where the payment processor collects them.",
         },
         {
             type: "text",
-            title: "15. Support",
-            description:
-                `Support relating to Accounts, Account Balance top-ups, Orders, delivery and access is provided by ${COMPANY_NAME}.\n\nProduct-specific technical support is provided only to the extent described on the Product page or in the Support Policy.\n\nUnless expressly included, support does not include:`,
-            bullets: [
-                "hosting or server administration;",
-                "installation or deployment;",
-                "website design or development services;",
-                "customisation or modification;",
-                "training in WordPress, Shopify or other third-party platforms;",
-                "assistance with unrelated third-party products;",
-                "recovery of a website damaged by third-party software or user modifications; or",
-                "creation of new features.",
-            ],
+            description: "Use of Balance. Paid Balance may be used only for QueTranslations services, does not earn interest, is non-transferable between users and does not expire merely because it remains unused. Any promotional or bonus credit, if offered, is not paid money, has no cash value and is not refundable unless expressly stated otherwise.",
         },
         {
             type: "text",
-            description:
-                "We may request reasonable diagnostic information before investigating a technical issue.",
+            description: "Unused Balance refunds. A user may request a refund of unused paid Balance at any time by emailing info@quetranslations.com. Subject to reasonable identity, fraud and payment verification, QueTranslations will initiate the refund to the original payment method in the original transaction currency within 14 days and will not charge its own refund fee.",
         },
         {
             type: "text",
-            title: "16. Refunds and Cancellations",
-            description:
-                "Refunds and cancellations are governed by the Refund and Cancellation Policy and applicable law.\n\nBecause Products are digital and can be copied after delivery, a purchase will not normally qualify for a refund merely because:",
-            bullets: [
-                "you changed your mind;",
-                "you purchased the wrong Product;",
-                "you lack the technical knowledge required to use it;",
-                "you do not have the required platform, software or hosting environment;",
-                "you no longer need the Product; or",
-                "the Product is incompatible with software or a version that was not listed as supported.",
-            ],
+            description: "External charges. Card issuers, banks or payment networks may apply external charges, processing delays or exchange-rate adjustments. QueTranslations is not responsible for such third-party amounts and does not guarantee that the amount received after currency conversion will equal an earlier converted amount.",
         },
         {
             type: "text",
-            description:
-                "A refund may be considered where, for example:",
-            bullets: [
-                "the same Product or top-up was charged more than once;",
-                "the Product was not delivered;",
-                "the files are materially defective;",
-                "the Product is materially different from its description; or",
-                "a confirmed technical defect prevents normal use and cannot be remedied within a reasonable time.",
-            ],
+            description: "Reversals and chargebacks. A payment reversal, failed payment or chargeback may result in a corresponding Balance adjustment and temporary Account restriction. Users should contact QueTranslations before initiating a chargeback so that the issue can be investigated.",
         },
         {
             type: "text",
-            description:
-                "Nothing in these Terms or the Refund and Cancellation Policy excludes rights that cannot legally be excluded.\n\nIf a Product refund is issued, the associated Licence and right to use the Product end. You must stop using the Product and delete all files, copies and activation information in your possession or control, unless applicable law requires otherwise.",
+            title: "Delivery",
+            description: "AI timing. AI Translation is normally delivered within several minutes, depending on file size, format, system load and technical complexity. This is an estimate rather than a guaranteed deadline.",
         },
         {
             type: "text",
-            title: "17. Payment Disputes and Chargebacks",
-            description:
-                "If you believe a payment was unauthorised or incorrect, please contact us before initiating a chargeback so that we have an opportunity to investigate and resolve the issue.\n\nWe may suspend the affected Account, Account Balance or Product access while a payment dispute, reversal, fraud investigation or chargeback is pending.\n\nSubmitting a knowingly false, misleading or abusive payment dispute may constitute a material breach of these Terms.\n\nNothing in this section prevents you from exercising lawful rights through your bank, card provider, payment provider or applicable consumer protection procedure.",
+            description: "Human timing. Human Translation Orders containing up to 5,000 source words are normally delivered within 24 to 48 hours, depending on volume, language pair, complexity, file quality and translator availability.",
         },
         {
             type: "text",
-            title: "18. Acceptable Use",
-            description:
-                "You must not use the Website, an Account or a Product to:",
-            bullets: [
-                "engage in unlawful, fraudulent or deceptive activity;",
-                "infringe intellectual property, privacy or other rights;",
-                "distribute malware, malicious code or harmful material;",
-                "obtain unauthorised access to systems, Accounts or data;",
-                "interfere with the Website’s security or operation;",
-                "scrape, harvest or systematically extract Website data without permission;",
-                "circumvent Licence restrictions or activation controls;",
-                "share or commercially exploit another user’s Account;",
-                "manipulate payments, Account Balance, reviews or Website functionality;",
-                "impersonate another person or misrepresent your affiliation; or",
-                "assist another person in carrying out any prohibited activity.",
-            ],
+            description: "Larger Orders. For Human Translation exceeding 5,000 source words, a separate estimated delivery time will be displayed or communicated before the user confirms the Order. QueTranslations is not required to complete such an Order within the standard 24-to-48-hour period.",
         },
         {
             type: "text",
-            description:
-                "We may take reasonable technical and legal measures to prevent abuse, fraud, unauthorised distribution and Licence violations.",
+            description: "Dependencies. Delivery estimates assume that Customer Content is complete, legible and technically usable and that the user responds promptly to clarification requests. Delays caused by missing instructions, inaccessible files, user changes, force majeure or third-party infrastructure extend the estimate reasonably.",
         },
         {
             type: "text",
-            title: "19. Intellectual Property",
-            description: `The Website, including its branding, design, text, graphics, software, databases and original content, is owned by or licensed to ${COMPANY_LEGAL_NAME} and is protected by intellectual property laws.\n\nProducts and Product-related trademarks may be owned by their respective Authors or other rights holders. Their appearance on the Website does not transfer ownership to ${COMPANY_NAME} or to the purchaser.\n\nYou may use Website content and Products only as expressly permitted by these Terms and the applicable Licence.\n\nIf you believe that material available through the Website infringes your intellectual property rights, contact ${COMPANY_EMAIL} with:`,
-            bullets: [
-                "identification of the protected work;",
-                "identification and location of the allegedly infringing material;",
-                "your name and contact information;",
-                "evidence of your ownership or authority to act;",
-                "an explanation of the alleged infringement; and",
-                "a statement confirming that the information supplied is accurate and submitted in good faith.",
-            ],
+            description: "Method of delivery. Translations are delivered electronically through the Account, by email or by another digital method indicated during the Order process. Users are responsible for downloading and reviewing deliverables within a reasonable period.",
         },
         {
             type: "text",
-            description:
-                "We may remove or restrict access to disputed material while investigating a credible complaint.",
+            title: "Quality, Revisions and Complaints",
+            description: "Review. Users should review a delivered translation promptly and provide a clear description of any claimed error, the relevant source passage and the requested correction.",
         },
         {
             type: "text",
-            title: "20. Third-Party Platforms and Services",
-            description:
-                `Products may be designed to operate with third-party platforms such as WordPress, WooCommerce, Shopify, Elementor or other software and services.\n\nThose platforms are operated independently and are subject to their own terms, licences, technical requirements and privacy practices.\n\nUnless expressly stated, ${COMPANY_NAME} is not affiliated with, endorsed by or responsible for any third-party platform. We are not responsible for changes made by third parties that are outside our reasonable control, although your statutory rights relating to the Product remain unaffected.`,
+            description: "Human Translation corrections. For a demonstrable mistranslation, omission or failure to follow the instructions accepted with a Human Translation Order, QueTranslations will provide a reasonable correction without additional charge. New text, changed instructions, stylistic preferences not stated in the original Order and expanded scope may require a new Order.",
         },
         {
             type: "text",
-            title: "21. Suspension and Termination",
-            description:
-                "We may suspend or restrict an Account, Order, Account Balance or access to Website services where reasonably necessary to:",
-            bullets: [
-                "protect the Website or other users;",
-                "investigate suspected fraud or unauthorised access;",
-                "respond to a payment dispute;",
-                "comply with law or a lawful authority request;",
-                "protect intellectual property rights; or",
-                "address a material breach of these Terms.",
-            ],
+            description: "AI Translation issues. Because AI Translation is automated, linguistic preferences or ordinary model limitations do not by themselves establish a service defect. If an AI Order fails technically, produces an incomplete file or materially departs from the selected source and target language, QueTranslations may rerun the translation, restore the relevant amount to the Balance or issue a refund as appropriate.",
         },
         {
             type: "text",
-            description:
-                "Where reasonably possible, we will explain the reason and provide an opportunity to resolve the issue.\n\nWe may terminate an Account for a serious or repeated breach. Termination does not remove any payment obligation, Licence restriction or liability that arose before termination.\n\nThe treatment of unused purchased Account Balance following Account closure will be determined under the Payment and Account Balance Policy, the reason for closure and applicable law.",
+            description: "Complaint timing. For efficient investigation, users are encouraged to notify QueTranslations within seven days after delivery. This operational period does not shorten any longer mandatory period for consumer claims.",
         },
         {
             type: "text",
-            title: "22. Website Availability",
-            description:
-                "We aim to keep the Website available and secure but do not guarantee uninterrupted or error-free operation.\n\nWe may temporarily suspend or restrict the Website for maintenance, security, updates, capacity management or circumstances outside our reasonable control.\n\nWe are not responsible for a delay or failure caused by events outside our reasonable control, provided that we take reasonable steps to reduce the effect of the delay and resume performance.",
+            description: "Written response. Written consumer complaints sent to info@quetranslations.com will be reviewed and answered within 15 days, unless a different mandatory period applies or additional information is reasonably required.",
         },
         {
             type: "text",
-            title: "23. Our Responsibility to Consumers",
-            description:
-                "If you are a Consumer, we are responsible for losses that are a foreseeable result of our breach of these Terms or failure to use reasonable care and skill.\n\nWe are not responsible for losses that were not reasonably foreseeable when the contract was formed.\n\nProducts are supplied for personal and permitted professional project use. If you use a Product for a commercial purpose, we are not responsible to you as a Consumer for business losses, including loss of profit, revenue, business opportunity, goodwill or anticipated savings.\n\nNothing in these Terms excludes or limits liability where doing so would be unlawful, including liability for:",
-            bullets: [
-                "death or personal injury caused by negligence;",
-                "fraud or fraudulent misrepresentation;",
-                "breach of rights that cannot legally be excluded; or",
-                "defective Digital Content where applicable law provides a mandatory remedy.",
-            ],
+            title: "Cancellation and Consumer Withdrawal",
+            description: "Immediate performance. Because translation begins immediately after payment from the Balance, a consumer will be asked to expressly request performance during the statutory withdrawal period and acknowledge that the right of withdrawal is lost once the selected service has been fully performed.",
         },
         {
             type: "text",
-            title: "24. Our Responsibility to Business Users",
-            description:
-                "If you are a Business User, to the fullest extent permitted by law:",
-            bullets: [
-                "the Website and Products are provided subject to the express terms stated in these Terms, the Product description and the applicable Licence;",
-                "implied warranties and conditions are excluded where legally permitted;",
-                "we are not liable for indirect or consequential loss;",
-                "we are not liable for loss of profit, revenue, contracts, business opportunity, goodwill, anticipated savings or data; and",
-                "our total aggregate liability arising from a Product or Order will not exceed the amount paid to us for the Product or Order giving rise to the claim.",
-            ],
+            description: "AI Orders. Where AI Translation has been fully performed and delivered after the consumer’s prior express request and legally required acknowledgement, the consumer may lose the statutory right of withdrawal to the extent permitted by applicable law.",
         },
         {
             type: "text",
-            description:
-                "Nothing in this section excludes or limits liability for death or personal injury caused by negligence, fraud, fraudulent misrepresentation or any other liability that cannot lawfully be excluded.",
+            description: "Human Orders before completion. If a consumer validly withdraws after requesting immediate performance but before Human Translation is fully completed, the consumer may be required to pay an amount proportionate to the work provided before QueTranslations received the withdrawal notice.",
         },
         {
             type: "text",
-            title: "25. Business User Indemnity",
-            description: `If you are a Business User, you agree to indemnify ${COMPANY_LEGAL_NAME} against reasonable losses, liabilities, damages and costs arising directly from:`,
-            bullets: [
-                "your unlawful use or redistribution of a Product;",
-                "your material breach of the applicable Licence;",
-                "content or materials you add to a Product that infringe third-party rights; or",
-                "your fraudulent or wilful misuse of the Website.",
-            ],
+            description: "Completed services. Once a service has been fully performed with the consumer’s prior express consent and acknowledgement, cancellation for change of mind is not available to the extent permitted by law. Rights relating to defective or non-conforming performance remain unaffected.",
         },
         {
             type: "text",
-            description:
-                "This indemnity does not apply to the extent that a loss was caused by our breach, negligence or unlawful conduct.",
+            description: "How to withdraw. A withdrawal or cancellation request must be sent to info@quetranslations.com and clearly identify the user, the Order and the decision to withdraw or cancel. The separate Refund, Cancellation and Balance Policy forms part of these Terms.",
         },
         {
             type: "text",
-            title: "26. Privacy and Cookies",
-            description:
-                "We process personal data in accordance with our Privacy Policy.\n\nOur Cookie Policy explains how we use cookies and similar technologies and how you can manage your preferences.\n\nYou are responsible for reviewing those policies before creating an Account or placing an Order.",
+            title: "Customer Content",
+            description: "Ownership. Users retain their rights in Customer Content. QueTranslations does not acquire ownership of source documents merely because they are uploaded.",
         },
         {
             type: "text",
-            title: "27. Electronic Communications",
-            description:
-                "You agree that we may send transactional and administrative communications electronically, including:",
-            bullets: [
-                "Account notices;",
-                "Order acknowledgements;",
-                "delivery emails;",
-                "activation information;",
-                "payment and refund notices;",
-                "security alerts;",
-                "support correspondence; and",
-                "notices concerning these Terms or related policies.",
-            ],
+            description: "Processing permission. The user grants QueTranslations a limited, worldwide, non-exclusive right to host, reproduce, convert, transmit and otherwise process Customer Content only as reasonably necessary to provide, secure and support the Services, comply with law and enforce these Terms.",
         },
         {
             type: "text",
-            description:
-                "Transactional communications are not marketing messages and may be necessary to provide the services you request.\n\nMarketing communications will be sent only where permitted by law. You may unsubscribe from marketing without affecting essential Order or Account communications.",
+            description: "Authority. The user confirms that they own Customer Content or have all permissions and lawful grounds necessary to submit it for translation, including authority to disclose personal data and confidential information contained in it.",
         },
         {
             type: "text",
-            title: "28. Changes to These Terms",
-            description:
-                "We may update these Terms to reflect changes in law, Website functionality, Products, payment methods or business practices.\n\nThe updated version will be published on the Website with a revised effective date.\n\nMaterial changes will apply prospectively. Terms accepted for an existing Order will continue to govern that Order unless a change is required by law or you expressly agree otherwise.\n\nYour continued use of the Website after updated Terms take effect constitutes acceptance only where such acceptance is legally valid. We may require you to confirm acceptance before placing another Order.",
+            description: "No AI training. QueTranslations does not use Customer Content or deliverables to train AI models and does not opt in to sharing Customer Content for model-training purposes. AI providers may temporarily process or retain limited content for service operation, security or abuse prevention as described in the Privacy Policy.",
         },
         {
             type: "text",
-            title: "29. Governing Law and Disputes",
-            description:
-                `These Terms and any non-contractual obligations arising from them are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore starting formal proceedings, you should contact us at ${COMPANY_EMAIL} and provide sufficient information about the issue, the relevant Order and the resolution requested. We will attempt to resolve the complaint in good faith.\n\nIf you are a Business User, the courts of England and Wales will have exclusive jurisdiction.\n\nIf you are a Consumer, the courts of England and Wales will have non-exclusive jurisdiction. You may also have the right to bring proceedings in the courts of the part of the United Kingdom or other country in which you reside, where applicable law permits.`,
+            description: "File retention. Source files and translations may remain available in an active Account for user convenience. They will be deleted after 24 consecutive months of Account inactivity, or earlier following a valid deletion request, subject to backup cycles, dispute preservation and legal retention duties.",
         },
         {
             type: "text",
-            title: "30. General Provisions",
+            title: "Confidentiality and Data Protection",
+            description: "Confidential handling. QueTranslations will use commercially reasonable measures to restrict access to Customer Content to authorised personnel, EEA-based human translators and service providers that require access for the Services and are subject to appropriate contractual or legal obligations.",
         },
         {
             type: "text",
-            title: "30.1 Assignment",
-            description:
-                "You may not transfer your rights or obligations under these Terms without our written consent.\n\nWe may transfer our rights or obligations as part of a business transfer, restructuring or sale, provided that doing so does not reduce your mandatory legal rights.",
+            description: "Exceptions. Confidentiality obligations do not apply to information that is lawfully public, independently developed without use of Customer Content, lawfully obtained without a duty of confidence, or required to be disclosed by law or a binding authority request.",
         },
         {
             type: "text",
-            title: "30.2 Severability",
-            description:
-                "If any provision is found to be unlawful or unenforceable, that provision will be adjusted or removed only to the minimum extent necessary. The remaining provisions will continue in effect.",
+            description: "Privacy Policy. Personal data is processed as described in the Privacy Policy. Users submitting personal data concerning other individuals are responsible for providing any notice and obtaining any authority required by applicable law.",
         },
         {
             type: "text",
-            title: "30.3 No Waiver",
-            description:
-                "A delay or failure to enforce a provision does not waive the right to enforce it later.",
+            title: "Intellectual Property",
+            description: "Platform rights. The website, software, workflows, design, trademarks, documentation and other platform materials are owned by or licensed to QueTranslations and are protected by intellectual-property laws. No right is granted except the limited right to use the Services under these Terms.",
         },
         {
             type: "text",
-            title: "30.4 Entire Agreement",
-            description: `These Terms and the policies incorporated into them constitute the agreement between you and ${COMPANY_LEGAL_NAME} concerning the Website, Account Balance and Products.\n\nIf you are a Consumer, this provision does not exclude liability for statements or representations that cannot lawfully be excluded.`,
+            description: "Deliverables. Subject to full payment and the rights in the source material, QueTranslations assigns or grants to the user the transferable rights that QueTranslations holds in the completed translation. This does not transfer rights in the platform, translation technology, models, general know-how or third-party materials.",
         },
         {
             type: "text",
-            title: "30.5 No Third-Party Rights",
-            description: `Except where the applicable Licence expressly grants enforceable rights to an Author or rights holder, no person other than you and ${COMPANY_LEGAL_NAME} has the right to enforce these Terms.`,
+            description: "Non-unique AI output. AI-generated translations may not be unique, and similar or identical wording may be produced for other users. QueTranslations does not warrant that AI output is eligible for copyright protection in every jurisdiction.",
         },
         {
             type: "text",
-            title: "31. Contact Us",
-            description: `Questions, complaints and legal notices concerning these Terms may be sent to:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}`,
+            description: "Feedback. A user may provide suggestions voluntarily. QueTranslations may use general feedback without identifying the user or disclosing Customer Content, and without an obligation to compensate the user.",
+        },
+        {
+            type: "text",
+            title: "Acceptable Use and Restricted Access",
+            description: "Lawful use. The Services may not be used to violate law, sanctions, export controls, intellectual-property rights, privacy rights or contractual confidentiality obligations, or to facilitate fraud, threats, exploitation, malware or other unlawful harm.",
+        },
+        {
+            type: "text",
+            description: "Restricted countries. The Services are not available to persons located in, ordinarily resident in or accessing the Services from Afghanistan, Belarus, Central African Republic, Cuba, Democratic Republic of the Congo, Haiti, Iran, Iraq, Mali, Myanmar (Burma), North Korea, Russia, Somalia, South Sudan, Sudan, Syria, Venezuela, Yemen or Zimbabwe.",
+        },
+        {
+            type: "text",
+            description: "Sanctioned persons. The Services are also unavailable where providing them would violate sanctions or trade restrictions binding on QueTranslations. QueTranslations may perform reasonable screening, reject an Order, restrict an Account or delay a refund where required by law.",
+        },
+        {
+            type: "text",
+            description: "Enforcement. If Customer Content or activity presents a legal, security or abuse risk, QueTranslations may refuse, pause or terminate processing. Any unused paid Balance remains refundable unless payment or repayment is prohibited by law or subject to a legitimate fraud or chargeback investigation.",
+        },
+        {
+            type: "text",
+            title: "Availability and Changes",
+            description: "Service availability. QueTranslations aims to maintain reliable Services but does not guarantee uninterrupted or error-free availability. Maintenance, model outages, translator availability, cyber incidents, third-party failures or events beyond reasonable control may affect access or delivery.",
+        },
+        {
+            type: "text",
+            description: "Service changes. Features, supported formats, language pairs, models, pricing methods and technical limits may change. A change will not retroactively alter a confirmed Order without the user’s agreement, except where necessary to comply with law or address a serious security issue.",
+        },
+        {
+            type: "text",
+            title: "Disclaimers and Liability",
+            description: "Translation judgement. Language involves judgement, context and style. Except for obligations that cannot be excluded, QueTranslations does not warrant that every translation will be error-free, suitable for every purpose or accepted by a court, authority, employer, educational institution or other third party.",
+        },
+        {
+            type: "text",
+            description: "User review. Users remain responsible for reviewing deliverables before publication, submission, commercial use or reliance, particularly where an error could cause financial, reputational, legal or safety consequences.",
+        },
+        {
+            type: "text",
+            description: "Excluded losses. To the extent permitted by law, QueTranslations is not liable for indirect, incidental, special or consequential loss, loss of profit, revenue, opportunity, goodwill or data, or a decision made in reliance on an unreviewed translation.",
+        },
+        {
+            type: "text",
+            description: "Business liability cap. For a business user, QueTranslations’ aggregate liability arising from an Order will not exceed the amount paid for that Order, except for fraud, wilful misconduct, gross negligence or liability that cannot lawfully be limited.",
+        },
+        {
+            type: "text",
+            description: "Consumer protection. For consumers, liability is limited only to the extent permitted by mandatory law. Nothing excludes liability for death or personal injury caused by negligence, fraud or any other liability that cannot legally be excluded.",
+        },
+        {
+            type: "text",
+            description: "Business indemnity. A business user will indemnify QueTranslations against third-party claims and reasonable costs arising from unlawful Customer Content, lack of required rights or authority, or the business user’s material breach of these Terms, to the extent permitted by law.",
+        },
+        {
+            type: "text",
+            title: "Suspension and Termination",
+            description: "Suspension. QueTranslations may suspend access where reasonably necessary to investigate security incidents, unauthorised payments, prohibited use, sanctions concerns or a material breach. Where appropriate, the user will be given notice and an opportunity to resolve the issue.",
+        },
+        {
+            type: "text",
+            description: "Account closure. A user may request Account closure by emailing info@quetranslations.com. Before closure, QueTranslations will process any valid refund of unused paid Balance and address active Orders, disputes and legal retention requirements.",
+        },
+        {
+            type: "text",
+            description: "Effect of termination. Termination ends the right to use the Services but does not affect accrued payment obligations, completed transactions, ownership, confidentiality, liability, dispute or other provisions intended to survive.",
+        },
+        {
+            type: "text",
+            title: "Changes to These Terms",
+            description: "Updates. QueTranslations may update these Terms to reflect service, legal or security changes. The current version and effective date will be published on the website. Material changes will apply prospectively and will be communicated through the website, Account or email where reasonably appropriate.",
+        },
+        {
+            type: "text",
+            title: "Governing Law and Disputes",
+            description: "Informal resolution. Users should first send a written complaint to info@quetranslations.com so that QueTranslations can investigate and propose a resolution.",
+        },
+        {
+            type: "text",
+            description: "Governing law. These Terms are governed by Estonian law, without prejudice to mandatory consumer protection rules of the consumer’s country of habitual residence.",
+        },
+        {
+            type: "text",
+            description: "Consumer redress. Where eligible, a consumer may apply to the Estonian Consumer Disputes Committee after first submitting a complaint to QueTranslations. Information is available at https://ttja.ee/en/consumer-disputes-committee. Cross-border consumers may also seek assistance from the European Consumer Centre in their country.",
+        },
+        {
+            type: "text",
+            description: "Courts. Disputes not resolved informally or through an applicable consumer body may be brought before the competent courts determined by applicable law. Business disputes are subject to the courts of Estonia unless the parties agree otherwise in writing.",
+        },
+        {
+            type: "text",
+            description: "Contact details. Questions, notices, complaints, withdrawal requests and Balance refund requests may be sent to QUENTICS OÜ at info@quetranslations.com or by post to Rotermanni tn 6, Kesklinna linnaosa, 10111 Tallinn, Harju maakond, Estonia.",
         },
     ],
 };

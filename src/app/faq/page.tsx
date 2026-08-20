@@ -113,7 +113,7 @@ const faqItems: FAQItem[] = [
         category: "Payments",
         question: "What is Account Balance?",
         answer:
-            "Account Balance is store credit recorded in your account and used to pay for translation orders on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash. Full rules are in the Payment and Account Balance Policy.",
+            "Account Balance is store credit recorded in your account and used to pay for translation orders on this website. It is non-transferable, is not cryptocurrency, is not tradable and is not redeemable for cash. Full rules are in the Refund, Cancellation and Balance Policy.",
     },
     {
         category: "Payments",
@@ -131,7 +131,7 @@ const faqItems: FAQItem[] = [
         category: "Payments",
         question: "How are prices in EUR and USD calculated?",
         answer:
-            "GBP is the base currency. EUR and USD prices are calculated from the GBP price using a fixed reference rate we maintain, with no conversion fee or surcharge added by us. Your bank or card issuer may apply its own exchange rate and fees. See the Payment and Account Balance Policy for details.",
+            "GBP is the base currency. EUR and USD prices are calculated from the GBP price using a fixed reference rate we maintain, with no conversion fee or surcharge added by us. Your bank or card issuer may apply its own exchange rate and fees. See the Refund, Cancellation and Balance Policy for details.",
     },
     {
         category: "Payments",

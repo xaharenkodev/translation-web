@@ -1,23 +1,14 @@
 import {PageSchema} from "@/components/constructor/page-render/types";
-import {
-    COMPANY_NAME,
-    COMPANY_ADDRESS,
-    COMPANY_LEGAL_NAME,
-    COMPANY_NUMBER,
-    COMPANY_EMAIL,
-    COMPANY_DOMAIN,
-    COMPANY_WEBSITE,
-} from "@/resources/constants";
+import {COMPANY_NAME} from "@/resources/constants";
 
 const deliveryPolicyEn: PageSchema = {
     meta: {
-        title: `Translation Delivery Policy – ${COMPANY_NAME}`,
-        description:
-            `How completed translations are delivered, turnaround times for AI and specialist orders, and what to do if a delivery does not arrive.`,
+        title: `Service Delivery, Revisions and Complaints Policy – ${COMPANY_NAME}`,
+        description: "This Policy explains delivery estimates, file requirements, revisions and the complaint process for AI and Human Translation.",
         canonical: "/delivery-policy",
         ogImage: {
-            title: `Translation Delivery Policy – ${COMPANY_NAME}`,
-            description: `How completed translations are delivered, turnaround times for AI and specialist orders, and what to do if a delivery does not arrive.`,
+            title: `Service Delivery, Revisions and Complaints Policy – ${COMPANY_NAME}`,
+            description: "This Policy explains delivery estimates, file requirements, revisions and the complaint process for AI and Human Translation.",
             bg: "#170B33",
             color: "#ffffff",
         },
@@ -25,661 +16,146 @@ const deliveryPolicyEn: PageSchema = {
     blocks: [
         {
             type: "text",
-            title: "Digital Delivery and Download Policy",
-            description: "Effective date: 23 July 2026",
+            title: "Service Delivery, Revisions and Complaints Policy",
+            description: "Last updated: 19 August 2026",
         },
         {
             type: "text",
-            title: "1. About This Policy",
-            description: `This Digital Delivery and Download Policy (“Policy”) explains how digital website themes, templates, files, Activation Credentials and related materials purchased through ${COMPANY_WEBSITE} are processed, delivered and made available to customers.\n\nThe Website is operated by:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}\n\nIn this Policy, “${COMPANY_NAME}”, “we”, “us” and “our” refer to ${COMPANY_LEGAL_NAME}. “You” and “your” refer to the person or organisation placing an Order or receiving a Product.\n\nThis Policy forms part of our Terms and Conditions.`,
+            description: "This Policy explains delivery estimates, file requirements, revisions and the complaint process for AI and Human Translation.",
         },
         {
             type: "text",
-            title: "2. Related Policies",
-            description:
-                "This Policy should be read together with:",
-            bullets: [
-                "our Terms and Conditions;",
-                "Digital Product Licence Agreement;",
-                "Payment and Account Balance Policy;",
-                "Refund and Cancellation Policy;",
-                "Support Policy; and",
-                "any Product-Specific Terms displayed before purchase or included with the Product.",
-            ],
+            title: "Service Selection and Confirmation",
+            description: "Selection. Before confirming an Order, the user selects AI Translation or Human Translation and reviews the source language, target language, price, calculated volume and estimated delivery time.",
         },
         {
             type: "text",
-            description:
-                "Nothing in this Policy excludes or limits rights that cannot lawfully be excluded.",
+            description: "Confirmation. The user is responsible for confirming that the correct file and languages have been selected. An Order confirmation records the accepted scope.",
         },
         {
             type: "text",
-            title: "3. Definitions",
-            description:
-                "For the purposes of this Policy:\n\n“Account” means a registered user account created through the Website.\n\n“Activation Credentials” means a Licence key, activation code, token, login information, registration data or other credential supplied for the activation or use of a Product.\n\n“Delivery” means sending the Product, Product files, download link, Activation Credentials or access instructions to the email address associated with the Order.\n\n“Delivery Email” means an email containing or providing access to the purchased Product or the information required to receive, download or activate it.\n\n“Digital Content” means data supplied in digital form, including themes, templates, files, archives, documentation and Activation Credentials.\n\n“Download Link” means a link supplied by us through which a Product may be downloaded.\n\n“Licence” means the limited permission to use a Product under our Digital Product Licence Agreement.\n\n“Order” means a request submitted through the Website to purchase a Product.\n\n“Product” means a digital website theme, template, file, archive, activation credential, documentation or other Digital Content offered through the Website.",
+            description: "Clarifications. QueTranslations may request clarification where instructions, terminology, formatting or file content are ambiguous. Delivery timing may pause until the user provides a usable response.",
         },
         {
             type: "text",
-            title: "4. Digital-Only Delivery",
-            description:
-                `All Products sold through ${COMPANY_NAME} are supplied digitally.\n\nWe do not ship physical:`,
-            bullets: [
-                "discs;",
-                "printed materials;",
-                "Licence cards;",
-                "installation media;",
-                "documents; or",
-                "other tangible goods.",
-            ],
+            title: "AI Translation Delivery",
+            description: "Expected timing. AI Translation is normally generated and delivered within several minutes. Actual time depends on file size, extraction, format conversion, model availability, system load and security review.",
         },
         {
             type: "text",
-            description:
-                "No shipping or postal delivery address is required unless needed for payment, billing, tax or verification purposes.\n\nReferences to “delivery”, “shipment” or “sending” in connection with a Product mean electronic Delivery.",
+            description: "No guaranteed minute count. The estimate is not a fixed service-level guarantee. QueTranslations will not treat a short technical delay by itself as non-performance where the Order is completed within a reasonable period.",
         },
         {
             type: "text",
-            title: "5. Delivery Method",
-            description:
-                "Following successful checkout and payment confirmation, a member of our team will contact you using the email address associated with your Order.\n\nDepending on the Product, the Delivery Email may contain:",
-            bullets: [
-                "the Product as an email attachment;",
-                "a secure Download Link;",
-                "Activation Credentials;",
-                "installation or activation instructions;",
-                "Product documentation;",
-                "information required to access the Product;",
-                "information about included files; or",
-                "instructions for obtaining further assistance.",
-            ],
+            description: "Automated output. AI Translation is not human-reviewed unless expressly purchased as a separate Human Translation service. Users must review AI output before external use or reliance.",
         },
         {
             type: "text",
-            description:
-                "For security, file-size or technical reasons, Product files and Activation Credentials may be sent in separate emails.\n\nA Product may also be delivered through another secure electronic method where necessary. We will provide the relevant access instructions by email.",
+            title: "Human Translation Delivery",
+            description: "Standard volume. Human Translation containing no more than 5,000 source words is normally delivered within 24 to 48 hours after Order confirmation.",
         },
         {
             type: "text",
-            title: "6. Delivery Time",
-            description:
-                "We aim to complete Delivery within 24 hours after:",
-            bullets: [
-                "checkout has been successfully completed;",
-                "payment has been confirmed;",
-                "sufficient Account Balance has been deducted, where applicable; and",
-                "the Order has passed any reasonably necessary security or payment checks.",
-            ],
+            description: "Factors affecting timing. The applicable point within that range depends on source-word count, language pair, complexity, formatting, file quality, instructions and translator availability.",
         },
         {
             type: "text",
-            description:
-                "The 24-hour delivery period is measured in consecutive hours and is not limited to business hours.\n\nIf information supplied with the Order is incomplete or requires clarification, we will contact you as soon as reasonably possible.\n\nIf exceptional circumstances prevent Delivery within 24 hours, we will notify you and provide:",
-            bullets: [
-                "information about the delay;",
-                "an updated delivery estimate; and",
-                "available cancellation or refund options where appropriate.",
-            ],
+            description: "Orders over 5,000 words. A separate estimated delivery time will be displayed or communicated before confirmation. The user must accept that estimate before work begins, and the standard 24-to-48-hour period does not apply.",
         },
         {
             type: "text",
-            title: "7. Order Acknowledgement and Acceptance",
-            description:
-                "An automated email confirming that we have received your Order is an Order acknowledgement. It does not necessarily mean that the Order has been accepted or delivered.\n\nAn Order is normally accepted when we:",
-            bullets: [
-                "send the Product;",
-                "send the Download Link;",
-                "send the Activation Credentials;",
-                "send access instructions; or",
-                "issue a separate acceptance confirmation.",
-            ],
+            description: "Volume measurement. The source-word count generated by the Services is used for pricing and delivery estimates unless a manifest extraction error is identified. Images, scans, tables, footnotes and non-editable text may require additional processing.",
         },
         {
             type: "text",
-            description:
-                "We may decline or cancel an Order before acceptance where:",
-            bullets: [
-                "payment cannot be confirmed;",
-                "the Product is unavailable;",
-                "the Order appears fraudulent or unauthorised;",
-                "additional verification cannot be completed;",
-                "Product or price information contains an obvious error;",
-                "Delivery would infringe applicable law or third-party rights; or",
-                "you have materially breached our Terms and Conditions.",
-            ],
+            title: "File Requirements",
+            description: "Usable files. Files must be complete, legible, free from malware and provided in a supported format. Password-protected, corrupted, low-resolution or handwritten materials may be refused or require a revised estimate.",
         },
         {
             type: "text",
-            description:
-                "If an Order is declined after payment or an Account Balance deduction, the corresponding amount will be refunded or restored in accordance with our Refund and Cancellation Policy and Payment and Account Balance Policy.",
+            description: "Formatting. QueTranslations will use reasonable efforts to preserve basic formatting where the selected format supports it. Exact reproduction of complex layouts, fonts, graphics, pagination, tracked changes or embedded objects is not guaranteed unless expressly included in the Order.",
         },
         {
             type: "text",
-            title: "8. Customer Email Address",
-            description:
-                "You are responsible for providing a complete and accurate email address when creating an Account and placing an Order.\n\nYou must ensure that:",
-            bullets: [
-                "the email account is active;",
-                "you have access to it;",
-                "the mailbox has sufficient available storage;",
-                `attachments and messages from ${COMPANY_NAME} can be received;`,
-                "spam or security settings do not automatically reject our messages; and",
-                "the email address remains current until Delivery is complete.",
-            ],
+            description: "Source changes. Text added or changed after confirmation is outside the original scope and may require a new Order, additional charge or revised delivery estimate.",
         },
         {
             type: "text",
-            description:
-                "Before contacting us about non-delivery, check:",
-            bullets: [
-                "your spam folder;",
-                "your junk folder;",
-                "filtered or quarantined messages;",
-                "inbox rules;",
-                "blocked sender settings; and",
-                "any alternative inbox tabs used by your email provider.",
-            ],
+            title: "Delivery Method and Completion",
+            description: "Electronic delivery. Completed translations are delivered through the Account, by email or through another digital method identified in the Order flow.",
         },
         {
             type: "text",
-            description:
-                "We are not responsible for a delay caused solely by an incorrect email address supplied by you or by your email provider’s filtering settings. However, we will make reasonable efforts to verify your Order and resend the Product to a corrected address.",
+            description: "Completion. An Order is treated as delivered when the file or output is made available through the agreed electronic method, provided the user can reasonably access it.",
         },
         {
             type: "text",
-            title: "9. Correcting an Email Address",
-            description:
-                `If you entered the wrong email address, contact ${COMPANY_EMAIL} as soon as possible.\n\nInclude:`,
-            bullets: [
-                "your full name;",
-                "the incorrect email address;",
-                "the correct email address;",
-                "the Order number;",
-                "the Product name; and",
-                "reasonable evidence that you are the purchaser.",
-            ],
+            description: "User responsibility. Users should maintain current contact information, monitor the Account and download important files. QueTranslations is not responsible for loss caused solely by an incorrect user email address, ignored notification or failure to download before a disclosed deletion date.",
         },
         {
             type: "text",
-            description:
-                "For security, we may require additional verification before changing the delivery address or resending Activation Credentials.\n\nWe will not redirect Delivery where we reasonably believe that the request is fraudulent, unauthorised or intended to obtain access to another customer’s Product.",
+            title: "Delays",
+            description: "User-caused delay. Delivery estimates extend reasonably where the user provides incomplete files, changes instructions, fails to respond, does not provide required access or otherwise prevents performance.",
         },
         {
             type: "text",
-            title: "10. When Delivery Is Completed",
-            description:
-                "Delivery will normally be treated as completed when the Delivery Email containing the Product, Download Link, Activation Credentials or access instructions has been sent to the email address associated with the Order, provided that we have not received a delivery failure notification.\n\nWhere the Product and Activation Credentials are sent separately, Delivery is completed when all material elements required to access and use the purchased Product have been sent.\n\nThe following do not automatically mean that Delivery failed:",
-            bullets: [
-                "the email was placed in a spam or junk folder;",
-                "the email was opened later;",
-                "you did not immediately download the Product;",
-                "you temporarily lost access to your email account; or",
-                "your device could not open a supported file format.",
-            ],
+            description: "Operational delay. QueTranslations may experience delay due to model or infrastructure outages, cyber incidents, translator illness or unavailability, unusual language complexity, force majeure or other events beyond reasonable control.",
         },
         {
             type: "text",
-            description:
-                "This does not limit your rights where the Product was not actually sent, the Download Link did not function or the Product could not reasonably be accessed.",
+            description: "Notice and remedy. Where a material delay is identified, QueTranslations will use reasonable efforts to notify the user and provide a revised estimate. If the revised timing is unacceptable and the service has not been fully performed, the user may request cancellation subject to payment for work already provided and mandatory consumer rights.",
         },
         {
             type: "text",
-            title: "11. Reporting Non-Delivery",
-            description:
-                `If Delivery has not been received within 24 hours, contact ${COMPANY_EMAIL}.\n\nInclude:`,
-            bullets: [
-                "your full name;",
-                "the email address associated with the Order;",
-                "the Order number;",
-                "the Product name;",
-                "the date and approximate time of purchase;",
-                "the payment method; and",
-                "a brief description of the issue.",
-            ],
+            title: "Revisions",
+            description: "Eligible Human Translation corrections. A correction is available for a substantiated mistranslation, omission, grammatical error or failure to follow an instruction included in the confirmed Human Translation Order.",
         },
         {
             type: "text",
-            description:
-                "We will investigate the Order and may:",
-            bullets: [
-                "resend the Delivery Email;",
-                "provide a replacement Download Link;",
-                "send the Product using an alternative electronic method;",
-                "correct the email address after verification;",
-                "provide replacement Activation Credentials; or",
-                "issue an appropriate refund if Delivery cannot be completed.",
-            ],
+            description: "Excluded changes. A free correction does not include new source text, a different target language, changed terminology supplied after delivery, subjective stylistic preferences not stated in advance, or reformatting outside the agreed scope.",
         },
         {
             type: "text",
-            description:
-                "A refund is governed by our Refund and Cancellation Policy.",
+            description: "AI output. AI output may vary when rerun. QueTranslations may rerun a technically defective AI Order but does not promise human-level revision within the AI Translation price.",
         },
         {
             type: "text",
-            title: "12. Download Links",
-            description:
-                "A Delivery Email may contain a Download Link instead of an attachment.\n\nA Download Link may be:",
-            bullets: [
-                "protected by a token or password;",
-                "limited to the intended recipient;",
-                "subject to reasonable security restrictions;",
-                "limited in the number of download attempts; or",
-                "available for a stated period.",
-            ],
+            description: "Prompt notice. Users are encouraged to request correction within seven days after delivery so that the assigned context remains available. Longer mandatory consumer claim periods remain unaffected.",
         },
         {
             type: "text",
-            description:
-                "Any material expiration period or download limit will be disclosed in the Delivery Email or related instructions.\n\nExpiration of a Download Link does not automatically terminate a valid Product Licence.\n\nIf a legitimate Download Link expires before you can reasonably download the Product, contact us. Subject to Order verification, Product availability and Licence status, we may issue a replacement link.",
+            title: "Complaints",
+            description: "Required information. A complaint should include the Account email, Order identifier, source and translated passages, a concise description of the issue and the remedy requested.",
         },
         {
             type: "text",
-            title: "13. Downloading the Product",
-            description:
-                "You are responsible for:",
-            bullets: [
-                "using a secure and compatible device;",
-                "maintaining a stable internet connection;",
-                "ensuring sufficient storage space;",
-                "using suitable software to open the supplied archive or file format;",
-                "following the Delivery and installation instructions; and",
-                "protecting downloaded files from unauthorised access.",
-            ],
+            description: "Assessment. QueTranslations may compare the source, instructions and deliverable, consult the assigned translator, review technical logs and request additional context.",
         },
         {
             type: "text",
-            description:
-                "Interrupted or incomplete downloads should be attempted again where the Download Link remains active.\n\nIf repeated download attempts fail, contact us before attempting to obtain the Product from another source.",
+            description: "Response period. Written consumer complaints will be answered within 15 days. If a complex technical or linguistic review requires more time, QueTranslations will explain the status where permitted by applicable law.",
         },
         {
             type: "text",
-            title: "14. Product Files and Formats",
-            description:
-                "Product files may be supplied in formats including:",
-            bullets: [
-                "ZIP or other compressed archives;",
-                "WordPress theme packages;",
-                "Shopify theme packages;",
-                "template files;",
-                "source code;",
-                "documentation files;",
-                "configuration files; and",
-                "other formats described on the Product page.",
-            ],
+            description: "Available outcomes. Depending on the issue, QueTranslations may correct or rerun the translation, deliver a missing file, restore Balance, reduce the price, issue a refund or explain why the deliverable conforms to the Order.",
         },
         {
             type: "text",
-            description:
-                "You are responsible for confirming before purchase that your platform, software and hosting environment can use the stated format.\n\nA Product package may contain more than one archive. The installable theme file may be located inside a larger documentation or source package.\n\nSupport may provide reasonable guidance identifying the correct file, but installation and configuration services are not included unless expressly stated.",
+            title: "Limitations of Service",
+            description: "No certified service. QueTranslations does not provide certified, sworn or notarised translations and does not warrant acceptance by courts, immigration authorities, registries, universities or other official bodies.",
         },
         {
             type: "text",
-            title: "15. File Integrity and Corrupted Files",
-            description:
-                "If a downloaded archive or file is incomplete, corrupted or cannot be opened, you should:",
-            bullets: [
-                "confirm that the download completed;",
-                "download the file again where possible;",
-                "check that your extraction or installation software supports the file format;",
-                "confirm that the correct package is being installed; and",
-                "contact us if the problem continues.",
-            ],
+            description: "No professional legal or medical service. QueTranslations does not offer legal or medical translation as a regulated professional service. Users must obtain qualified professional review before using any translation in a legal, medical, clinical or safety-critical context.",
         },
         {
             type: "text",
-            description:
-                "Where the delivered file is confirmed to be corrupted or incomplete, we will provide:",
-            bullets: [
-                "a replacement copy;",
-                "a corrected archive;",
-                "an alternative Download Link; or",
-                "another remedy under our Refund and Cancellation Policy.",
-            ],
+            description: "Final review. The user remains responsible for names, numbers, dates, technical terms, formatting and suitability before publishing, submitting or relying on a translation.",
         },
         {
             type: "text",
-            description:
-                "Do not download purported replacement copies from unauthorised websites or file-sharing services.",
-        },
-        {
-            type: "text",
-            title: "16. Activation Credentials",
-            description:
-                "Where a Product requires activation, the relevant Activation Credentials will be included in the Delivery Email or sent separately.\n\nActivation Credentials:",
-            bullets: [
-                "are linked to the purchased Licence;",
-                "must be kept confidential;",
-                "may be limited to a stated number of installations;",
-                "must not be sold, published or shared;",
-                "must not be used for unrelated websites or Clients; and",
-                "may be disabled following a refund, chargeback or material Licence breach.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "If Activation Credentials do not work when first supplied, contact us with:",
-            bullets: [
-                "the Order number;",
-                "the Product name;",
-                "the licensed domain;",
-                "the relevant error message; and",
-                "reasonable non-sensitive technical information.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Do not send passwords, payment card details or unrelated confidential information by ordinary email.",
-        },
-        {
-            type: "text",
-            title: "17. Domain and Activation Changes",
-            description:
-                "If you need to move the same licensed website to a replacement domain, you may be required to:",
-            bullets: [
-                "deactivate the Product from the previous domain;",
-                "confirm that the previous website is no longer using the Licence;",
-                "provide the old and new domain details; and",
-                "complete reasonable Licence verification.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "A domain change does not permit simultaneous use on multiple Production Websites.\n\nThe applicable rules are contained in our Digital Product Licence Agreement.",
-        },
-        {
-            type: "text",
-            title: "18. Product Contents",
-            description:
-                "The delivered Product will include the files and components identified in the Product description or Product-Specific Terms.\n\nUnless expressly stated otherwise:",
-            bullets: [
-                "preview images may not be included;",
-                "demo content may differ from the supplied package;",
-                "hosting and domain services are not included;",
-                "third-party platform subscriptions are not included;",
-                "premium third-party plugins may require separate licensing;",
-                "installation and customisation services are not included; and",
-                "updates and support are governed separately.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "You should review the Product description before purchase and the included documentation after Delivery.",
-        },
-        {
-            type: "text",
-            title: "19. Installation",
-            description:
-                "Delivery does not include installation unless the Product page or Order expressly states otherwise.\n\nYou are responsible for:",
-            bullets: [
-                "installing the Product;",
-                "maintaining a suitable hosting environment;",
-                "meeting the disclosed technical requirements;",
-                "backing up your website before installation;",
-                "following the Product documentation; and",
-                "ensuring that third-party software is compatible.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Our Support Policy explains what assistance may be available.",
-        },
-        {
-            type: "text",
-            title: "20. Backups and Long-Term Storage",
-            description:
-                "After Delivery, you should promptly:",
-            bullets: [
-                "download the Product;",
-                "verify that the files can be opened;",
-                "retain the original Delivery Email;",
-                "save the Order information;",
-                "store Activation Credentials securely; and",
-                "create at least one secure backup copy.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Subject to the Digital Product Licence Agreement, backup copies may be retained solely for the licensed End Product.\n\nWe do not guarantee that a Product or Download Link will remain permanently available through the Website or our delivery systems.\n\nFailure to retain a backup does not automatically entitle you to a refund.",
-        },
-        {
-            type: "text",
-            title: "21. Replacement Delivery",
-            description:
-                "We may provide replacement Delivery where:",
-            bullets: [
-                "the original email was not received;",
-                "an attachment was blocked;",
-                "a Download Link expired before reasonable use;",
-                "the files were corrupted;",
-                "Activation Credentials were invalid;",
-                "the Product was delivered to an incorrect email address and ownership is verified; or",
-                "another legitimate technical issue prevented access.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Replacement Delivery is subject to:",
-            bullets: [
-                "verification of the original Order;",
-                "continued validity of the Licence;",
-                "absence of a completed refund or chargeback;",
-                "Product availability; and",
-                "compliance with our Terms and Licence.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "We may decline replacement Delivery where there is reasonable evidence of fraud, unauthorised redistribution or Licence abuse.",
-        },
-        {
-            type: "text",
-            title: "22. Product Updates",
-            description:
-                "Updates, if included, may be delivered:",
-            bullets: [
-                "by email;",
-                "through a new Download Link;",
-                "through an activation or update system;",
-                "through the Author’s authorised system; or",
-                "by another method described in the Product documentation.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "The purchase of a Product does not guarantee lifetime updates unless that entitlement was expressly stated before purchase.\n\nThe availability of updates does not remove your responsibility to retain the originally delivered files.",
-        },
-        {
-            type: "text",
-            title: "23. Product Removal or Discontinuation",
-            description:
-                "A Product may be removed or discontinued because of:",
-            bullets: [
-                "an Author’s decision;",
-                "expiry or change of distribution rights;",
-                "a legal or intellectual property complaint;",
-                "a material security concern;",
-                "technical incompatibility; or",
-                "another legitimate operational reason.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Removal from the Website does not automatically terminate a valid existing Licence.\n\nHowever, future downloads, updates or activation services may become unavailable where continued provision is unlawful or outside our reasonable control.\n\nIf a Product is removed before your accepted Order is delivered, we will offer:",
-            bullets: [
-                "an appropriate replacement, with your agreement; or",
-                "a refund or Account Balance restoration.",
-            ],
-        },
-        {
-            type: "text",
-            title: "24. Delivery Security",
-            description:
-                "We take reasonable measures to protect Digital Delivery and prevent unauthorised access.\n\nYou must not:",
-            bullets: [
-                "forward Delivery Emails to unauthorised persons;",
-                "publish Download Links;",
-                "share Activation Credentials;",
-                "upload Product files to public storage;",
-                "bypass download restrictions;",
-                "attempt to access another customer’s Product; or",
-                "use automated tools to make excessive download requests.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "We may suspend a Download Link or Activation Credential where we reasonably believe that it has been compromised or misused.",
-        },
-        {
-            type: "text",
-            title: "25. Privacy",
-            description:
-                "We process Delivery information in accordance with our Privacy Policy.\n\nInformation used for Delivery may include:",
-            bullets: [
-                "your name;",
-                "email address;",
-                "Account information;",
-                "Order and payment status;",
-                "Product and Licence information;",
-                "licensed domain;",
-                "delivery records; and",
-                "support correspondence.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "We may retain evidence that a Delivery Email was sent, delivered, rejected or accessed where reasonably necessary for Order fulfilment, fraud prevention and dispute resolution.",
-        },
-        {
-            type: "text",
-            title: "26. Delivery Delays Outside Our Control",
-            description:
-                "We are not responsible for delays caused solely by circumstances outside our reasonable control, including:",
-            bullets: [
-                "Payment Provider outages;",
-                "email service failures;",
-                "internet or hosting outages;",
-                "cyberattacks;",
-                "widespread infrastructure failures;",
-                "government restrictions;",
-                "severe technical incidents; or",
-                "other events that could not reasonably be prevented.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Where such an event occurs, we will:",
-            bullets: [
-                "take reasonable steps to minimise the delay;",
-                "resume Delivery as soon as reasonably possible;",
-                "keep affected customers informed where practical; and",
-                "provide cancellation or refund options where required by law or our Refund and Cancellation Policy.",
-            ],
-        },
-        {
-            type: "text",
-            title: "27. Refunds",
-            description:
-                "Delivery-related refunds are governed by our Refund and Cancellation Policy.\n\nA refund may be available where:",
-            bullets: [
-                "the Product was not delivered;",
-                "we cannot complete Delivery within a reasonable time;",
-                "the wrong Product was delivered;",
-                "the files are materially defective;",
-                "Activation Credentials are invalid and cannot be corrected; or",
-                "applicable law requires a refund.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "A refund is not normally available solely because:",
-            bullets: [
-                "you failed to check your spam folder;",
-                "you provided an incorrect email address but the Product can be resent;",
-                "you did not download the Product after Delivery;",
-                "you lack suitable software or technical knowledge;",
-                "you lost your downloaded copy; or",
-                "you changed your mind after valid Delivery.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Nothing in this section limits mandatory legal rights.",
-        },
-        {
-            type: "text",
-            title: "28. Effect of Refund or Chargeback",
-            description:
-                "If a full Product refund or successful chargeback is processed:",
-            bullets: [
-                "the Product Licence ends;",
-                "the Download Link may be disabled;",
-                "Activation Credentials may be cancelled;",
-                "you must stop using the Product;",
-                "you must delete downloaded and backup copies; and",
-                "you must remove the Product from active websites.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "Continued use after a refund may constitute breach of contract and infringement of intellectual property rights.",
-        },
-        {
-            type: "text",
-            title: "29. Liability",
-            description:
-                "Our liability concerning Orders, Digital Delivery and Products is governed by our Terms and Conditions.\n\nNothing in this Policy excludes or limits liability where doing so would be unlawful, including liability for:",
-            bullets: [
-                "fraud or fraudulent misrepresentation;",
-                "death or personal injury caused by negligence;",
-                "breach of mandatory consumer rights; or",
-                "any other liability that cannot legally be excluded.",
-            ],
-        },
-        {
-            type: "text",
-            title: "30. Changes to This Policy",
-            description:
-                "We may update this Policy to reflect changes in:",
-            bullets: [
-                "delivery methods;",
-                "Website functionality;",
-                "Product formats;",
-                "security procedures;",
-                "applicable law; or",
-                "business operations.",
-            ],
-        },
-        {
-            type: "text",
-            description:
-                "The updated version will be published with a revised effective date.\n\nThe Policy in force when you place an Order will normally govern Delivery of that Order unless a change is required by law or gives you more favourable rights.",
-        },
-        {
-            type: "text",
-            title: "31. Governing Law and Disputes",
-            description:
-                `This Policy and any non-contractual obligations arising from it are governed by the laws of England and Wales.\n\nIf you are a Consumer, this choice of law does not deprive you of mandatory protections available under the law of the country in which you ordinarily reside.\n\nBefore beginning formal proceedings, contact ${COMPANY_EMAIL} with the relevant Order information and requested resolution. We will attempt to resolve the matter in good faith.`,
-        },
-        {
-            type: "text",
-            title: "32. Contact Us",
-            description: `Questions and Delivery issues may be sent to:\n\n${COMPANY_LEGAL_NAME}\nCompany number: ${COMPANY_NUMBER}\nRegistered office: ${COMPANY_ADDRESS}\nEmail: ${COMPANY_EMAIL}`,
+            title: "Contact",
+            description: "Service contact. Delivery questions, correction requests and complaints should be sent to info@quetranslations.com.",
         },
     ],
 };

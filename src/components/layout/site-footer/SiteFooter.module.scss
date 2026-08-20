@@ -97,6 +97,8 @@
 .legalLinks {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    /* Keep rows aligned to the top so a label that does wrap cannot stretch its row. */
+    align-items: start;
     gap: 12px 24px;
     font-size: 0.9rem;
 }
