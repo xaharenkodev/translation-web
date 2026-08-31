@@ -5,8 +5,7 @@ import {
     COMPANY_EMAIL,
     COMPANY_LEGAL_NAME,
     COMPANY_NAME,
-    COMPANY_NUMBER,
-    COMPANY_PHONE
+    COMPANY_NUMBER
 } from "@/resources/constants";
 
 export const baseURL =
@@ -58,7 +57,6 @@ export const footerContent = {
     ],
     contact: {
         email: COMPANY_EMAIL,
-        phone: COMPANY_PHONE,
         address: COMPANY_ADDRESS,
     },
 
@@ -67,7 +65,6 @@ export const footerContent = {
         companyNumber: COMPANY_NUMBER,
         address: COMPANY_ADDRESS,
         email: COMPANY_EMAIL,
-        phone: COMPANY_PHONE,
     },
     socials: [],
 };

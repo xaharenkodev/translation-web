@@ -76,7 +76,6 @@ const Footer: React.FC = () => {
                                 {legal.companyNumber && <div className={styles.legalLine}>{legal.companyNumber}</div>}
                                 <div className={styles.contactItems}>
                                     {contact.email && <a href={`mailto:${contact.email}`}>{contact.email}</a>}
-                                    {contact.phone && <a href={`tel:${contact.phone}`}>{contact.phone}</a>}
                                     {contact.address && <span>{contact.address}</span>}
                                 </div>
                             </div>

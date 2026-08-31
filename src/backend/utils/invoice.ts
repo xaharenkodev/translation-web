@@ -15,7 +15,6 @@ import {
     COMPANY_NUMBER,
     COMPANY_ADDRESS,
     COMPANY_EMAIL,
-    COMPANY_PHONE,
 } from "@/resources/constants";
 
 export type InvoiceData = {
@@ -123,7 +122,6 @@ export async function generateInvoicePdf(data: InvoiceData): Promise<Uint8Array>
         COMPANY_NUMBER ? `Company No. ${COMPANY_NUMBER}` : "",
         COMPANY_ADDRESS || "",
         COMPANY_EMAIL || "",
-        COMPANY_PHONE || "",
     ].filter(Boolean);
 
     for (const line of companyLines) {

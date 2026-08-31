@@ -6,7 +6,6 @@ import { BASE_CURRENCY, SupportedCurrency, formatMoney } from "@/utils/money";
 import {
     COMPANY_NAME,
     COMPANY_ADDRESS,
-    COMPANY_PHONE,
     COMPANY_LEGAL_NAME,
     COMPANY_NUMBER,
     COMPANY_EMAIL,
@@ -31,7 +30,6 @@ Your account has been successfully created.
 You can now sign in and start using the platform.
 
 ${COMPANY_EMAIL ? `Support email: ${COMPANY_EMAIL}` : ""}
-${COMPANY_PHONE ? `Phone: ${COMPANY_PHONE}` : ""}
 ${COMPANY_ADDRESS ? `Address: ${COMPANY_ADDRESS}` : ""}
 
 Best regards,
@@ -69,7 +67,7 @@ ${companyName} Team
             </div>
 
             ${
-            COMPANY_EMAIL || COMPANY_PHONE || COMPANY_ADDRESS
+            COMPANY_EMAIL || COMPANY_ADDRESS
                 ? `
             <div style="margin-top:24px; padding:16px; background:#f8fbff; border-radius:8px;">
               <p style="margin:0 0 10px; font-size:14px; font-weight:bold;">
@@ -79,12 +77,6 @@ ${companyName} Team
               ${
                     COMPANY_EMAIL
                         ? `<p style="margin:4px 0; font-size:14px;">Email: ${escapeHtml(COMPANY_EMAIL)}</p>`
-                        : ""
-                }
-
-              ${
-                    COMPANY_PHONE
-                        ? `<p style="margin:4px 0; font-size:14px;">Phone: ${escapeHtml(COMPANY_PHONE)}</p>`
                         : ""
                 }
 
@@ -204,7 +196,6 @@ Transaction date: ${formattedDate}
 ${invoiceAttached ? `\nA PDF invoice (${invoiceNumber}.pdf) is attached to this email.` : ""}
 
 ${COMPANY_EMAIL ? `Support email: ${COMPANY_EMAIL}` : ""}
-${COMPANY_PHONE ? `Phone: ${COMPANY_PHONE}` : ""}
 
 Best regards,
 ${companyName} Team
@@ -275,12 +266,11 @@ ${companyName} Team
             }
 
             ${
-                COMPANY_EMAIL || COMPANY_PHONE || COMPANY_ADDRESS
+                COMPANY_EMAIL || COMPANY_ADDRESS
                     ? `
             <div style="margin-top:24px; padding:16px; background:#f8fbff; border-radius:8px;">
               <p style="margin:0 0 10px; font-size:14px; font-weight:bold;">Support</p>
               ${COMPANY_EMAIL ? `<p style="margin:4px 0; font-size:14px;">Email: ${escapeHtml(COMPANY_EMAIL)}</p>` : ""}
-              ${COMPANY_PHONE ? `<p style="margin:4px 0; font-size:14px;">Phone: ${escapeHtml(COMPANY_PHONE)}</p>` : ""}
               ${COMPANY_ADDRESS ? `<p style="margin:4px 0; font-size:14px;">Address: ${escapeHtml(COMPANY_ADDRESS)}</p>` : ""}
             </div>
             `

@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { FaEnvelope, FaPhone, FaLocationDot, FaArrowRight } from "react-icons/fa6";
+import { FaEnvelope, FaLocationDot, FaArrowRight } from "react-icons/fa6";
 import { footerContent } from "@/resources/content";
 import visa from "@/assets/cards/visa.png";
 import mastercard from "@/assets/cards/mastercard.png";
@@ -85,12 +85,6 @@ export default function SiteFooter() {
                             <div className={styles.contactItem}>
                                 <FaEnvelope />
                                 <a href={`mailto:${footerContent.contact.email}`}>{footerContent.contact.email}</a>
-                            </div>
-                        )}
-                        {footerContent.contact.phone && (
-                            <div className={styles.contactItem}>
-                                <FaPhone />
-                                <a href={`tel:${footerContent.contact.phone}`}>{footerContent.contact.phone}</a>
                             </div>
                         )}
                         {footerContent.contact.address && (
