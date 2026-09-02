@@ -6,7 +6,7 @@ async function ensureBalance(user: IUserSchema) {
     if (typeof user.balance !== "number" || Number.isNaN(user.balance)) {
         user.balance = legacyTokensToBalance(user.tokens || 0);
         user.tokens = undefined;
-        await user.save();
+        await user.save({ validateModifiedOnly: true });
     }
 
     return user;
@@ -19,7 +19,7 @@ export const userService = {
 
         await ensureBalance(user);
         user.balance = roundMoney((user.balance || 0) + amount);
-        await user.save();
+        await user.save({ validateModifiedOnly: true });
         return user;
     },
 

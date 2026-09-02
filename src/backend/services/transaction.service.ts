@@ -14,6 +14,12 @@ export interface TransactionMeta {
     withdrawalWaiverAcceptedAt?: Date;
     billingDescriptor?: string;
     simulated?: boolean;
+    orderId?: string;
+    requestId?: string;
+    tid?: string;
+    status?: "pending" | "captured" | "failed" | "cancelled" | "refunded";
+    paymentProvider?: string;
+    failureMessage?: string;
 }
 
 export const transactionService = {
@@ -36,5 +42,18 @@ export const transactionService = {
         });
         console.log("🧾 Transaction saved:", tx);
         return tx;
+    },
+
+    async findByOrderId(orderId: string) {
+        await connectDB();
+        return Transaction.findOne({ orderId });
+    },
+
+    async updateByOrderId(
+        orderId: string,
+        updates: Partial<TransactionMeta & { balanceAfter?: number; status?: string }>
+    ) {
+        await connectDB();
+        return Transaction.findOneAndUpdate({ orderId }, { $set: updates }, { new: true });
     },
 };

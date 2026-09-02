@@ -26,4 +26,5 @@ export const ENV = {
     EMAIL_FROM: env("EMAIL_FROM", ""),
     RESEND_API: env("RESEND_API", ""),
     PAYMENT_TEST_MODE: env("PAYMENT_TEST_MODE", "false") === "true",
+    EASYTRANSAC_API_KEY: env("EASYTRANSAC_API_KEY", ""),
 };
