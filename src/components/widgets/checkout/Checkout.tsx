@@ -143,7 +143,11 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
                 }),
             });
 
-            const data = (await res.json().catch(() => ({}))) as { message?: string };
+            const data = (await res.json().catch(() => ({}))) as {
+                message?: string;
+                pageUrl?: string;
+                orderId?: string;
+            };
 
             if (!res.ok) {
                 throw new Error(data?.message ?? "Payment failed");
@@ -151,7 +155,12 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
 
             localStorage.removeItem("selectedPlan");
             clearPlan();
-            window.location.href = "/profile";
+
+            if (data.pageUrl) {
+                window.location.href = data.pageUrl;
+            } else {
+                window.location.href = "/profile";
+            }
         } catch (err: unknown) {
             setAmountError(err instanceof Error ? err.message : "Payment failed");
         } finally {
@@ -273,7 +282,7 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
                 </div>
 
                 <div className={styles.payment}>
-                    <h2>{testMode ? "Confirm Test Payment" : "Payment Details"}</h2>
+                    <h2>{testMode ? "Confirm Test Payment" : "Payment Method"}</h2>
 
                     <form onSubmit={handlePay}>
                         {testMode ? (
@@ -286,15 +295,18 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
                                 </p>
                             </div>
                         ) : (
-                            <>
-                                <input type="text" placeholder="Card number" autoComplete="off"/>
-                                <div className={styles.row}>
-                                    <input type="text" placeholder="MM/YY" autoComplete="off"/>
-                                    <input type="text" placeholder="CVV" autoComplete="off"/>
-                                </div>
-                                <input type="text" placeholder="Cardholder name" autoComplete="off"/>
-                                <input type="text" placeholder="Billing address" autoComplete="off"/>
-                            </>
+                            <div className={styles.redirectNotice}>
+                                <strong>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <rect x="2" y="5" width="20" height="14" rx="2" />
+                                        <line x1="2" y1="10" x2="22" y2="10" />
+                                    </svg>
+                                    Secure Hosted Payment Page
+                                </strong>
+                                <p>
+                                    You will be redirected to Easytransac&apos;s secure payment page to complete your payment with Credit/Debit Card, Apple Pay, or Google Pay.
+                                </p>
+                            </div>
                         )}
 
                         <div className={styles.descriptorNotice}>
@@ -335,7 +347,9 @@ const Checkout = ({testMode = false}: CheckoutProps) => {
                             disabled={!agreed || !waiverAccepted || loading}
                             className={styles.payButton}
                         >
-                            {loading ? "Processing..." : `Pay ${sign}${total.toFixed(2)} ${currency}`}
+                            {loading
+                                ? "Redirecting to payment..."
+                                : `Proceed to Payment (${sign}${total.toFixed(2)} ${currency})`}
                         </button>
                     </form>
                 </div>

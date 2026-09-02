@@ -67,7 +67,9 @@ const PricingCard: React.FC<PricingCardProps> = ({
     // Stored in the base currency (GBP) because that is what the wallet balance is denominated in.
     const baseTopUpAmount = useMemo(() => convertToBase(displayPrice), [convertToBase, displayPrice]);
 
-    const handleBuy = () => {
+    const [loading, setLoading] = useState(false);
+
+    const handleBuy = async () => {
         if (!user) {
             showAlert("Sign in required", "Please sign in to continue", "info");
             setTimeout(() => router.push("/sign-in"), 1200);
@@ -79,17 +81,43 @@ const PricingCard: React.FC<PricingCardProps> = ({
             return;
         }
 
-        const plan = {
-            title,
-            basePrice: baseTopUpAmount,
-            amount: baseTopUpAmount,
-            displayPrice,
-            variant,
-            currency,
-        };
-        setPlan(plan);
-        localStorage.setItem("selectedPlan", JSON.stringify(plan));
-        router.push("/checkout");
+        try {
+            setLoading(true);
+            const res = await fetch("/api/user/top-up-balance", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    amount: displayPrice,
+                    currency,
+                    acceptedTerms: true,
+                    acceptedWithdrawalWaiver: true,
+                }),
+            });
+
+            const data = (await res.json().catch(() => ({}))) as {
+                message?: string;
+                pageUrl?: string;
+                orderId?: string;
+            };
+
+            if (!res.ok) {
+                throw new Error(data?.message || "Failed to initiate payment");
+            }
+
+            if (data.pageUrl) {
+                window.location.href = data.pageUrl;
+            } else {
+                router.push("/profile");
+            }
+        } catch (err: unknown) {
+            showAlert(
+                "Payment Error",
+                err instanceof Error ? err.message : "Failed to start payment",
+                "error"
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -166,8 +194,8 @@ const PricingCard: React.FC<PricingCardProps> = ({
             </motion.div>
 
             <motion.div className={styles.cta} variants={softScaleReveal(reduced)}>
-                <ButtonUI fullWidth variant="soft" onClick={handleBuy}>
-                    {isCustom ? "Calculate Price" : user ? buttonText : "Sign in to buy"}
+                <ButtonUI fullWidth variant="soft" onClick={handleBuy} disabled={loading}>
+                    {loading ? "Redirecting to payment..." : isCustom ? "Proceed to Payment" : user ? buttonText : "Sign in to buy"}
                 </ButtonUI>
             </motion.div>
         </motion.div>

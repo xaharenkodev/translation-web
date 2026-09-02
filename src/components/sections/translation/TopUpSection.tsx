@@ -37,7 +37,9 @@ function Card({ plan, index }: { plan: TopUpPlan; index: number }) {
     // Rough words estimate at the AI rate, so packages feel tangible.
     const wordsEstimate = Math.floor(baseAmount / aiPerWord);
 
-    const handleBuy = () => {
+    const [loading, setLoading] = useState(false);
+
+    const handleBuy = async () => {
         if (!user) {
             showAlert("Sign in required", "Please sign in to continue", "info");
             setTimeout(() => router.push("/sign-in"), 1200);
@@ -48,17 +50,43 @@ function Card({ plan, index }: { plan: TopUpPlan; index: number }) {
             return;
         }
 
-        const selected = {
-            title: plan.title,
-            basePrice: baseAmount,
-            amount: baseAmount,
-            displayPrice,
-            variant: plan.variant,
-            currency,
-        };
-        setPlan(selected);
-        localStorage.setItem("selectedPlan", JSON.stringify(selected));
-        router.push("/checkout");
+        try {
+            setLoading(true);
+            const res = await fetch("/api/user/top-up-balance", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    amount: displayPrice,
+                    currency,
+                    acceptedTerms: true,
+                    acceptedWithdrawalWaiver: true,
+                }),
+            });
+
+            const data = (await res.json().catch(() => ({}))) as {
+                message?: string;
+                pageUrl?: string;
+                orderId?: string;
+            };
+
+            if (!res.ok) {
+                throw new Error(data?.message || "Failed to initiate payment");
+            }
+
+            if (data.pageUrl) {
+                window.location.href = data.pageUrl;
+            } else {
+                router.push("/profile");
+            }
+        } catch (err: unknown) {
+            showAlert(
+                "Payment Error",
+                err instanceof Error ? err.message : "Failed to start payment",
+                "error"
+            );
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -104,8 +132,13 @@ function Card({ plan, index }: { plan: TopUpPlan; index: number }) {
                 type="button"
                 className={`${styles.buyBtn} ${popular || isCustom ? styles.buyBtnGradient : ""}`}
                 onClick={handleBuy}
+                disabled={loading}
             >
-                {plan.buttonText} <FaArrowRight />
+                {loading ? "Redirecting to payment..." : (
+                    <>
+                        {plan.buttonText} <FaArrowRight />
+                    </>
+                )}
             </button>
         </motion.article>
     );

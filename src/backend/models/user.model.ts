@@ -39,24 +39,34 @@ const UserSchema: Schema<IUserSchema> = new Schema(
 );
 
 UserSchema.pre("validate", function syncRegistrationFields(next) {
-    this.phoneNumber = this.phoneNumber?.trim() || this.phone?.trim() || "";
-    this.phone = this.phoneNumber;
+    const isProfileUpdate =
+        this.isNew ||
+        this.isModified("phoneNumber") ||
+        this.isModified("phone") ||
+        this.isModified("dateOfBirth") ||
+        this.isModified("birthDate") ||
+        this.isModified("address");
 
-    this.dateOfBirth = this.dateOfBirth || this.birthDate;
-    this.birthDate = this.dateOfBirth;
+    if (isProfileUpdate) {
+        this.phoneNumber = this.phoneNumber?.trim() || this.phone?.trim() || "";
+        this.phone = this.phoneNumber;
 
-    this.address = this.address || { street: "", city: "", country: "", postCode: "", zip: "" };
-    this.address.street = this.address.street?.trim() || "";
-    this.address.city = this.address.city?.trim() || "";
-    this.address.country = this.address.country?.trim() || "";
-    this.address.postCode = this.address.postCode?.trim() || this.address.zip?.trim() || "";
-    this.address.zip = this.address.postCode;
+        this.dateOfBirth = this.dateOfBirth || this.birthDate;
+        this.birthDate = this.dateOfBirth;
 
-    if (!this.phoneNumber) this.invalidate("phoneNumber", "Phone number is required");
-    if (!this.dateOfBirth || Number.isNaN(this.dateOfBirth.getTime())) {
-        this.invalidate("dateOfBirth", "Date of birth is required");
+        this.address = this.address || { street: "", city: "", country: "", postCode: "", zip: "" };
+        this.address.street = this.address.street?.trim() || "";
+        this.address.city = this.address.city?.trim() || "";
+        this.address.country = this.address.country?.trim() || "";
+        this.address.postCode = this.address.postCode?.trim() || this.address.zip?.trim() || "";
+        this.address.zip = this.address.postCode;
+
+        if (!this.phoneNumber) this.invalidate("phoneNumber", "Phone number is required");
+        if (!this.dateOfBirth || Number.isNaN(this.dateOfBirth.getTime())) {
+            this.invalidate("dateOfBirth", "Date of birth is required");
+        }
+        if (!this.address.postCode) this.invalidate("address.postCode", "Post code is required");
     }
-    if (!this.address.postCode) this.invalidate("address.postCode", "Post code is required");
 
     const legacyTokens = typeof this.tokens === "number" ? this.tokens : 0;
     if (typeof this.balance !== "number" || Number.isNaN(this.balance)) {

@@ -41,9 +41,17 @@ export async function POST(req: NextRequest) {
         const amountInBaseCurrency = convertToBaseCurrency(parsedAmount, currency);
         const now = new Date();
 
-        const user = await userController.topUpBalance(payload.sub, amountInBaseCurrency, {
-            simulated: ENV.PAYMENT_TEST_MODE,
-            meta: {
+        const clientIp =
+            req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+            req.headers.get("x-real-ip") ||
+            "127.0.0.1";
+
+        const result = await userController.initiateTopUp(
+            payload.sub,
+            parsedAmount,
+            currency,
+            clientIp,
+            {
                 reference: `ET-${now.getTime().toString(36).toUpperCase()}`,
                 chargedCurrency: currency,
                 chargedAmount: parsedAmount,
@@ -53,18 +61,14 @@ export async function POST(req: NextRequest) {
                 termsAcceptedAt: now,
                 withdrawalWaiverAcceptedAt: now,
                 billingDescriptor: BILLING_DESCRIPTOR,
-                simulated: ENV.PAYMENT_TEST_MODE,
-            },
-        });
+            }
+        );
 
         return NextResponse.json({
-            user,
-            topUpAmount: amountInBaseCurrency,
-            simulated: ENV.PAYMENT_TEST_MODE,
+            pageUrl: result.pageUrl,
+            orderId: result.orderId,
+            simulated: result.simulated,
             billingDescriptor: BILLING_DESCRIPTOR,
-            message: ENV.PAYMENT_TEST_MODE
-                ? "Test mode enabled: balance credited without payment provider."
-                : "Balance top-up completed successfully.",
         });
     } catch (err: unknown) {
         const message = err instanceof Error ? err.message : "Unable to top up balance.";
