@@ -5,22 +5,30 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaEnvelope, FaLocationDot, FaArrowRight } from "react-icons/fa6";
 import { footerContent } from "@/resources/content";
-import visa from "@/assets/cards/visa.png";
-import mastercard from "@/assets/cards/mastercard.png";
+import visa from "@/assets/cards/visa.svg";
+import mastercard from "@/assets/cards/mastercard.svg";
 import pciDss from "@/assets/cards/pci-dss-compliant-logo-vector.svg";
 import { COMPANY_NAME } from "@/resources/constants";
+import { useCookieConsent } from "@/context/CookieConsentContext";
 import styles from "./SiteFooter.module.scss";
 
 const LANG_CHIPS = ["EN", "SV", "DE", "FR", "ES", "UA", "PL", "中文", "日本語", "AR"];
 
-/* Brand marks sit on light chips so they stay legible on the dark footer. */
+/*
+ * Card scheme brand marks, reproduced from the official vector artwork:
+ * the Visa Blue (#1434CB) brandmark and the Mastercard symbol-and-wordmark
+ * lockup. Both brand centres require the mark to appear unaltered, in its
+ * approved colour, on a solid light background with clear space around it —
+ * so each mark sits alone on an opaque white chip and is never recoloured,
+ * outlined or squeezed out of its own aspect ratio.
+ */
 const PAYMENT_MARKS = [
-    { src: visa, alt: "Visa" },
-    { src: mastercard, alt: "Mastercard" },
-    { src: pciDss, alt: "PCI DSS compliant" },
+    { src: visa, alt: "Visa", className: styles.payMarkVisa },
+    { src: mastercard, alt: "Mastercard", className: styles.payMarkMastercard },
 ];
 
 export default function SiteFooter() {
+    const { openPreferences } = useCookieConsent();
     const navColumn = footerContent.columns.find((c) => c.title === "Navigate");
     const legalColumn = footerContent.columns.find((c) => c.title === "Legal");
     const year = new Date().getFullYear();
@@ -75,6 +83,14 @@ export default function SiteFooter() {
                                     {l.label}
                                 </Link>
                             ))}
+                            {/* Consent must stay reachable after the first visit. */}
+                            <button
+                                type="button"
+                                className={styles.linkButton}
+                                onClick={openPreferences}
+                            >
+                                Cookie Settings
+                            </button>
                         </div>
                     </div>
 
@@ -105,9 +121,12 @@ export default function SiteFooter() {
                     <div className={styles.payMarks}>
                         {PAYMENT_MARKS.map((m) => (
                             <span key={m.alt} className={styles.payChip}>
-                                <Image src={m.src} alt={m.alt} className={styles.payIcon} />
+                                <Image src={m.src} alt={m.alt} className={m.className} />
                             </span>
                         ))}
+                        <span className={styles.payChip}>
+                            <Image src={pciDss} alt="PCI DSS compliant" className={styles.payMarkPci} />
+                        </span>
                     </div>
                 </div>
 

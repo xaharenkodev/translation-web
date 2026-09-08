@@ -1,5 +1,11 @@
 import {PageSchema} from "@/components/constructor/page-render/types";
 import {COMPANY_NAME} from "@/resources/constants";
+import {COOKIE_CATEGORIES, COOKIE_INVENTORY} from "@/resources/cookies";
+
+/** Category id → the label shown in the policy table. */
+const CATEGORY_TITLES = Object.fromEntries(
+    COOKIE_CATEGORIES.map((category) => [category.id, category.title]),
+) as Record<(typeof COOKIE_INVENTORY)[number]["category"], string>;
 
 const cookiePolicyEn: PageSchema = {
     meta: {
@@ -17,7 +23,7 @@ const cookiePolicyEn: PageSchema = {
         {
             type: "text",
             title: "Cookie Policy",
-            description: "Last updated: 19 August 2026",
+            description: "Last updated: 8 September 2026",
         },
         {
             type: "text",
@@ -66,6 +72,20 @@ const cookiePolicyEn: PageSchema = {
             type: "text",
             title: "Current Cookie Information",
             description: "Cookie Settings panel. The current list of non-essential cookies and similar technologies, including provider, purpose, category and lifetime, is made available through the website’s Cookie Settings or consent panel. That live panel forms part of this Cookie Policy because technologies may change as the website is developed.",
+        },
+        {
+            type: "table",
+            title: "Cookies and Similar Technologies in Use",
+            description: "The technologies currently set by this website, with the purpose each one serves and how long it lasts. The Cookie Settings panel shows the same list and is the place to change or withdraw consent.",
+            columns: ["Name", "Category", "Type", "Purpose", "Expiry"],
+            rows: COOKIE_INVENTORY.map((cookie) => [
+                cookie.name,
+                CATEGORY_TITLES[cookie.category],
+                cookie.storage,
+                cookie.purpose,
+                cookie.expiry,
+            ]),
+            note: "All of the above are set for the quetranslations.com domain. No analytics or marketing technologies are in use at the date of this policy; if any are introduced they will be added to this table and to the Cookie Settings panel, and will not run before consent is given. The payment provider may set its own strictly necessary technologies on its hosted payment page, governed by its own notice.",
         },
         {
             type: "text",

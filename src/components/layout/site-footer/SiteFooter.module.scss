@@ -114,6 +114,24 @@
     }
 }
 
+/* Matches .link but is a button, because it opens the consent panel. */
+.linkButton {
+    color: rgba(255, 255, 255, 0.66);
+    transition: color 0.2s ease, transform 0.2s ease;
+    width: fit-content;
+    padding: 0;
+    border: none;
+    background: none;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        color: #f0abfc;
+        transform: translateX(4px);
+    }
+}
+
 /* ---- contact ---- */
 .contactItem {
     display: flex;
@@ -177,15 +195,20 @@
     gap: 12px;
 }
 
+/*
+ * Scheme brand marks must sit on an opaque light background, keep their own
+ * proportions and never be tinted, so the chip is solid white, sized by its
+ * content, and the padding provides the clear space each brand centre asks for.
+ */
 .payChip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
+    min-width: 62px;
     height: 46px;
-    padding: 3px 4px;
+    padding: 6px 10px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.62);
+    background: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.14);
     transition: transform 0.25s ease;
 
@@ -194,9 +217,27 @@
     }
 }
 
-.payIcon {
-    width: 100%;
-    height: 100%;
+/*
+ * Heights are set per mark rather than sharing one box: the Visa brandmark ships
+ * with clear space inside its own artboard, while the Mastercard lockup is close
+ * to square, so a single height would render one of them far smaller than the
+ * minimum reproduction size.
+ */
+.payMarkVisa {
+    width: auto;
+    height: 26px;
+    object-fit: contain;
+}
+
+.payMarkMastercard {
+    width: auto;
+    height: 32px;
+    object-fit: contain;
+}
+
+.payMarkPci {
+    width: auto;
+    height: 30px;
     object-fit: contain;
 }
 

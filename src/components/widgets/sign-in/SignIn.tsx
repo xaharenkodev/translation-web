@@ -30,7 +30,7 @@ export default function SignIn() {
                     <header className={styles.header}>
                         <h1 className={styles.title}>Sign In to Your Account</h1>
                         <p className={styles.subtitle}>
-                            Access your purchased templates, downloads and Account Balance.
+                            Access your translation orders, finished documents and Account Balance.
                         </p>
                     </header>
 
@@ -48,7 +48,7 @@ export default function SignIn() {
                                     <InputUI
                                         name="email"
                                         type="email"
-                                        placeholder="john.doe@enterprise.com"
+                                        placeholder="you@example.com"
                                         formik
                                     />
                                 </div>

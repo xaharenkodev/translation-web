@@ -17,7 +17,7 @@ const privacyPageEn: PageSchema = {
         {
             type: "text",
             title: "Privacy Policy",
-            description: "Last updated: 19 August 2026",
+            description: "Last updated: 8 September 2026",
         },
         {
             type: "text",
@@ -61,6 +61,10 @@ const privacyPageEn: PageSchema = {
         {
             type: "text",
             description: "Payment data. QueTranslations receives transaction references, currency, amount, payment status, limited card metadata and refund or chargeback information. Full payment-card details are generally collected directly by the payment processor rather than stored by QueTranslations.",
+        },
+        {
+            type: "text",
+            description: "Strong customer authentication and 3D Secure. Card payments are authenticated using 3D Secure (for example Visa Secure or Mastercard Identity Check). During that step the payment processor, the card scheme and the card issuer exchange data needed to verify the cardholder, which may include the device, browser and network information of the person paying, the transaction details and the outcome of the authentication. This processing is carried out by the payment processor and the card issuer under their own notices, is required by law for strong customer authentication and for fraud prevention, and QueTranslations receives only the authentication result rather than the credentials used.",
         },
         {
             type: "text",

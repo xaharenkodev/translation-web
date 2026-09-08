@@ -143,6 +143,8 @@
     gap: 20px;
 }
 
+/* Rendered as an <a> when the card links out and a <button> when it filters the
+   list below, so the button defaults are reset back to the link's appearance. */
 .card {
     position: relative;
     display: flex;
@@ -153,6 +155,12 @@
     background: var(--surface-color);
     border: 1px solid var(--border-color);
     overflow: hidden;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    appearance: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 
     &::before {

@@ -1,6 +1,10 @@
 export function env(name: string, fallback?: string): string {
     const value = process.env[name] ?? fallback;
-    if (!value) {
+    // An explicit "" fallback means the setting is optional — callers such as
+    // easytransacService.isConfigured() test for it themselves. Only a value
+    // that was never supplied at all is a configuration error, otherwise a
+    // missing optional key takes down every route that imports ENV.
+    if (value === undefined) {
         throw new Error(`${name} is not defined in environment variables.`);
     }
     return value;

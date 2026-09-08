@@ -46,7 +46,7 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                 <InputUI
                     name="email"
                     type="email"
-                    placeholder="john.doe@enterprise.com"
+                    placeholder="you@example.com"
                     formik
                 />
             </div>
@@ -78,7 +78,7 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                     <InputUI
                         name="phoneNumber"
                         type="tel"
-                        placeholder="+1 (555) 000-0000"
+                        placeholder="+372 000 0000"
                         formik
                     />
                 </div>
@@ -100,7 +100,7 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                 <InputUI
                     name="street"
                     type="text"
-                    placeholder="123 Business Way"
+                    placeholder="12 Rotermanni tn"
                     formik
                 />
             </div>
@@ -111,7 +111,7 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                     <InputUI
                         name="city"
                         type="text"
-                        placeholder="San Francisco"
+                        placeholder="Tallinn"
                         formik
                     />
                 </div>
@@ -120,7 +120,7 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                     <InputUI
                         name="postCode"
                         type="text"
-                        placeholder="94105"
+                        placeholder="10111"
                         formik
                     />
                 </div>
@@ -150,8 +150,8 @@ function SignUpForm({ isSubmitting }: { isSubmitting: boolean }) {
                         <a href="/privacy-policy" target="_blank" rel="noreferrer">
                             Privacy Policy
                         </a>
-                        . I understand my data will be handled according to enterprise
-                        security standards.
+                        . I understand my documents and personal data will be handled as
+                        described in the Privacy Policy.
                     </span>
                 </label>
 
@@ -184,7 +184,7 @@ export default function SignUp() {
                     <header className={styles.header}>
                         <h1 className={styles.title}>Create your account</h1>
                         <p className={styles.subtitle}>
-                            Join the enterprise marketplace for high-performance assets.
+                            Create an account to order translations, manage your Account Balance and download finished work.
                         </p>
                     </header>
 

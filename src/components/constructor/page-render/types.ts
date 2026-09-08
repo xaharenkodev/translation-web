@@ -54,6 +54,16 @@ export type SliderBlock = {
     images: string[];
 };
 
+export type TableBlock = {
+    type: "table";
+    title?: string;
+    description?: string;
+    caption?: string;
+    columns: string[];
+    rows: string[][];
+    note?: string;
+};
+
 export type FaqBlock = {
     type: "faq";
     image?: string;
@@ -317,6 +327,7 @@ export type PageBlock =
     | TextBlock
     | MediaBlock
     | SliderBlock
+    | TableBlock
     | FaqBlock
     | CardBlock
     | SectionBlock

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import React, { useId, useMemo, useState } from "react";
+import React, { useCallback, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 import {
@@ -37,11 +37,17 @@ export type FAQCardIcon =
     | "account"
     | "help";
 
+/**
+ * A card either jumps to a page (`href`) or filters the accordion below to one
+ * category (`category`) — the latter is what the three topic cards do, so they
+ * lead to the answers they advertise instead of bouncing to the contact page.
+ */
 export interface FAQCard {
     title: string;
     description: string;
-    href: string;
     linkText: string;
+    href?: string;
+    category?: FAQCategory;
     icon?: FAQCardIcon;
 }
 
@@ -87,6 +93,15 @@ const FAQ: React.FC<FAQProps> = ({
     const [activeCategory, setActiveCategory] = useState("All");
     const [openItemKey, setOpenItemKey] = useState<string | null>(null);
     const searchId = useId();
+    const accordionRef = useRef<HTMLDivElement>(null);
+
+    /** Selecting a topic card filters the list and scrolls it into view. */
+    const showCategory = useCallback((category: FAQCategory) => {
+        setSearchQuery("");
+        setActiveCategory(normalizeCategory(category));
+        setOpenItemKey(null);
+        accordionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, []);
 
     const availableCategories = useMemo(() => {
         const derived = Array.from(
@@ -176,9 +191,8 @@ const FAQ: React.FC<FAQProps> = ({
                     <div className={styles.cards}>
                         {cards.map((card) => {
                             const Icon = card.icon ? cardIcons[card.icon] : FiHelpCircle;
-
-                            return (
-                                <Link key={`${card.title}-${card.href}`} href={card.href} className={styles.card}>
+                            const body = (
+                                <>
                                     <span className={styles.cardIconWrap} aria-hidden="true">
                                         <Icon className={styles.cardIcon} />
                                     </span>
@@ -188,13 +202,32 @@ const FAQ: React.FC<FAQProps> = ({
                                         {card.linkText}
                                         <FiArrowRight aria-hidden="true" />
                                     </span>
+                                </>
+                            );
+
+                            if (card.category) {
+                                return (
+                                    <button
+                                        key={`${card.title}-${card.category}`}
+                                        type="button"
+                                        className={styles.card}
+                                        onClick={() => showCategory(card.category!)}
+                                    >
+                                        {body}
+                                    </button>
+                                );
+                            }
+
+                            return (
+                                <Link key={`${card.title}-${card.href}`} href={card.href ?? "/contact-us"} className={styles.card}>
+                                    {body}
                                 </Link>
                             );
                         })}
                     </div>
                 )}
 
-                <div className={styles.accordion}>
+                <div className={styles.accordion} ref={accordionRef}>
                     {filteredItems.length > 0 ? (
                         filteredItems.map((item, idx) => {
                             const itemKey = getItemKey(item);

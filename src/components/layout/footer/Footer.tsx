@@ -7,8 +7,8 @@ import styles from "./Footer.module.scss";
 import {footerContent} from "@/resources/content";
 import {footerStyles} from "@/resources/styles-config";
 import {SmartLinkProps} from "@/types/smart-link";
-import visa from "@/assets/cards/visa.png";
-import mastercard from "@/assets/cards/mastercard.png";
+import visa from "@/assets/cards/visa.svg";
+import mastercard from "@/assets/cards/mastercard.svg";
 import pciDss from "@/assets/cards/pci-dss-compliant-logo-vector.svg";
 
 const SmartLink: React.FC<SmartLinkProps> = ({href, className, children, ariaLabel, title, target, rel}) => {
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                                 />
                             </SmartLink>
                             <p className={styles.brandDesc}>
-                                Premium marketplace for website templates, landing pages, eCommerce designs, and modern web layouts built to help you launch faster.
+                                Professional document and text translation in 33 languages — instant AI results, or specialist translation reviewed by a linguist and delivered within 12–24 hours.
                             </p>
                         </div>
 
@@ -92,8 +92,8 @@ const Footer: React.FC = () => {
                             © {new Date().getFullYear()} {legal.companyName}. All rights reserved.
                         </p>
                         <div className={styles.paymentsContent}>
-                            <Image src={visa} alt="Visa" placeholder="blur" className={styles.paymentIconColor} />
-                            <Image src={mastercard} alt="Mastercard" placeholder="blur" className={styles.paymentIconColor} />
+                            <Image src={visa} alt="Visa" className={styles.paymentMarkVisa} />
+                            <Image src={mastercard} alt="Mastercard" className={styles.paymentMarkMastercard} />
                             <Image src={pciDss} alt="PCI DSS Compliant" className={styles.paymentIconColor} />
                         </div>
                     </div>

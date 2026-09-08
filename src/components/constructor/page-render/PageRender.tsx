@@ -14,6 +14,7 @@ import { legacyTokensToBalance } from "@/utils/money";
 import HighlightStrip from "../highlight-strip/HighlightStrip";
 import Marquee from "../marquee/Marquee";
 import Timeline from "../timeline/Timeline";
+import Table from "../table/Table";
 
 import type {
     PageSchema,
@@ -23,6 +24,7 @@ import type {
     SectionBlock,
     GridBlock,
     SliderBlock,
+    TableBlock,
     FaqBlock,
     CardBlock,
     PricingBlock,
@@ -318,6 +320,19 @@ function RenderGrid(b: GridBlock) {
     );
 }
 
+function RenderTable(b: TableBlock) {
+    return (
+        <Table
+            title={b.title}
+            description={b.description}
+            caption={b.caption}
+            columns={b.columns}
+            rows={b.rows}
+            note={b.note}
+        />
+    );
+}
+
 // ------------------- switch -------------------
 
 function renderBlock(block: PageBlock, key?: React.Key): React.ReactNode {
@@ -328,6 +343,8 @@ function renderBlock(block: PageBlock, key?: React.Key): React.ReactNode {
             return <RenderMedia key={key} {...block} />;
         case "slider":
             return <RenderSlider key={key} {...block} />;
+        case "table":
+            return <RenderTable key={key} {...block} />;
         case "faq":
             return <RenderFaq key={key} {...block} />;
         case "card":

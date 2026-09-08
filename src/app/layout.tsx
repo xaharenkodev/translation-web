@@ -11,6 +11,9 @@ import {currentFont} from "@/resources/styles-config";
 import {I18nProvider} from "@/context/i18nContext";
 import {AllOrdersProvider} from "@/context/AllOrdersContext";
 import {CurrencyProvider} from "@/context/CurrencyContext";
+import {CookieConsentProvider} from "@/context/CookieConsentContext";
+import CookieConsent from "@/components/layout/cookie-consent/CookieConsent";
+import SupportChat from "@/components/widgets/support-chat/SupportChat";
 
 const siteUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || "http://localhost:3000";
 const siteDescription =
@@ -69,11 +72,15 @@ function Layout({children}: { children: React.ReactNode }) {
                 <AllOrdersProvider>
                     <ProtectedRoute>
                         <CurrencyProvider>
-                            <Header/>
-                            <PageWrapper>
-                                {children}
-                            </PageWrapper>
-                            <SiteFooter/>
+                            <CookieConsentProvider>
+                                <Header/>
+                                <PageWrapper>
+                                    {children}
+                                </PageWrapper>
+                                <SiteFooter/>
+                                <SupportChat/>
+                                <CookieConsent/>
+                            </CookieConsentProvider>
                         </CurrencyProvider>
                     </ProtectedRoute>
                 </AllOrdersProvider>

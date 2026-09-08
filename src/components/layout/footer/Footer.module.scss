@@ -204,6 +204,19 @@
   align-items: center;
 }
 
+/* Scheme marks keep their own aspect ratio and approved colour — never tinted. */
+.paymentMarkVisa {
+  width: auto;
+  height: 26px;
+  object-fit: contain;
+}
+
+.paymentMarkMastercard {
+  width: auto;
+  height: 32px;
+  object-fit: contain;
+}
+
 .paymentIconColor {
   width: 48px;
   height: 30px;
